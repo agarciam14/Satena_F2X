@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './styles/themes/all' as themes;
+@use './styles/typography/config';
+
+@include mat.core();
+
+@include mat.core-theme(themes.$my-app-light-theme);
+@include mat.button-theme(themes.$my-app-light-theme);
+@include mat.icon-theme(themes.$my-app-light-theme);
+@include mat.menu-theme(themes.$my-app-light-theme);
+
+@include mat.typography-hierarchy(config.$my-app-typography);
+
+@media (prefers-color-scheme: dark) {
+  @include mat.core-color(themes.$my-app-dark-theme);
+  @include mat.button-color(themes.$my-app-dark-theme);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.section__title {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+  
+  &-subheading {
+    text-align: center;
+    color: #5E6282;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }
+
+  &-heading {
+    text-align: center;
+    color: #181E4B;
+    word-wrap: break-word;
+  }
+}

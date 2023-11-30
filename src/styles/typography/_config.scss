@@ -1,0 +1,68 @@
+@use '@angular/material' as mat;
+
+$heading-font-family: "'Inter', sans-serif";
+$regular-font-family: "'Inter', sans-serif";
+
+$my-app-typography: mat.define-typography-config(
+  $font-family: $regular-font-family,
+  $headline-1:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-size: 112px,
+    ),
+  $headline-2:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-size: 56px,
+    ),
+  $headline-3:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-size: 45px,
+      $line-height: 48px,
+    ),
+  $headline-4:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-size: 34px,
+      $line-height: 40px,
+    ),
+  $headline-5:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-weight: 800,
+      $font-size: 30px,
+      $line-height: 38px,
+    ),
+  $headline-6:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-weight: 700,
+      $font-size: 30px,
+      $line-height: 38px,
+    ),
+  $subtitle-1:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-size: 18px,
+      $line-height: 28px,
+    ),
+  $subtitle-2:
+    mat.define-typography-level(
+      $font-family: $heading-font-family,
+      $font-size: 18px,
+      $line-height: 24px,
+    ),
+  $body-2:
+    mat.define-typography-level(
+      $font-size: 16px,
+    ),
+  $body-1:
+    mat.define-typography-level(
+      $font-size: 16px,
+    ),
+  $button:
+    mat.define-typography-level(
+      $font-size: 16px,
+    ),
+);

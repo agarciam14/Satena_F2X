@@ -1,0 +1,17 @@
+:host {
+    height: 222px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    left: 42px;
+    top: 159px;
+    position: absolute;
+    border-radius: 10px;
+    border: 3px #F7F7F7 solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    display: inline-flex;
+}

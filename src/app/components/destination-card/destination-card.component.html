@@ -1,0 +1,11 @@
+<img class="destinations__card-image" [src]="destination.imgSrc" alt="" />
+<div class="destinations__card-text">
+  <div class="destinations__card-text-main">
+    <span>{{ destination.name }}</span>
+    <span>{{ destination.formattedPrice }}</span>
+  </div>
+  <div class="destinations__card-text-bottom">
+    <img src="/assets/icons/calendar.svg" alt="" />
+    <span>{{ destination.initialDate }} - {{ destination.finalDate }}</span>
+  </div>
+</div>

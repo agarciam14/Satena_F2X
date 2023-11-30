@@ -1,0 +1,94 @@
+<div
+  class="Component17"
+  style="
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+  ">
+  <img
+    class="Foto1"
+    style="width: 40px; height: 40px; border-radius: 9999px"
+    alt=""
+    [src]="testimonial.profilePicture" />
+</div>
+<div
+  class="Comentario"
+  style="
+    align-self: stretch;
+    color: #5e6282;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 20.4px;
+    word-wrap: break-word;
+  ">
+  {{ testimonial.commentary }}
+</div>
+<div
+  class="Frame64"
+  style="
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: flex;
+  ">
+  <div
+    class="Nombre"
+    style="
+      color: #5e6282;
+      font-size: 18px;
+      font-family: Inter;
+      font-weight: 600;
+      word-wrap: break-word;
+    ">
+    {{ testimonial.userName }}
+  </div>
+  <div
+    class="Frame69"
+    style="
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      display: inline-flex;
+    ">
+    <div
+      class="Lugar"
+      style="
+        color: #5e6282;
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 400;
+        word-wrap: break-word;
+      ">
+      {{ testimonial.origin }}
+    </div>
+    <div
+      class="FlightTakeoff"
+      style="width: 20px; height: 20px; position: relative">
+      <div
+        class="Vector"
+        style="
+          width: 16.68px;
+          height: 14.42px;
+          left: 1.66px;
+          top: 2.79px;
+          position: absolute;
+          background: #5e6282;
+        "></div>
+    </div>
+    <div
+      class="Lugar"
+      style="
+        color: #5e6282;
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 400;
+        word-wrap: break-word;
+      ">
+      {{ testimonial.destination }}
+    </div>
+  </div>
+</div>
