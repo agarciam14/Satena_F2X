@@ -1,0 +1,2480 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Destination",
+            "id": "interface-Destination-79191f47fba8320a5296cfcf0c69e0d640f84088303d617a179751b6bc28a3e80f26e979d927e3846ff8fb1f399adc4ec53d082eb735ba2522d5110148aa3d3b",
+            "file": "src/models/destination.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Destination {\n  imgSrc: string;\n  name: string;\n  formattedPrice: string;\n  initialDate: string;\n  finalDate: string;\n}\n",
+            "properties": [
+                {
+                    "name": "finalDate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "formattedPrice",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "imgSrc",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "initialDate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Testimonial",
+            "id": "interface-Testimonial-259af71a94302d9b113d2a604992a1e5a29319cbb6741bcb67dc0a4f7dc1df5f6bfd51c9c2eb07c369afa1e77833b579152954321252ff084e1b33db6a6144d7",
+            "file": "src/models/testimonial.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Testimonial {\n  userName: string;\n  profilePicture: string;\n  origin: string;\n  destination: string;\n  commentary: string;\n}\n",
+            "properties": [
+                {
+                    "name": "commentary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "destination",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "origin",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "profilePicture",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "userName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "BrowserStorageService",
+            "id": "injectable-BrowserStorageService-825b79e1ce1b63e9063fa52d95d067b593be965c34b5916d38d6807016e067798d885d5059a34d61979dccce3bc04886376b30a4bcbee8dec9865442fc201ae9",
+            "file": "src/app/browser-storage.service.ts",
+            "properties": [
+                {
+                    "name": "storage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Storage",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "decorators": [
+                        {
+                            "name": "Inject",
+                            "stringifiedArguments": "BROWSER_STORAGE"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        125
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "get",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "set",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Inject, Injectable, InjectionToken } from '@angular/core';\n\nexport const BROWSER_STORAGE = new InjectionToken<Storage>('Browser Storage', {\n  providedIn: 'root',\n  factory: () => localStorage,\n});\n\n@Injectable({ providedIn: 'root' })\nexport class BrowserStorageService {\n  constructor(@Inject(BROWSER_STORAGE) public storage: Storage) {}\n\n  get(key: string) {\n    return this.storage.getItem(key);\n  }\n\n  set(key: string, value: string) {\n    this.storage.setItem(key, value);\n  }\n\n  remove(key: string) {\n    this.storage.removeItem(key);\n  }\n\n  clear() {\n    this.storage.clear();\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "storage",
+                        "type": "Storage",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "storage",
+                        "type": "Storage",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "ThemeManager",
+            "id": "injectable-ThemeManager-350a1b4c416f37f5b8a804f94f09ae9c09a75aa0b2a29c19fbcfb4353381424a803240531db7ae19f98ab2a7422736d53a92f97d02f7996efeee81d98278d5c9",
+            "file": "src/app/theme-manager.service.ts",
+            "properties": [
+                {
+                    "name": "_isDarkSub",
+                    "defaultValue": "new BehaviorSubject(false)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "_window",
+                    "defaultValue": "this.document.defaultView",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "browserStorage",
+                    "defaultValue": "inject(BrowserStorageService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "document",
+                    "defaultValue": "inject(DOCUMENT)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "getPreferredTheme",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                },
+                {
+                    "name": "getStoredTheme",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "isDark$",
+                    "defaultValue": "this._isDarkSub.asObservable()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "setStoredTheme",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "setTheme",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53
+                }
+            ],
+            "methods": [
+                {
+                    "name": "changeTheme",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 89,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeStyle",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 82,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setMaterialTheme",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 69,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { DOCUMENT } from '@angular/common';\nimport { Injectable, inject } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';\nimport { take } from 'rxjs/operators';\nimport { BrowserStorageService } from './browser-storage.service';\n\nconst LOCAL_STORAGE_KEY = 'angular-material.dev';\n\n@Injectable({ providedIn: 'root' })\nexport class ThemeManager {\n  private document = inject(DOCUMENT);\n  private browserStorage = inject(BrowserStorageService);\n  private _isDarkSub = new BehaviorSubject(false);\n  isDark$ = this._isDarkSub.asObservable();\n  private _window = this.document.defaultView;\n\n  constructor() {\n    this.setTheme(this.getPreferredTheme());\n    if (this._window !== null && this._window.matchMedia) {\n      this._window\n        .matchMedia('(prefers-color-scheme: dark)')\n        .addEventListener('change', () => {\n          const storedTheme = this.getStoredTheme();\n          if (storedTheme !== 'light' && storedTheme !== 'dark') {\n            this.setTheme(this.getPreferredTheme());\n          }\n        });\n    }\n  }\n\n  getStoredTheme = () =>\n    JSON.parse(this.browserStorage.get(LOCAL_STORAGE_KEY) ?? '{}').theme;\n  setStoredTheme = (theme: string) => {\n    const meta = JSON.parse(this.browserStorage.get(LOCAL_STORAGE_KEY) ?? '{}');\n    meta.theme = theme;\n    this.browserStorage.set(LOCAL_STORAGE_KEY, JSON.stringify(meta));\n  };\n\n  getPreferredTheme = (): 'dark' | 'light' => {\n    const storedTheme = this.getStoredTheme();\n    if (storedTheme) {\n      return storedTheme;\n    }\n\n    if (this._window !== null && this._window.matchMedia) {\n      return this._window.matchMedia('(prefers-color-scheme: dark)').matches\n        ? 'dark'\n        : 'light';\n    }\n    return 'light';\n  };\n\n  setTheme = (theme: string) => {\n    if (this._window !== null && this._window.matchMedia) {\n      if (\n        theme === 'auto' &&\n        this._window.matchMedia('(prefers-color-scheme: dark)').matches\n      ) {\n        this.document.documentElement.setAttribute('data-bs-theme', 'dark');\n        this._isDarkSub.next(true);\n      } else {\n        this.document.documentElement.setAttribute('data-bs-theme', theme);\n        this._isDarkSub.next(theme === 'dark');\n      }\n      this.setMaterialTheme();\n    }\n  };\n\n  setMaterialTheme() {\n    this.isDark$.pipe(take(1)).subscribe(isDark => {\n      if (isDark) {\n        const href = 'dark-theme.css';\n        getLinkElementForKey('dark-theme').setAttribute('href', href);\n        this.document.documentElement.classList.add('dark-theme');\n      } else {\n        this.removeStyle('dark-theme');\n        this.document.documentElement.classList.remove('dark-theme');\n      }\n    });\n  }\n\n  removeStyle(key: string) {\n    const existingLinkElement = getExistingLinkElementByKey(key);\n    if (existingLinkElement) {\n      this.document.head.removeChild(existingLinkElement);\n    }\n  }\n\n  changeTheme(theme: string) {\n    this.setStoredTheme(theme);\n    this.setTheme(theme);\n  }\n}\n\nfunction getLinkElementForKey(key: string) {\n  return getExistingLinkElementByKey(key) || createLinkElementWithKey(key);\n}\n\nfunction getExistingLinkElementByKey(key: string) {\n  return document.head.querySelector(\n    `link[rel=\"stylesheet\"].${getClassNameForKey(key)}`\n  );\n}\n\nfunction createLinkElementWithKey(key: string) {\n  const linkEl = document.createElement('link');\n  linkEl.setAttribute('rel', 'stylesheet');\n  linkEl.classList.add(getClassNameForKey(key));\n  document.head.appendChild(linkEl);\n  return linkEl;\n}\n\nfunction getClassNameForKey(key: string) {\n  return `style-manager-${key}`;\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 15
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-b22f9cc4f18ec5837b68ac32693f09320bf0014a7d3f89f106c0beab3c99fcd60b2b7a16edc6c04cafab2b6884cf493973cbe131f9364a9361623ae6ffe56f23",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'satena_landing'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n  title = 'satena_landing';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".landing-satena {\n  width: 100vw;\n  height: 100%;\n  padding-top: 64px;\n  padding-bottom: 40px;\n  padding-left: 16px;\n  padding-right: 16px;\n  background: white;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  gap: 62px;\n  display: inline-flex;\n  overflow-x: hidden;\n}\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"landing-satena\">\n  <app-header></app-header>\n  <app-banner></app-banner>\n  <app-testimonials></app-testimonials>\n  <app-destinations></app-destinations>\n  <app-flights></app-flights>\n  <app-footer></app-footer>\n</div>\n"
+        },
+        {
+            "name": "BannerComponent",
+            "id": "component-BannerComponent-8a6b6780713501fee65f4032fa9709028f7c4d137142ab0b5c8ed5c2b9a42cf4f1de4bc2dd50c7caa88d3f0bbedd2601a74736a85b523646a0bf92ab7e1cf6d7",
+            "file": "src/app/components/banner/banner.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-banner",
+            "styleUrls": [
+                "./banner.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./banner.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n})\nexport class BannerComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  width: 100%;\n  justify-content: flex-start;\n  align-items: center;\n  display: inline-flex;\n  position: relative;\n\n  .banner-titles {\n    padding: 12px 0;\n    z-index: 10;\n  }\n\n  .traveller1 {\n    position: absolute;\n    right: -2.5rem;\n    bottom: -1rem;\n    z-index: 5;\n  }\n\n  .decore {\n    position: absolute;\n    right: -1rem;\n    top: -4rem;\n    z-index: 0;\n  }\n}\n",
+                    "styleUrl": "./banner.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div\n  class=\"banner-titles\"\n  style=\"\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: flex-start;\n    gap: 24px;\n    display: inline-flex;\n  \">\n  <h1\n    class=\"H1\"\n    style=\"\n      color: #181e4b;\n      font-size: 30px;\n      font-family: Inter;\n      font-weight: 800;\n      word-wrap: break-word;\n    \">\n    Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\n  </h1>\n  <div\n    class=\"P\"\n    style=\"\n      color: #181e4b;\n      font-size: 14px;\n      font-family: Inter;\n      font-weight: 600;\n      text-transform: uppercase;\n      word-wrap: break-word;\n    \">\n    Conoce más sobre<br />nuestras políticas<br />pensadas para ti\n  </div>\n  <app-button label=\"Conoce más aquí\" size=\"small\" />\n</div>\n<img\n  class=\"traveller1\"\n  style=\"width: 289px; height: 288px\"\n  src=\"assets/images/traveler.png\"\n  alt=\"\" />\n<img\n  class=\"decore\"\n  style=\"width: 175px; height: 320px\"\n  src=\"assets/images/decore.svg\"\n  alt=\"\" />\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-572e1d85b3b24371d98a915fac36973c5fe4eaca1e52bd971209f17909c4e922f328bf67219673935f8ecc8d2fa90c3fd7182cd4e622e1395d6adbb5f0e01a75",
+            "file": "src/app/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'big'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "\"big\" | \"small\"",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"primary\" | \"secondary\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nconst getStyles = (...args: string[]) => ['button', ...args].filter(Boolean);\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent {\n  @Input()\n  label = '';\n\n  @Input()\n  type: 'primary' | 'secondary' = 'primary';\n\n  @Input()\n  size: 'big' | 'small' = 'big';\n\n  public get classes(): string[] {\n    return getStyles(this.type, this.size);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".button {\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 8px 16px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    border: none;\r\n}\r\n\r\n.primary {\r\n    background: #F1A501;\r\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n    border-radius: 10px;\r\n\r\n    &:hover {\r\n        background: #E49F1A;\r\n    }\r\n\r\n    &:active {\r\n        background: #DB8C15;\r\n    }\r\n\r\n    span {\r\n        color: white;\r\n        font-size: 14px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &.big {\r\n        height: 60px;\r\n        span {\r\n            font-size: 18px;\r\n            font-weight: 500;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    border-radius: 5px;\r\n    border: 1px #181E4B solid;\r\n    background: transparent;\r\n\r\n    span {\r\n        color: #181E4B;\r\n        font-size: 18px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &:hover {\r\n        border: 2px #181E4B solid;\r\n    }\r\n    \r\n    &:active {\r\n        background: #C0C5EF;\r\n        border: 1px #181E4B solid;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 20
+                    }
+                }
+            },
+            "templateData": "<button [ngClass]=\"classes\">\n  <span>\n    {{ label }}\n  </span>\n</button>\n"
+        },
+        {
+            "name": "DestinationCardComponent",
+            "id": "component-DestinationCardComponent-50ddd7766a8f0e93525be99c4b829d3a0094e5c2c1f6ce8410fce8e5cf73e19ac8c8250f0503076840359db9f36b9e0c75c6f1bfcee07c5cd4a18ee421b6e3d4",
+            "file": "src/app/components/destination-card/destination-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-destination-card",
+            "styleUrls": [
+                "./destination-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./destination-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "destination",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 10,
+                    "type": "Destination",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Destination } from 'src/models';\n\n@Component({\n  selector: 'app-destination-card',\n  templateUrl: './destination-card.component.html',\n  styleUrls: ['./destination-card.component.scss'],\n})\nexport class DestinationCardComponent {\n  @Input({ required: true }) destination!: Destination;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n    border-radius: 20px;\r\n    overflow: hidden;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: flex-start;\r\n    display: flex;\r\n    width: 270px;\r\n\r\n    .destinations__card {\r\n        &-image {\r\n            width: 100%;\r\n            height: 205px;\r\n        }\r\n\r\n        &-text {\r\n            height: 124px;\r\n            padding: 32px 24px;\r\n            background: white;\r\n            border-bottom-left-radius: 20px;\r\n            border-bottom-right-radius: 20px;\r\n            border: 3px #F7F7F7 solid;\r\n            border-top: none;\r\n            flex-direction: column;\r\n            justify-content: flex-end;\r\n            align-items: flex-start;\r\n            gap: 8px;\r\n            display: flex;\r\n            width: 100%;\r\n\r\n            &-main {\r\n                align-self: stretch;\r\n                justify-content: space-between;\r\n                align-items: flex-start;\r\n                display: inline-flex;\r\n\r\n                span {\r\n                    color: #181E4B;\r\n                    font-size: 18px;\r\n                    font-weight: 400;\r\n                    word-wrap: break-word;\r\n                }\r\n            }\r\n\r\n            &-bottom {\r\n                justify-content: flex-start;\r\n                align-items: center;\r\n                gap: 8px;\r\n                display: inline-flex;\r\n\r\n                img {\r\n                    width: 24px;\r\n                    height: 24px;\r\n                }\r\n\r\n                span {\r\n                    color: #181E4B;\r\n                    font-size: 16px;\r\n                    font-weight: 500;\r\n                    line-height: 30px;\r\n                    word-wrap: break-word;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./destination-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<img class=\"destinations__card-image\" [src]=\"destination.imgSrc\" alt=\"\" />\n<div class=\"destinations__card-text\">\n  <div class=\"destinations__card-text-main\">\n    <span>{{ destination.name }}</span>\n    <span>{{ destination.formattedPrice }}</span>\n  </div>\n  <div class=\"destinations__card-text-bottom\">\n    <img src=\"/assets/icons/calendar.svg\" alt=\"\" />\n    <span>{{ destination.initialDate }} - {{ destination.finalDate }}</span>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "DestinationsComponent",
+            "id": "component-DestinationsComponent-8cb524b0a23bebe418d0343c19430e8303361c326cad454f1997cade942d90fefa30383606832f66bacf67919eed94144e00ab6f05470bb5f2e2a609d94e4785",
+            "file": "src/app/components/destinations/destinations.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-destinations",
+            "styleUrls": [
+                "./destinations.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./destinations.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "destinations",
+                    "defaultValue": "[\n    {\n      imgSrc: '/assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Destination[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Destination } from 'src/models';\n\n@Component({\n  selector: 'app-destinations',\n  templateUrl: './destinations.component.html',\n  styleUrls: ['./destinations.component.scss'],\n})\nexport class DestinationsComponent {\n  destinations: Destination[] = [\n    {\n      imgSrc: '/assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 60px;\r\n    display: flex;\r\n\r\n    .destinations__card-container {\r\n        align-self: stretch;\r\n        align-items: center;\r\n        gap: 40px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n}",
+                    "styleUrl": "./destinations.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"section__title\">\n  <span class=\"section__title-subheading\">Más vendidos</span>\n  <h2\n    class=\"section__title-heading\"\n    style=\"text-align: center; color: #181e4b; word-wrap: break-word\">\n    Destinos favoritos\n  </h2>\n</div>\n<div class=\"destinations__card-container\">\n  <app-destination-card\n    *ngFor=\"let destination of destinations\"\n    [destination]=\"destination\"></app-destination-card>\n</div>\n"
+        },
+        {
+            "name": "FlightsComponent",
+            "id": "component-FlightsComponent-c39f977db5ad48c89011087c6cb7d333f58b823b66f255c330b31a8633764e29dd7e3efb5ff16277d505ef9690bf8a6ef04e4c5ec1846936f4bbaa4460b9abca",
+            "file": "src/app/components/flights/flights.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-flights",
+            "styleUrls": [
+                "./flights.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./flights.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-flights',\n  templateUrl: './flights.component.html',\n  styleUrls: ['./flights.component.scss'],\n})\nexport class FlightsComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 60px;\r\n    display: inline-flex;\r\n}",
+                    "styleUrl": "./flights.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div\n  class=\"section__title\"\n  style=\"\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 8px;\n    display: flex;\n  \">\n  <span class=\"section__title-subheading\">Vuelos</span>\n  <h2 class=\"section__title-heading\">Busca tu vuelo</h2>\n</div>\n<app-flights-form></app-flights-form>\n"
+        },
+        {
+            "name": "FlightsFormComponent",
+            "id": "component-FlightsFormComponent-3e9ae56dedfcf8275b7fc1e1923fc415c57f039df163c353a950c0d500c9f526bb88e5b762356b1c37c6fc2be02f775deb6282346ea7efa2dbd31ebce95925d6",
+            "file": "src/app/components/flights-form/flights-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-flights-form",
+            "styleUrls": [
+                "./flights-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./flights-form.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "categories",
+                    "defaultValue": "['Categoría 1', 'Categoría 2', 'Categoría 3']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "flightForm",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "passengers",
+                    "defaultValue": "[\n    { viewValue: '1 Pasajero', value: 1 },\n    { viewValue: '2 Pasajeros', value: 2 },\n    { viewValue: '3 Pasajeros', value: 3 },\n    { viewValue: '4 Pasajeros', value: 4 },\n    { viewValue: '5 Pasajeros', value: 5 },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { FormBuilder, FormGroup } from '@angular/forms';\n\n@Component({\n  selector: 'app-flights-form',\n  templateUrl: './flights-form.component.html',\n  styleUrls: ['./flights-form.component.scss'],\n})\nexport class FlightsFormComponent {\n  flightForm: FormGroup;\n  passengers = [\n    { viewValue: '1 Pasajero', value: 1 },\n    { viewValue: '2 Pasajeros', value: 2 },\n    { viewValue: '3 Pasajeros', value: 3 },\n    { viewValue: '4 Pasajeros', value: 4 },\n    { viewValue: '5 Pasajeros', value: 5 },\n  ];\n\n  categories = ['Categoría 1', 'Categoría 2', 'Categoría 3'];\n\n  constructor(private fb: FormBuilder) {\n    this.flightForm = this.fb.group({\n      type: '',\n      from: '',\n      to: '',\n      departureDate: '',\n      returnDate: '',\n      passengersNumber: [],\n      category: '',\n    });\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n    align-self: stretch;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 40px;\r\n    display: flex;\r\n\r\n    input,\r\n    .ng-select.input ::ng-deep .ng-select-container {\r\n        align-self: stretch;\r\n        height: 48px;\r\n        padding-left: 16px;\r\n        padding-right: 16px;\r\n        background: white;\r\n        border-radius: 10px;\r\n        border: 2px #f7f7f7 solid;\r\n        justify-content: space-between;\r\n        align-items: center;\r\n        display: inline-flex;\r\n        font-size: 14px;\r\n        font-weight: 400;\r\n        word-wrap: break-word;\r\n\r\n        &:focus,\r\n        &:focus-visible {\r\n            outline: 2px #181E4B solid;\r\n        }\r\n\r\n        &::placeholder {\r\n            color: #a7b0bf;\r\n            \r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./flights-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<form\n  [formGroup]=\"flightForm\"\n  class=\"FormularioVacio\"\n  style=\"\n    align-self: stretch;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: flex-start;\n    gap: 24px;\n    display: flex;\n  \">\n  <!-- <mat-radio-group aria-label=\"Select an option\">\n    <mat-radio-button value=\"1\">Solo ida</mat-radio-button>\n    <mat-radio-button value=\"2\">Ida y regreso</mat-radio-button>\n  </mat-radio-group> -->\n  <div\n    class=\"Inputs\"\n    style=\"\n      align-self: stretch;\n      height: 408px;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n      gap: 24px;\n      display: flex;\n    \">\n    <input type=\"text\" placeholder=\"Desde\" formControlName=\"from\" />\n    <input type=\"text\" placeholder=\"Hacia\" formControlName=\"to\" />\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Ida\n        </div>\n      </div>\n      <img src=\"/assets/icons/calendar_month.svg\" alt=\"\" />\n    </div>\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Regreso\n        </div>\n      </div>\n      <img src=\"/assets/icons/calendar_month.svg\" alt=\"\" />\n    </div>\n    <ng-select\n      class=\"input\"\n      formControlName=\"passengersNumber\"\n      [items]=\"passengers\"\n      bindLabel=\"viewValue\"\n      bindValue=\"value\"\n      placeholder=\"Número de pasajeros\"></ng-select>\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Número de pasajeros\n        </div>\n      </div>\n      <div\n        class=\"KeyboardArrowDown\"\n        style=\"width: 24px; height: 24px; position: relative\">\n        <div\n          class=\"Vector\"\n          style=\"\n            width: 11.18px;\n            height: 6.59px;\n            left: 6.41px;\n            top: 8.71px;\n            position: absolute;\n            background: #a7b0bf;\n          \"></div>\n      </div>\n    </div>\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Categoria\n        </div>\n      </div>\n      <div\n        class=\"KeyboardArrowDown\"\n        style=\"width: 24px; height: 24px; position: relative\">\n        <div\n          class=\"Vector\"\n          style=\"\n            width: 11.18px;\n            height: 6.59px;\n            left: 6.41px;\n            top: 8.71px;\n            position: absolute;\n            background: #a7b0bf;\n          \"></div>\n      </div>\n    </div>\n  </div>\n</form>\n<form\n  class=\"Cta\"\n  style=\"\n    align-self: stretch;\n    height: 40px;\n    padding-left: 16px;\n    padding-right: 16px;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    background: #f1a501;\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);\n    border-radius: 5px;\n    justify-content: center;\n    align-items: center;\n    gap: 10px;\n    display: inline-flex;\n  \">\n  <div\n    class=\"Boton\"\n    style=\"\n      color: white;\n      font-size: 14px;\n      font-family: Inter;\n      font-weight: 500;\n      word-wrap: break-word;\n    \">\n    Buscar\n  </div>\n</form>\n"
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-53bc80862ac78159f362fbbd89e750845eec8559c4ccae2cd9bbe7318e77d197dda4f1e23786106a637fd83dc78ff4b959b8823b0457ef4ae4950921e549fae4",
+            "file": "src/app/components/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [
+                "./footer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 32px;\r\n    display: inline-flex;\r\n\r\n    .social-media__container {\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: inline-flex;\r\n\r\n        .social-media__icon {\r\n            width: 41px;\r\n            height: 41px;\r\n            background: white;\r\n            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);\r\n            border-radius: 50%;\r\n            display: flex;\r\n            align-items: center;\r\n            justify-content: center;\r\n        }\r\n    }\r\n\r\n    .footer__text-container {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 16px;\r\n        display: flex;\r\n\r\n        .footer__text {\r\n            color: #5E6282;\r\n            font-size: 12px;\r\n            font-weight: 400;\r\n            line-height: 20.40px;\r\n            word-wrap: break-word;\r\n\r\n            &--bold {\r\n                color: #5E6282;\r\n                font-size: 12px;\r\n                font-weight: 700;\r\n                word-wrap: break-word;\r\n            }\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<img src=\"/assets/images/satena_logo.svg\" alt=\"\" />\n<div class=\"social-media__container\">\n  <div class=\"social-media__icon\">\n    <img src=\"/assets/icons/facebook.svg\" alt=\"\" />\n  </div>\n  <div class=\"social-media__icon\">\n    <img src=\"/assets/icons/instagram.svg\" alt=\"\" />\n  </div>\n  <div class=\"social-media__icon\">\n    <img src=\"/assets/icons/twitter.svg\" alt=\"\" />\n  </div>\n</div>\n<div class=\"footer__text-container\">\n  <p class=\"footer__text--bold\">Líneas de atención al cliente</p>\n  <p class=\"footer__text\">\n    Lunes a viernes de 6:00am a 9:00pm.<br />Sábados, domingos y festivos de\n    6:00am a 6:00pm\n  </p>\n  <p class=\"footer__text\">(601) 390 6962<br />Línea directa Bogotá</p>\n  <p class=\"footer__text\">\n    Avenida El Dorado # 103-08 Interior 11 Bogotá-Colombia.\n  </p>\n</div>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-923107e1dbbaa3e13ea2a7752dcae733941ac535b7d232ed3bcd72471ac7c82e00d9725127ab62dbbb0d12273e6ec606725f42ac8875ab6a1a22674b80ee8359",
+            "file": "src/app/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  position: fixed;\n  width: 100%;\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 20px;\n  padding-bottom: 12px;\n  justify-content: space-between;\n  align-items: center;\n  display: inline-flex;\n  top: 0;\n  left: 0;\n  z-index: 50;\n}\n",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<app-logo size=\"small\" />\n<img src=\"assets/images/nav_mobile.svg\" alt=\"\" />\n"
+        },
+        {
+            "name": "LogoComponent",
+            "id": "component-LogoComponent-868b095971cbad53d3be8ebcdb4cdfcb990112b377aeb4808ad6769dc20125831768c426a5f7b6e5f35d2232221e10f5b61d24a66dcfdc11d7b5fca70852d643",
+            "file": "src/app/components/logo/logo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-logo",
+            "styleUrls": [
+                "./logo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./logo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'big'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"big\" | \"small\"",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'full-color'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "\"full-color\" | \"white\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss'],\n})\nexport class LogoComponent {\n  @Input()\n  type: 'full-color' | 'white' = 'full-color';\n\n  @Input()\n  size: 'big' | 'small' = 'big';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./logo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<img\n  src=\"/assets/images/logo_full-color.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"type === 'full-color' && size === 'big'\" />\n<img\n  src=\"/assets/images/logo_white.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"type === 'white' && size === 'big'\" />\n<img\n  src=\"/assets/images/logo_small.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"size === 'small'\" />\n"
+        },
+        {
+            "name": "TestimonialCardComponent",
+            "id": "component-TestimonialCardComponent-b8d68fe0733d473bb72b9316bba8b4e001f9b0b73afa7c16dd75ee35bc6605e5933b7a4d0d557c0196173752a06a7ee070f0b89dbe370cd31456a99b8b5703dc",
+            "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-testimonial-card",
+            "styleUrls": [
+                "./testimonial-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./testimonial-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'small'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"big\" | \"small\"",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "testimonial",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 20,
+                    "type": "Testimonial",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"primary\" | \"secondary\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Testimonial } from '../../../models';\n\nconst getStyles = (...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean);\n\n@Component({\n  selector: 'app-testimonial-card',\n  templateUrl: './testimonial-card.component.html',\n  styleUrls: ['./testimonial-card.component.scss'],\n})\nexport class TestimonialCardComponent {\n  @Input()\n  type: 'primary' | 'secondary' = 'primary';\n\n  @Input()\n  size: 'big' | 'small' = 'small';\n\n  @Input({ required: true })\n  testimonial!: Testimonial;\n\n  public get classes(): string[] {\n    return getStyles(this.type, this.size);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".testimonial-card {\r\n    width: 250px;\r\n    padding: 24px 32px;\r\n    background: white;\r\n    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.05);\r\n    border-radius: 10px;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: flex-start;\r\n    gap: 24px;\r\n    display: inline-flex;\r\n    position: relative;\r\n\r\n    &__img {\r\n        position: absolute;\r\n        top: -16px;\r\n        left: 50%;\r\n        transform: translate(-50%, 0);\r\n        height: 68px;\r\n        width: 68px;\r\n        border-radius: 50%;\r\n    }\r\n\r\n    &__main {\r\n        align-self: stretch;\r\n        color: #5e6282;\r\n        font-size: 12px;\r\n        font-weight: 400;\r\n        line-height: 20.4px;\r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &__bottom {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 8px;\r\n        display: flex;\r\n    }\r\n\r\n    &__name {\r\n        color: #5e6282;\r\n        font-size: 18px;\r\n        font-family: Inter;\r\n        font-weight: 600;\r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &__places {\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 8px;\r\n        display: inline-flex;\r\n\r\n        span {\r\n            color: #5e6282;\r\n            font-size: 12px;\r\n            font-family: Inter;\r\n            font-weight: 400;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    background: transparent;\r\n    border: 3px #F7F7F7 solid;\r\n    .testimonial-card__img {\r\n        width: 40px;\r\n        height: 40px;\r\n    }\r\n}\r\n\r\n.big {\r\n    width: 500px;\r\n    height: 232px;\r\n    justify-content: space-between;\r\n\r\n    .testimonial-card__img {\r\n        position: absolute;\r\n        top: -26px;\r\n        left: -36px;\r\n        border-radius: 50%;\r\n        transform: translate(0,0);\r\n    }\r\n}",
+                    "styleUrl": "./testimonial-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 22
+                    }
+                }
+            },
+            "templateData": "<div [ngClass]=\"classes\">\n  <img\n    class=\"testimonial-card__img\"\n    alt=\"\"\n    [src]=\"testimonial.profilePicture\" />\n  <p class=\"testimonial-card__main\">\n    {{ testimonial.commentary }}\n  </p>\n  <div class=\"testimonial-card__bottom\">\n    <div class=\"testimonial-card__name\">\n      {{ testimonial.userName }}\n    </div>\n    <div class=\"testimonial-card__places\">\n      <span>\n        {{ testimonial.origin }}\n      </span>\n      <img src=\"/assets/icons/flight_takeoff.svg\" alt=\"\" />\n      <span>\n        {{ testimonial.destination }}\n      </span>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "TestimonialsComponent",
+            "id": "component-TestimonialsComponent-5c0ce353f7ab0bef7f8b3dd107bddc90a5202379afb308cdbae6a0afab85b8b940ef27894d238093d0bd83d5caf3227b49c36b10ab325d11fca5f1dd51974b01",
+            "file": "src/app/components/testimonials/testimonials.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-testimonials",
+            "styleUrls": [
+                "./testimonials.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./testimonials.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "activeIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "testimonials",
+                    "defaultValue": "[\n    {\n      userName: 'Erick Padilla',\n      profilePicture: '/assets/images/erick',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: '/assets/images/andres',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Testimonial[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "next",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "prev",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\nimport { Testimonial } from 'src/models';\n\n@Component({\n  selector: 'app-testimonials',\n  templateUrl: './testimonials.component.html',\n  styleUrls: ['./testimonials.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TestimonialsComponent {\n  activeIndex = 0;\n  testimonials: Testimonial[] = [\n    {\n      userName: 'Erick Padilla',\n      profilePicture: '/assets/images/erick',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: '/assets/images/andres',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ];\n\n  public get nextIndex() {\n    return (this.activeIndex + 1) % this.testimonials.length;\n  }\n\n  public next() {\n    this.activeIndex = this.nextIndex;\n  }\n\n  public prev() {\n    if (this.activeIndex === 0) {\n      this.activeIndex = this.testimonials.length - 1;\n    } else {\n      this.activeIndex -= 1;\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "app-testimonials {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 80px;\r\n    display: inline-flex;\r\n\r\n    .testimonials__title {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 48px;\r\n        display: flex;\r\n\r\n        .testimonials__dots {\r\n            width: 50px;\r\n            height: 12px;\r\n            position: relative;\r\n\r\n            .testimonials__dot {\r\n                width: 12px;\r\n                height: 12px;\r\n                top: 0px;\r\n                position: absolute;\r\n                border-radius: 50%;\r\n\r\n                &--primary {\r\n                    left: 0px;\r\n                    background: #181e4b;\r\n                }\r\n\r\n                &--secondary {\r\n                    left: 38px;\r\n                    background: #f7f7f7;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .testimonials__card-container {\r\n        width: 292px;\r\n        height: 499px;\r\n        position: relative;\r\n    \r\n        app-testimonial-card {\r\n            >div {\r\n                z-index: 1;\r\n            }\r\n            \r\n            &[type='secondary'] {\r\n                z-index: 0;\r\n                position: absolute;\r\n                right: 0;\r\n                top: 143px;\r\n            }\r\n        }\r\n\r\n        .testimonials__card-navigation {\r\n            height: 14px;\r\n            left: 110px;\r\n            top: 485px;\r\n            position: absolute;\r\n\r\n            img {\r\n                width: 14px;\r\n                height: 7px;\r\n                left: 0px;\r\n                top: 14px;\r\n                position: absolute;\r\n                transform: rotate(-90deg);\r\n                transform-origin: 0 0;\r\n            }\r\n\r\n            :last-child {\r\n                left: 64.5px;\r\n            }\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./testimonials.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "nextIndex": {
+                    "name": "nextIndex",
+                    "getSignature": {
+                        "name": "nextIndex",
+                        "type": "",
+                        "returnType": "",
+                        "line": 31
+                    }
+                }
+            },
+            "templateData": "<div class=\"testimonials__title\">\n  <div class=\"section__title\">\n    <div class=\"section__title-subheading\">Testimonios</div>\n    <h2 class=\"section__title-heading\">Comentarios de<br />otros viajeros</h2>\n  </div>\n  <div class=\"testimonials__dots\">\n    <div class=\"testimonials__dot testimonials__dot--primary\"></div>\n    <div class=\"testimonials__dot testimonials__dot--secondary\"></div>\n  </div>\n</div>\n<div class=\"testimonials__card-container\">\n  <app-testimonial-card [testimonial]=\"testimonials[activeIndex]\" />\n  <app-testimonial-card\n    [testimonial]=\"testimonials[nextIndex]\"\n    type=\"secondary\" />\n  <div class=\"testimonials__card-navigation\">\n    <img\n      (click)=\"prev()\"\n      (keypress)=\"prev()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"/assets/icons/arrow_up.svg\"\n      alt=\"\" />\n    <img\n      (click)=\"next()\"\n      (keypress)=\"next()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"/assets/icons/arrow_down.svg\"\n      alt=\"\" />\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ThemeComponent",
+            "id": "component-ThemeComponent-2be0da783d9901896e2e4e3455c9309432d6d35c41a0e38c4c6962669398ae46ab8ca7daaa3db77eb91289d2d5c7d6c06f13f38f8fa0c0ba8e049fa2d606eb68",
+            "file": "src/app/components/theme/theme.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-theme",
+            "styleUrls": [
+                "./theme.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./theme.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isDark$",
+                    "defaultValue": "this.themeManager.isDark$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "themeManager",
+                    "defaultValue": "inject(ThemeManager)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'satena_landing'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changeTheme",
+                    "args": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "theme",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { ThemeManager } from 'src/app/theme-manager.service';\n\n@Component({\n  selector: 'app-theme',\n  templateUrl: './theme.component.html',\n  styleUrls: ['./theme.component.scss'],\n})\nexport class ThemeComponent {\n  title = 'satena_landing';\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  changeTheme(theme: string) {\n    this.themeManager.changeTheme(theme);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./theme.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div>\n  <h1>Angular Material Theming System: Complete Guide</h1>\n  <button\n    mat-icon-button\n    class=\"theme-toggle\"\n    aria-label=\"Change theme\"\n    [matMenuTriggerFor]=\"themeMenu\">\n    <mat-icon>{{\n      (isDark$ | async) === true ? 'dark_mode' : 'light_mode'\n    }}</mat-icon>\n  </button>\n  <mat-menu #themeMenu=\"matMenu\">\n    <button mat-menu-item (click)=\"changeTheme('auto')\">System</button>\n    <button mat-menu-item (click)=\"changeTheme('light')\">Light</button>\n    <button mat-menu-item (click)=\"changeTheme('dark')\">Dark</button>\n  </mat-menu>\n  <div class=\"demo-buttons\">\n    <button mat-raised-button color=\"primary\">Raised</button>\n    <button mat-raised-button color=\"accent\">Accent</button>\n    <button mat-raised-button color=\"warn\">Warn</button>\n  </div>\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-12fff83b2cde194a214230d8f2853b81e2ca6bc63c783603919aab97e6b172be732d736fab095c00a79d141883fdc6ef3946d159f10d97036aa5ecbd084cfb4d",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { CommonModule } from '@angular/common';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { ThemeComponent } from './components/theme/theme.component';\nimport { HeaderComponent } from './components/header/header.component';\nimport { BannerComponent } from './components/banner/banner.component';\nimport { TestimonialsComponent } from './components/testimonials/testimonials.component';\nimport { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';\nimport { DestinationsComponent } from './components/destinations/destinations.component';\nimport { DestinationCardComponent } from './components/destination-card/destination-card.component';\nimport { FlightsComponent } from './components/flights/flights.component';\nimport { FlightsFormComponent } from './components/flights-form/flights-form.component';\nimport { FooterComponent } from './components/footer/footer.component';\nimport { ButtonComponent } from './components/button/button.component';\nimport { LogoComponent } from './components/logo/logo.component';\nimport { NgSelectModule } from '@ng-select/ng-select';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    ThemeComponent,\n    HeaderComponent,\n    BannerComponent,\n    TestimonialsComponent,\n    TestimonialCardComponent,\n    DestinationsComponent,\n    DestinationCardComponent,\n    FlightsComponent,\n    FlightsFormComponent,\n    FooterComponent,\n    ButtonComponent,\n    LogoComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    CommonModule,\n    MatButtonModule,\n    MatIconModule,\n    MatMenuModule,\n    MatRadioModule,\n    NgSelectModule,\n    FormsModule,\n    ReactiveFormsModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "BannerComponent"
+                        },
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "DestinationCardComponent"
+                        },
+                        {
+                            "name": "DestinationsComponent"
+                        },
+                        {
+                            "name": "FlightsComponent"
+                        },
+                        {
+                            "name": "FlightsFormComponent"
+                        },
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
+                        },
+                        {
+                            "name": "LogoComponent"
+                        },
+                        {
+                            "name": "TestimonialCardComponent"
+                        },
+                        {
+                            "name": "TestimonialsComponent"
+                        },
+                        {
+                            "name": "ThemeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-0dc291a0afd3272506872fe6fa763d13caf4b8fd5fcd9d9673ea721d0260167c3929f23647cd16ac134dd8c37af92788e0497290e40e237a1993e3e2cd47364b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "BROWSER_STORAGE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/browser-storage.service.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "new InjectionToken<Storage>('Browser Storage', {\n  providedIn: 'root',\n  factory: () => localStorage,\n})"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/main.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StorybookConfig",
+                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n}"
+            },
+            {
+                "name": "FullColorBig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/logo/logo.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "FullColorSmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/logo/logo.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({\n  size: 'small',\n})"
+            },
+            {
+                "name": "getStyles",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(...args: string[]) => ['button', ...args].filter(Boolean)"
+            },
+            {
+                "name": "getStyles",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean)"
+            },
+            {
+                "name": "LOCAL_STORAGE_KEY",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/theme-manager.service.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'angular-material.dev'"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": ".storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimarySmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({\n  type: 'secondary',\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<FlightsFormComponent>",
+                "defaultValue": "(\r\n  args: FlightsFormComponent\r\n) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/logo/logo.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<LogoComponent>",
+                "defaultValue": "(args: LogoComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<TestimonialCardComponent>",
+                "defaultValue": "(\n  args: TestimonialCardComponent\n) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "White",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/logo/logo.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({\n  type: 'white',\n})"
+            }
+        ],
+        "functions": [
+            {
+                "name": "createLinkElementWithKey",
+                "file": "src/app/theme-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getClassNameForKey",
+                "file": "src/app/theme-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getExistingLinkElementByKey",
+                "file": "src/app/theme-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getLinkElementForKey",
+                "file": "src/app/theme-manager.service.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "key",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/browser-storage.service.ts": [
+                {
+                    "name": "BROWSER_STORAGE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/browser-storage.service.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "new InjectionToken<Storage>('Browser Storage', {\n  providedIn: 'root',\n  factory: () => localStorage,\n})"
+                }
+            ],
+            "src/stories/main.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/main.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StorybookConfig",
+                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n}"
+                }
+            ],
+            "src/app/components/logo/logo.component.stories.ts": [
+                {
+                    "name": "FullColorBig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/logo/logo.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "FullColorSmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/logo/logo.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({\n  size: 'small',\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/logo/logo.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<LogoComponent>",
+                    "defaultValue": "(args: LogoComponent) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "White",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/logo/logo.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({\n  type: 'white',\n})"
+                }
+            ],
+            "src/app/components/button/button.component.ts": [
+                {
+                    "name": "getStyles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(...args: string[]) => ['button', ...args].filter(Boolean)"
+                }
+            ],
+            "src/app/components/testimonial-card/testimonial-card.component.ts": [
+                {
+                    "name": "getStyles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean)"
+                }
+            ],
+            "src/app/theme-manager.service.ts": [
+                {
+                    "name": "LOCAL_STORAGE_KEY",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/theme-manager.service.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'angular-material.dev'"
+                }
+            ],
+            ".storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": ".storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                }
+            ],
+            "src/app/components/button/button.component.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({\n  type: 'secondary',\n})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/app/components/flights-form/flights-form.component.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<FlightsFormComponent>",
+                    "defaultValue": "(\r\n  args: FlightsFormComponent\r\n) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/app/components/testimonial-card/testimonial-card.component.stories.ts": [
+                {
+                    "name": "PrimarySmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<TestimonialCardComponent>",
+                    "defaultValue": "(\n  args: TestimonialCardComponent\n) => ({\n  props: args,\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/app/theme-manager.service.ts": [
+                {
+                    "name": "createLinkElementWithKey",
+                    "file": "src/app/theme-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getClassNameForKey",
+                    "file": "src/app/theme-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getExistingLinkElementByKey",
+                    "file": "src/app/theme-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getLinkElementForKey",
+                    "file": "src/app/theme-manager.service.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": ".storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/browser-storage.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "BrowserStorageService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/browser-storage.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BROWSER_STORAGE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getStyles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/destination-card/destination-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DestinationCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/destinations/destinations.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DestinationsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/flights-form/flights-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlightsFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/flights/flights.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlightsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/logo/logo.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FullColorBig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/logo/logo.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FullColorSmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/logo/logo.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/logo/logo.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "White",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/logo/logo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LogoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimarySmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TestimonialCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getStyles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonials/testimonials.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TestimonialsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/theme/theme.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ThemeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme-manager.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ThemeManager",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "createLinkElementWithKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getClassNameForKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getExistingLinkElementByKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme-manager.service.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getLinkElementForKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/theme-manager.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LOCAL_STORAGE_KEY",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/models/destination.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Destination",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/models/testimonial.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Testimonial",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/main.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

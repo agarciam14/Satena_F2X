@@ -1,0 +1,16 @@
+$breakpoints: (
+    "sm": 0px,
+    "md": 834px,
+    "lg": 1200px,
+);
+
+@mixin breakpoint-up($value) {
+    $map: map-get($breakpoints, $value);
+    @if $map {
+        @media (min-width: #{$map}) {
+            @content;
+        }
+    }@else {
+        @error "Seems like the breakpoint #{$value} is not defined"
+    }
+};

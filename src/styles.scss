@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 @use './styles/themes/all' as themes;
 @use './styles/typography/config';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 @include mat.core();
 
@@ -49,4 +50,14 @@ body {
     color: #181E4B;
     word-wrap: break-word;
   }
+}
+
+.mat-h1,
+.mat-headline-5,
+.mat-typography .mat-h1,
+.mat-typography .mat-headline-5,
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography p {
+  margin: 0
 }

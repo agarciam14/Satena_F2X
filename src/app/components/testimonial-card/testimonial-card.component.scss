@@ -1,17 +1,86 @@
-:host {
-    height: 222px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    left: 42px;
-    top: 159px;
-    position: absolute;
+.testimonial-card {
+    width: 250px;
+    padding: 24px 32px;
+    background: white;
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-    border: 3px #F7F7F7 solid;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 24px;
     display: inline-flex;
+    position: relative;
+
+    &__img {
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 68px;
+        width: 68px;
+        border-radius: 50%;
+    }
+
+    &__main {
+        align-self: stretch;
+        color: #5e6282;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20.4px;
+        word-wrap: break-word;
+    }
+
+    &__bottom {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 8px;
+        display: flex;
+    }
+
+    &__name {
+        color: #5e6282;
+        font-size: 18px;
+        font-family: Inter;
+        font-weight: 600;
+        word-wrap: break-word;
+    }
+
+    &__places {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        display: inline-flex;
+
+        span {
+            color: #5e6282;
+            font-size: 12px;
+            font-family: Inter;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+    }
+}
+
+.secondary {
+    background: transparent;
+    border: 3px #F7F7F7 solid;
+    .testimonial-card__img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.big {
+    width: 500px;
+    height: 232px;
+    justify-content: space-between;
+
+    .testimonial-card__img {
+        position: absolute;
+        top: -26px;
+        left: -36px;
+        border-radius: 50%;
+        transform: translate(0,0);
+    }
 }

@@ -4,11 +4,42 @@
 $app-light-primary-text: #181e4b;
 
 $app-primary-palette: (
-  500: #f1a501,
+  50: #e3e4e9,
+  100: #C0C5EF,
+  200: #8c8fa5,
+  300: #5E6282,
+  400: #3b4066,
+  500: #181e4b,
+  600: #151a44,
+  700: #11163b,
+  800: #0e1233,
+  900: #080a23,
+  A100: #6169ff,
+  A200: #2e38ff,
+  A400: #000cfa,
+  A700: #000be0,
 );
 
-$my-app-light-primary: mat.define-palette($app-primary-palette);
-$my-app-light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$app-accent-palette: (
+  50: #fdf4e1,
+  100: #fbe4b3,
+  200: #f8d280,
+  300: #f5c04d,
+  400: #f3b327,
+  500: #f1a501,
+  600: #E49F1A,
+  700: #DB8C15,
+  800: #eb8a01,
+  900: #e77900,
+  A100: #ffffff,
+  A200: #ffecda,
+  A400: #ffd0a7,
+  A700: #ffc38e,
+);
+
+
+$my-app-light-primary: mat.define-palette($app-primary-palette, 500, 100, 300, 500);
+$my-app-light-accent: mat.define-palette($app-accent-palette, 500, 600, 700, A100);
 
 $my-app-light-warn: mat.define-palette(mat.$red-palette);
 

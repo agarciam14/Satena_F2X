@@ -1,26 +1,63 @@
+@import '../../../styles/setting/mixins';
+
 :host {
   width: 100%;
+  height: 328px;
   justify-content: flex-start;
   align-items: center;
-  display: inline-flex;
+  display: flex;
   position: relative;
 
-  .banner-titles {
+  .section__title {
     padding: 12px 0;
     z-index: 10;
+    align-items: flex-start;
+    gap: 24px;
+    width: 210px;
+
+    &-heading {
+      text-align: start;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      word-wrap: break-word;
+    }
   }
 
-  .traveller1 {
+  .banner__traveler {
     position: absolute;
     right: -2.5rem;
     bottom: -1rem;
     z-index: 5;
+    width: 289px;
+    height: 288px;
   }
 
-  .decore {
+  .banner__decore {
     position: absolute;
     right: -1rem;
     top: -4rem;
     z-index: 0;
+    width: 175px;
+    height: 320px;
+  }
+
+  @include breakpoint-up(md) {
+    height: 524px;
+    .section__title {
+      width: 349px;
+    }
+
+    .banner__traveler {
+      position: absolute;
+      right: -2.5rem;
+      bottom: -1rem;
+      z-index: 5;
+      width: 522px;
+      height: 521px;
+    }
   }
 }
