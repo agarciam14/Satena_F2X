@@ -86,6 +86,27 @@ app-testimonials {
             display: inline-flex;
             flex-direction: row;
             gap: 69px;
+
+            .testimonials__card-navigation {
+                height: 14px;
+                left: 110px;
+                top: 485px;
+                position: absolute;
+    
+                img {
+                    width: 14px;
+                    height: 7px;
+                    left: 0px;
+                    top: 14px;
+                    position: absolute;
+                    transform: rotate(-90deg);
+                    transform-origin: 0 0;
+                }
+    
+                :last-child {
+                    left: 64.5px;
+                }
+            }
         }
     }
 }

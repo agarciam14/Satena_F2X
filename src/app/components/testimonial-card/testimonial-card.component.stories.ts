@@ -7,7 +7,7 @@ export default {
   args: {
     testimonial: {
       userName: 'Erick Padilla',
-      profilePicture: '/assets/images/erick',
+      profilePicture: 'assets/images/erick',
       commentary:
         'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',
       origin: 'Medellín',

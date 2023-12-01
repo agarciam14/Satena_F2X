@@ -9,21 +9,21 @@ import { Destination } from 'src/models';
 export class DestinationsComponent {
   destinations: Destination[] = [
     {
-      imgSrc: '/assets/images/destinations/la-macarena.jpg',
+      imgSrc: 'assets/images/destinations/la-macarena.jpg',
       name: 'La macarena',
       formattedPrice: '$130.000',
       initialDate: '5 nov',
       finalDate: '13 dic',
     },
     {
-      imgSrc: '/assets/images/destinations/nuqui.jpg',
+      imgSrc: 'assets/images/destinations/nuqui.jpg',
       name: 'Nuquí',
       formattedPrice: '$197.000',
       initialDate: '5 nov',
       finalDate: '13 dic',
     },
     {
-      imgSrc: '/assets/images/destinations/quibdo.jpg',
+      imgSrc: 'assets/images/destinations/quibdo.jpg',
       name: 'Quibdó',
       formattedPrice: '$184.900',
       initialDate: '5 nov',

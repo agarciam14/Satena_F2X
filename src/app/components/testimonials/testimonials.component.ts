@@ -12,7 +12,7 @@ export class TestimonialsComponent {
   testimonials: Testimonial[] = [
     {
       userName: 'Erick Padilla',
-      profilePicture: '/assets/images/erick',
+      profilePicture: 'assets/images/erick',
       commentary:
         'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',
       origin: 'Medellín',
@@ -20,7 +20,7 @@ export class TestimonialsComponent {
     },
     {
       userName: 'Andrés Guzmán',
-      profilePicture: '/assets/images/andres',
+      profilePicture: 'assets/images/andres',
       commentary:
         'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',
       origin: 'Bogotá',
