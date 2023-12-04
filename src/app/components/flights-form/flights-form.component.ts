@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
 
@@ -8,8 +8,10 @@ import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
   styleUrls: ['./flights-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class FlightsFormComponent {
-  flightForm: FormGroup;
+export class FlightsFormComponent implements OnInit {
+  fb = inject(FormBuilder);
+  breakpointManager = inject(BreakpointManagerService);
+  flightForm!: FormGroup;
   passengers = [
     { viewValue: '1 persona', value: 1 },
     { viewValue: '2 personas', value: 2 },
@@ -24,10 +26,7 @@ export class FlightsFormComponent {
     { viewValue: 'Primera Clase', value: 'Primera Clase' },
   ];
 
-  constructor(
-    private fb: FormBuilder,
-    public breakpointManager: BreakpointManagerService
-  ) {
+  ngOnInit() {
     this.flightForm = this.fb.group({
       type: '',
       from: '',

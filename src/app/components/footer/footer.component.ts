@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  constructor(public breakpointManager: BreakpointManagerService) {}
+  breakpointManager = inject(BreakpointManagerService);
 
   public get logoSize() {
     if (this.breakpointManager.currentBreakpoint === 'Small') {

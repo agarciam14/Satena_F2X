@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { Testimonial } from 'src/models';
 import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
 
@@ -9,6 +9,7 @@ import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class TestimonialsComponent {
+  breakpointManager = inject(BreakpointManagerService);
   activeIndex = 0;
   testimonials: Testimonial[] = [
     {
@@ -28,8 +29,6 @@ export class TestimonialsComponent {
       destination: 'Nuquí',
     },
   ];
-
-  constructor(public breakpointManager: BreakpointManagerService) {}
 
   public get cardSize() {
     if (this.breakpointManager.currentBreakpoint === 'Small') {

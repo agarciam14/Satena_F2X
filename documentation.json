@@ -124,6 +124,106 @@
     ],
     "injectables": [
         {
+            "name": "BreakpointManagerService",
+            "id": "injectable-BreakpointManagerService-c7f017fb647cb08e0cf127a1a00d1609ef123f2eaa0673dd68120a28e920f7ffdad054ddc87ac149f72e0a3a2fd244649d38469a91ef31b527e33b0554d7d861",
+            "file": "src/app/breakpoint-manager.service.ts",
+            "properties": [
+                {
+                    "name": "breakpoint$",
+                    "defaultValue": "this.breakpointObserver\n    .observe([\n      '(max-width: 833.8px)',\n      '(min-width: 834px) and (max-width: 1023.8px)',\n      '(min-width: 1024px)',\n    ])\n    .pipe(distinctUntilChanged())",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "breakpointObserver",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BreakpointObserver",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "breakpoints",
+                    "defaultValue": "Breakpoints",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "currentBreakpoint",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methods": [
+                {
+                    "name": "breakpointChanged",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';\nimport { Injectable } from '@angular/core';\nimport { distinctUntilChanged } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class BreakpointManagerService {\n  readonly breakpoint$ = this.breakpointObserver\n    .observe([\n      '(max-width: 833.8px)',\n      '(min-width: 834px) and (max-width: 1023.8px)',\n      '(min-width: 1024px)',\n    ])\n    .pipe(distinctUntilChanged());\n\n  breakpoints = Breakpoints;\n  currentBreakpoint = '';\n\n  constructor(public breakpointObserver: BreakpointObserver) {\n    this.breakpoint$.subscribe(() => this.breakpointChanged());\n  }\n\n  private breakpointChanged() {\n    if (this.breakpointObserver.isMatched('(max-width: 833.8px)')) {\n      this.currentBreakpoint = 'Small';\n    } else if (\n      this.breakpointObserver.isMatched(\n        '(min-width: 834px) and (max-width: 1023.8px)'\n      )\n    ) {\n      this.currentBreakpoint = 'Medium';\n    } else if (this.breakpointObserver.isMatched('(min-width: 1024px)')) {\n      this.currentBreakpoint = 'Large';\n    }\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "breakpointObserver",
+                        "type": "BreakpointObserver",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "breakpointObserver",
+                        "type": "BreakpointObserver",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
             "name": "BrowserStorageService",
             "id": "injectable-BrowserStorageService-825b79e1ce1b63e9063fa52d95d067b593be965c34b5916d38d6807016e067798d885d5059a34d61979dccce3bc04886376b30a4bcbee8dec9865442fc201ae9",
             "file": "src/app/browser-storage.service.ts",
@@ -538,7 +638,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".landing-satena {\n  width: 100vw;\n  height: 100%;\n  padding-top: 64px;\n  padding-bottom: 40px;\n  padding-left: 16px;\n  padding-right: 16px;\n  background: white;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  gap: 62px;\n  display: inline-flex;\n  overflow-x: hidden;\n}\n",
+                    "data": "@import '../styles/setting/mixins';\n\n.landing-satena {\n  width: 100vw;\n  height: 100%;\n  padding-top: 64px;\n  padding-bottom: 40px;\n  padding-left: 16px;\n  padding-right: 16px;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  gap: 62px;\n  display: inline-flex;\n  overflow-x: hidden;\n\n  @include breakpoint-up(md){\n    padding-bottom: 62px;\n    padding-left: 60px;\n    padding-right: 60px;\n    gap: 80px;\n  }\n  \n  @include breakpoint-up(lg){\n    padding-left: 80px;\n    padding-right: 80px;\n    gap: 100px;\n  }\n\n}\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -548,7 +648,7 @@
         },
         {
             "name": "BannerComponent",
-            "id": "component-BannerComponent-8a6b6780713501fee65f4032fa9709028f7c4d137142ab0b5c8ed5c2b9a42cf4f1de4bc2dd50c7caa88d3f0bbedd2601a74736a85b523646a0bf92ab7e1cf6d7",
+            "id": "component-BannerComponent-5ee026c8993b0327403376caf7ae53f49d9f6888cdb3db863cbc1341db9662624c92157f9778a222c247f735cac68fd4ec02d531ae369e34e4c8c8a652954f82",
             "file": "src/app/components/banner/banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -567,7 +667,38 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "breakpointManager",
+                    "defaultValue": "inject(BreakpointManagerService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "isDark$",
+                    "defaultValue": "this.themeManager.isDark$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "themeManager",
+                    "defaultValue": "inject(ThemeManager)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -578,17 +709,37 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n})\nexport class BannerComponent {}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { Observable, map, take } from 'rxjs';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\nimport { ThemeManager } from 'src/app/theme-manager.service';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n})\nexport class BannerComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  public get buttonSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n\n  public get decoreUrl$(): Observable<string> {\n    let url = 'assets/images/decore';\n    return this.themeManager.isDark$.pipe(\n      take(1),\n      map(isDark => {\n        url += isDark ? '_dark.svg' : '_light.svg';\n        return url;\n      })\n    );\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  width: 100%;\n  justify-content: flex-start;\n  align-items: center;\n  display: inline-flex;\n  position: relative;\n\n  .banner-titles {\n    padding: 12px 0;\n    z-index: 10;\n  }\n\n  .traveller1 {\n    position: absolute;\n    right: -2.5rem;\n    bottom: -1rem;\n    z-index: 5;\n  }\n\n  .decore {\n    position: absolute;\n    right: -1rem;\n    top: -4rem;\n    z-index: 0;\n  }\n}\n",
+                    "data": "@import '../../../styles/setting/mixins';\n\n:host {\n  width: 100%;\n  .banner {\n    height: 328px;\n    justify-content: flex-start;\n    align-items: center;\n    display: flex;\n    position: relative;\n    .section__title {\n      padding: 12px 0;\n      z-index: 10;\n      align-items: flex-start;\n      gap: 24px;\n      width: 210px;\n  \n      &-heading {\n        text-align: start;\n      }\n  \n      p {\n        font-size: 14px;\n        font-weight: 600;\n        text-transform: uppercase;\n        word-wrap: break-word;\n      }\n    }\n  \n    .banner__traveler {\n      position: absolute;\n      right: -40px;\n      bottom: -16px;\n      z-index: 5;\n      width: 289px;\n      height: 288px;\n    }\n  \n    .banner__decore {\n      position: absolute;\n      right: -16px;\n      top: -64px;\n      z-index: 0;\n      width: 175px;\n      height: 320px;\n    }\n  }\n\n\n  @include breakpoint-up(md) {\n    .banner {\n      height: 524px;\n\n      .section__title {\n        width: 349px;\n      }\n  \n      .banner__traveler {\n        right: -40px;\n        bottom: -60px;\n        width: 522px;\n        height: 521px;\n      }\n\n      .banner__decore {\n        height: 577px;\n        width: 390px;\n        top: -64px;\n        right: -60px;\n      }\n    }\n  }\n\n  @include breakpoint-up(lg) {\n    .banner {\n      height: 748px;\n\n      .section__title {\n        width: 566px;\n      }\n\n      .banner__traveler {\n        width: 695px;\n        height: 694px;\n        right: -40px;\n        bottom: -30px;\n      }\n\n      .banner__decore {\n        height: 760px;\n        width: 552px;\n        top: -64px;\n        right: -80px;\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./banner.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\n  class=\"banner-titles\"\n  style=\"\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: flex-start;\n    gap: 24px;\n    display: inline-flex;\n  \">\n  <h1\n    class=\"H1\"\n    style=\"\n      color: #181e4b;\n      font-size: 30px;\n      font-family: Inter;\n      font-weight: 800;\n      word-wrap: break-word;\n    \">\n    Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\n  </h1>\n  <div\n    class=\"P\"\n    style=\"\n      color: #181e4b;\n      font-size: 14px;\n      font-family: Inter;\n      font-weight: 600;\n      text-transform: uppercase;\n      word-wrap: break-word;\n    \">\n    Conoce más sobre<br />nuestras políticas<br />pensadas para ti\n  </div>\n  <app-button label=\"Conoce más aquí\" size=\"small\" />\n</div>\n<img\n  class=\"traveller1\"\n  style=\"width: 289px; height: 288px\"\n  src=\"assets/images/traveler.png\"\n  alt=\"\" />\n<img\n  class=\"decore\"\n  style=\"width: 175px; height: 320px\"\n  src=\"assets/images/decore.svg\"\n  alt=\"\" />\n"
+            "accessors": {
+                "buttonSize": {
+                    "name": "buttonSize",
+                    "getSignature": {
+                        "name": "buttonSize",
+                        "type": "",
+                        "returnType": "",
+                        "line": 16
+                    }
+                },
+                "decoreUrl$": {
+                    "name": "decoreUrl$",
+                    "getSignature": {
+                        "name": "decoreUrl$",
+                        "type": "",
+                        "returnType": "Observable<string>",
+                        "line": 24
+                    }
+                }
+            },
+            "templateData": "<div class=\"banner\">\n  <div class=\"section__title\">\n    <h1 class=\"section__title-heading\">\n      Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\n    </h1>\n    <p>Conoce más sobre nuestras políticas pensadas para ti</p>\n    <app-button label=\"Conoce más aquí\" [size]=\"buttonSize\" />\n  </div>\n  <img class=\"banner__traveler\" src=\"assets/images/traveler.png\" alt=\"\" />\n  <img class=\"banner__decore\" [src]=\"decoreUrl$ | async\" alt=\"\" />\n</div>\n"
         },
         {
             "name": "ButtonComponent",
@@ -654,7 +805,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".button {\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 8px 16px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    border: none;\r\n}\r\n\r\n.primary {\r\n    background: #F1A501;\r\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n    border-radius: 10px;\r\n\r\n    &:hover {\r\n        background: #E49F1A;\r\n    }\r\n\r\n    &:active {\r\n        background: #DB8C15;\r\n    }\r\n\r\n    span {\r\n        color: white;\r\n        font-size: 14px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &.big {\r\n        height: 60px;\r\n        span {\r\n            font-size: 18px;\r\n            font-weight: 500;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    border-radius: 5px;\r\n    border: 1px #181E4B solid;\r\n    background: transparent;\r\n\r\n    span {\r\n        color: #181E4B;\r\n        font-size: 18px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &:hover {\r\n        border: 2px #181E4B solid;\r\n    }\r\n    \r\n    &:active {\r\n        background: #C0C5EF;\r\n        border: 1px #181E4B solid;\r\n    }\r\n}\r\n",
+                    "data": "@use '../../../styles/setting/variables' as var;\r\n\r\n.button {\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 8px 16px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.primary {\r\n    background: var.$app-primary;\r\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n    border-radius: 10px;\r\n\r\n    &:hover {\r\n        background: var.$app-primary-hover;\r\n    }\r\n\r\n    &:active {\r\n        background: var.$app-primary-pressed;\r\n    }\r\n\r\n    span {\r\n        color: var.$app-primary-text;\r\n        font-size: 14px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &.big {\r\n        height: 60px;\r\n        span {\r\n            font-size: 18px;\r\n            font-weight: 500;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    border-radius: 5px;\r\n    border: 1px solid;\r\n    background: transparent;\r\n    height: 38px;\r\n\r\n    span {\r\n        font-size: 18px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &:hover {\r\n        border: 2px solid;\r\n    }\r\n    \r\n    &:active {\r\n        border: 1px solid;\r\n    }\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -720,17 +871,17 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n    border-radius: 20px;\r\n    overflow: hidden;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: flex-start;\r\n    display: flex;\r\n    width: 270px;\r\n\r\n    .destinations__card {\r\n        &-image {\r\n            width: 100%;\r\n            height: 205px;\r\n        }\r\n\r\n        &-text {\r\n            height: 124px;\r\n            padding: 32px 24px;\r\n            background: white;\r\n            border-bottom-left-radius: 20px;\r\n            border-bottom-right-radius: 20px;\r\n            border: 3px #F7F7F7 solid;\r\n            border-top: none;\r\n            flex-direction: column;\r\n            justify-content: flex-end;\r\n            align-items: flex-start;\r\n            gap: 8px;\r\n            display: flex;\r\n            width: 100%;\r\n\r\n            &-main {\r\n                align-self: stretch;\r\n                justify-content: space-between;\r\n                align-items: flex-start;\r\n                display: inline-flex;\r\n\r\n                span {\r\n                    color: #181E4B;\r\n                    font-size: 18px;\r\n                    font-weight: 400;\r\n                    word-wrap: break-word;\r\n                }\r\n            }\r\n\r\n            &-bottom {\r\n                justify-content: flex-start;\r\n                align-items: center;\r\n                gap: 8px;\r\n                display: inline-flex;\r\n\r\n                img {\r\n                    width: 24px;\r\n                    height: 24px;\r\n                }\r\n\r\n                span {\r\n                    color: #181E4B;\r\n                    font-size: 16px;\r\n                    font-weight: 500;\r\n                    line-height: 30px;\r\n                    word-wrap: break-word;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+                    "data": ":host {\r\n    border-radius: 20px;\r\n    overflow: hidden;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: flex-start;\r\n    display: flex;\r\n    width: 270px;\r\n\r\n    .destinations__card {\r\n        &-image {\r\n            width: 100%;\r\n            height: 205px;\r\n        }\r\n\r\n        &-text {\r\n            height: 124px;\r\n            padding: 32px 24px;\r\n            border-bottom-left-radius: 20px;\r\n            border-bottom-right-radius: 20px;\r\n            border-width: 3px;\r\n            border-style: solid;\r\n            border-top: none;\r\n            flex-direction: column;\r\n            justify-content: flex-end;\r\n            align-items: flex-start;\r\n            gap: 8px;\r\n            display: flex;\r\n            width: 100%;\r\n\r\n            &-main {\r\n                align-self: stretch;\r\n                justify-content: space-between;\r\n                align-items: flex-start;\r\n                display: inline-flex;\r\n\r\n                span {\r\n                    font-size: 18px;\r\n                    font-weight: 400;\r\n                    word-wrap: break-word;\r\n                }\r\n            }\r\n\r\n            &-bottom {\r\n                justify-content: flex-start;\r\n                align-items: center;\r\n                gap: 8px;\r\n                display: inline-flex;\r\n\r\n                span {\r\n                    font-size: 16px;\r\n                    font-weight: 500;\r\n                    line-height: 30px;\r\n                    word-wrap: break-word;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./destination-card.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<img class=\"destinations__card-image\" [src]=\"destination.imgSrc\" alt=\"\" />\n<div class=\"destinations__card-text\">\n  <div class=\"destinations__card-text-main\">\n    <span>{{ destination.name }}</span>\n    <span>{{ destination.formattedPrice }}</span>\n  </div>\n  <div class=\"destinations__card-text-bottom\">\n    <img src=\"/assets/icons/calendar.svg\" alt=\"\" />\n    <span>{{ destination.initialDate }} - {{ destination.finalDate }}</span>\n  </div>\n</div>\n"
+            "templateData": "<img class=\"destinations__card-image\" [src]=\"destination.imgSrc\" alt=\"\" />\n<div class=\"destinations__card-text\">\n  <div class=\"destinations__card-text-main\">\n    <span>{{ destination.name }}</span>\n    <span>{{ destination.formattedPrice }}</span>\n  </div>\n  <div class=\"destinations__card-text-bottom\">\n    <mat-icon>date_range</mat-icon>\n    <span>{{ destination.initialDate }} - {{ destination.finalDate }}</span>\n  </div>\n</div>\n"
         },
         {
             "name": "DestinationsComponent",
-            "id": "component-DestinationsComponent-8cb524b0a23bebe418d0343c19430e8303361c326cad454f1997cade942d90fefa30383606832f66bacf67919eed94144e00ab6f05470bb5f2e2a609d94e4785",
+            "id": "component-DestinationsComponent-f266c3aaeaee854ec9c5fe412794730d9ab5640bbb53aebce3219e8fa9733cd4f384988a61864fdc6c693c4c2346da7459b3fcc0d336c5296e46170e2275151d",
             "file": "src/app/components/destinations/destinations.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -752,7 +903,7 @@
             "propertiesClass": [
                 {
                     "name": "destinations",
-                    "defaultValue": "[\n    {\n      imgSrc: '/assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ]",
+                    "defaultValue": "[\n    {\n      imgSrc: 'assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Destination[]",
@@ -771,17 +922,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Destination } from 'src/models';\n\n@Component({\n  selector: 'app-destinations',\n  templateUrl: './destinations.component.html',\n  styleUrls: ['./destinations.component.scss'],\n})\nexport class DestinationsComponent {\n  destinations: Destination[] = [\n    {\n      imgSrc: '/assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: '/assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ];\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Destination } from 'src/models';\n\n@Component({\n  selector: 'app-destinations',\n  templateUrl: './destinations.component.html',\n  styleUrls: ['./destinations.component.scss'],\n})\nexport class DestinationsComponent {\n  destinations: Destination[] = [\n    {\n      imgSrc: 'assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 60px;\r\n    display: flex;\r\n\r\n    .destinations__card-container {\r\n        align-self: stretch;\r\n        align-items: center;\r\n        gap: 40px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n}",
+                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 60px;\r\n    display: flex;\r\n\r\n    .destinations__card-container {\r\n        align-self: stretch;\r\n        align-items: center;\r\n        gap: 40px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n\r\n    @include breakpoint-up(md){\r\n        .destinations__card-container {\r\n            padding-left: 60px;\r\n            padding-right: 60px;\r\n            justify-content: space-between;\r\n            align-items: flex-start;\r\n            flex-direction: row;\r\n            flex-wrap: wrap;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./destinations.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"section__title\">\n  <span class=\"section__title-subheading\">Más vendidos</span>\n  <h2\n    class=\"section__title-heading\"\n    style=\"text-align: center; color: #181e4b; word-wrap: break-word\">\n    Destinos favoritos\n  </h2>\n</div>\n<div class=\"destinations__card-container\">\n  <app-destination-card\n    *ngFor=\"let destination of destinations\"\n    [destination]=\"destination\"></app-destination-card>\n</div>\n"
+            "templateData": "<div class=\"section__title\">\n  <span class=\"section__title-subheading\">Más vendidos</span>\n  <h2 class=\"section__title-heading\">Destinos favoritos</h2>\n</div>\n<div class=\"destinations__card-container\">\n  <app-destination-card\n    *ngFor=\"let destination of destinations\"\n    [destination]=\"destination\"></app-destination-card>\n</div>\n"
         },
         {
             "name": "FlightsComponent",
@@ -825,13 +976,15 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\n  class=\"section__title\"\n  style=\"\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 8px;\n    display: flex;\n  \">\n  <span class=\"section__title-subheading\">Vuelos</span>\n  <h2 class=\"section__title-heading\">Busca tu vuelo</h2>\n</div>\n<app-flights-form></app-flights-form>\n"
+            "templateData": "<div class=\"section__title\">\n  <span class=\"section__title-subheading\">Vuelos</span>\n  <h2 class=\"section__title-heading\">Busca tu vuelo</h2>\n</div>\n<app-flights-form></app-flights-form>\n"
         },
         {
             "name": "FlightsFormComponent",
-            "id": "component-FlightsFormComponent-3e9ae56dedfcf8275b7fc1e1923fc415c57f039df163c353a950c0d500c9f526bb88e5b762356b1c37c6fc2be02f775deb6282346ea7efa2dbd31ebce95925d6",
+            "id": "component-FlightsFormComponent-c4f8e0a5f17af025c66ac3e8574f1aefcec3c5e10ca606e16fe7f75e3d284f0e4e20e19339714e4fc14d11c7c5a31608e3bb3ebfd2c7cb3fb33542c89bbf6199",
             "file": "src/app/components/flights-form/flights-form.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -850,14 +1003,34 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "breakpointManager",
+                    "defaultValue": "inject(BreakpointManagerService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
                     "name": "categories",
-                    "defaultValue": "['Categoría 1', 'Categoría 2', 'Categoría 3']",
+                    "defaultValue": "[\n    { viewValue: 'Económica', value: 'Económica' },\n    { viewValue: 'Ejecutiva', value: 'Ejecutiva' },\n    { viewValue: 'Primera Clase', value: 'Primera Clase' },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 23
+                },
+                {
+                    "name": "fb",
+                    "defaultValue": "inject(FormBuilder)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
                 },
                 {
                     "name": "flightForm",
@@ -866,20 +1039,62 @@
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 14
                 },
                 {
                     "name": "passengers",
-                    "defaultValue": "[\n    { viewValue: '1 Pasajero', value: 1 },\n    { viewValue: '2 Pasajeros', value: 2 },\n    { viewValue: '3 Pasajeros', value: 3 },\n    { viewValue: '4 Pasajeros', value: 4 },\n    { viewValue: '5 Pasajeros', value: 5 },\n  ]",
+                    "defaultValue": "[\n    { viewValue: '1 persona', value: 1 },\n    { viewValue: '2 personas', value: 2 },\n    { viewValue: '3 personas', value: 3 },\n    { viewValue: '4 personas', value: 4 },\n    { viewValue: '5 personas', value: 5 },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 15
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "clearInput",
+                    "args": [
+                        {
+                            "name": "formControlName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "formControlName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -889,47 +1104,35 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { FormBuilder, FormGroup } from '@angular/forms';\n\n@Component({\n  selector: 'app-flights-form',\n  templateUrl: './flights-form.component.html',\n  styleUrls: ['./flights-form.component.scss'],\n})\nexport class FlightsFormComponent {\n  flightForm: FormGroup;\n  passengers = [\n    { viewValue: '1 Pasajero', value: 1 },\n    { viewValue: '2 Pasajeros', value: 2 },\n    { viewValue: '3 Pasajeros', value: 3 },\n    { viewValue: '4 Pasajeros', value: 4 },\n    { viewValue: '5 Pasajeros', value: 5 },\n  ];\n\n  categories = ['Categoría 1', 'Categoría 2', 'Categoría 3'];\n\n  constructor(private fb: FormBuilder) {\n    this.flightForm = this.fb.group({\n      type: '',\n      from: '',\n      to: '',\n      departureDate: '',\n      returnDate: '',\n      passengersNumber: [],\n      category: '',\n    });\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';\nimport { FormBuilder, FormGroup } from '@angular/forms';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-flights-form',\n  templateUrl: './flights-form.component.html',\n  styleUrls: ['./flights-form.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FlightsFormComponent implements OnInit {\n  fb = inject(FormBuilder);\n  breakpointManager = inject(BreakpointManagerService);\n  flightForm!: FormGroup;\n  passengers = [\n    { viewValue: '1 persona', value: 1 },\n    { viewValue: '2 personas', value: 2 },\n    { viewValue: '3 personas', value: 3 },\n    { viewValue: '4 personas', value: 4 },\n    { viewValue: '5 personas', value: 5 },\n  ];\n\n  categories = [\n    { viewValue: 'Económica', value: 'Económica' },\n    { viewValue: 'Ejecutiva', value: 'Ejecutiva' },\n    { viewValue: 'Primera Clase', value: 'Primera Clase' },\n  ];\n\n  ngOnInit() {\n    this.flightForm = this.fb.group({\n      type: '',\n      from: '',\n      to: '',\n      departureDate: '',\n      returnDate: '',\n      passengersNumber: [],\n      category: [],\n    });\n  }\n\n  public get buttonSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n\n  public clearInput(formControlName: string): void {\n    this.flightForm.get(formControlName)?.setValue('');\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n    align-self: stretch;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 40px;\r\n    display: flex;\r\n\r\n    input,\r\n    .ng-select.input ::ng-deep .ng-select-container {\r\n        align-self: stretch;\r\n        height: 48px;\r\n        padding-left: 16px;\r\n        padding-right: 16px;\r\n        background: white;\r\n        border-radius: 10px;\r\n        border: 2px #f7f7f7 solid;\r\n        justify-content: space-between;\r\n        align-items: center;\r\n        display: inline-flex;\r\n        font-size: 14px;\r\n        font-weight: 400;\r\n        word-wrap: break-word;\r\n\r\n        &:focus,\r\n        &:focus-visible {\r\n            outline: 2px #181E4B solid;\r\n        }\r\n\r\n        &::placeholder {\r\n            color: #a7b0bf;\r\n            \r\n        }\r\n    }\r\n}",
+                    "data": "@import '../../../styles/setting/mixins';\r\n\r\napp-flights-form {\r\n    align-self: stretch;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 40px;\r\n    display: flex;\r\n\r\n    .flights-form {\r\n        align-self: stretch;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: flex;\r\n\r\n        &__radio-buttons {\r\n            justify-content: flex-start;\r\n            align-items: flex-start;\r\n            gap: 40px;\r\n            display: inline-flex;\r\n\r\n            .mdc-form-field {\r\n                height: 24px;\r\n            }\r\n        }\r\n\r\n        &__input-container {\r\n            align-self: stretch;\r\n            height: 48px;\r\n            justify-content: space-between;\r\n            align-items: center;\r\n            display: inline-flex;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            position: relative;\r\n            \r\n            .flights-form__input {\r\n                border-width: 2px;\r\n                border-style: solid;\r\n                padding-right: 16px;\r\n                padding-left: 16px;\r\n                height: 100%;\r\n                width: 100%;\r\n                border-radius: 10px;\r\n                font-size: 14px;\r\n                font-weight: 400;\r\n            }\r\n\r\n            .flights-form__input-clear {\r\n                position: absolute;\r\n                right: 16px;\r\n                cursor: pointer;\r\n            }\r\n        }\r\n\r\n        &__date-picker {\r\n            align-self: stretch;\r\n            border: 2px solid;\r\n            border-radius: 10px;\r\n            height: 48px;\r\n            padding-left: 16px;\r\n            padding-right: 16px;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n\r\n            .mat-mdc-text-field-wrapper {\r\n                padding: 0;\r\n\r\n                .mat-mdc-form-field-flex {\r\n                    align-items: center;\r\n                    height: 48px;\r\n                }\r\n            }\r\n            \r\n\r\n            .mat-mdc-form-field-subscript-wrapper,\r\n            .mdc-line-ripple {\r\n                display: none;\r\n            }\r\n\r\n            .mat-mdc-icon-button.mat-mdc-button-base,\r\n            .mat-mdc-icon-button .mat-mdc-button-touch-target {\r\n                width: 24px;\r\n                height: 24px;\r\n                padding: 0;\r\n            }\r\n\r\n        }\r\n\r\n        &__select.ng-select.ng-select-single {\r\n            align-self: stretch;\r\n\r\n            &.ng-select-focused {\r\n                .ng-select-container {\r\n                    border: 2px solid;\r\n                }\r\n\r\n                &:not(.ng-select-opened) {\r\n                    .ng-select-container {\r\n                        box-shadow: none;\r\n                    }\r\n                }\r\n            }\r\n            \r\n            .ng-select-container {\r\n                border: 2px solid;\r\n                border-radius: 10px;\r\n                height: 48px;\r\n                padding-left: 16px;\r\n                padding-right: 16px;\r\n                font-size: 14px;\r\n                font-weight: 400;\r\n\r\n                .ng-value-container {\r\n                    padding: 0;\r\n                }\r\n\r\n                .ng-arrow-wrapper {\r\n                    display: flex;\r\n                    align-items: center;\r\n                    justify-content: center;\r\n                    padding: 0;\r\n                    background-image: url('https://agarciam14.github.io/Satena_F2X/assets/icons/keyboard_arrow_down.svg');\r\n                    background-repeat: no-repeat;\r\n                    background-size: 24px 24px;\r\n                    width: 24px;\r\n                    height: 24px;\r\n\r\n                    .ng-arrow {\r\n                        border-color: none;\r\n                        border-style: none;\r\n                        border-width: 0;\r\n                        \r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .flights-form__submit {\r\n        width: 100%;\r\n    }\r\n\r\n    @include breakpoint-up(md) {\r\n        .flights-form {\r\n            flex-direction: row;\r\n            flex-wrap: wrap;\r\n            max-width: 740px;\r\n            align-self: unset;\r\n    \r\n            & > * {\r\n                width: calc( 50% - 12px);\r\n            }\r\n    \r\n            &__radio-buttons {\r\n                width: 100%;\r\n            }\r\n        }\r\n\r\n        .flights-form__submit {\r\n            width: 300px;\r\n        }\r\n\r\n    }\r\n}",
                     "styleUrl": "./flights-form.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 19,
-                "jsdoctags": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
             "extends": [],
-            "templateData": "<form\n  [formGroup]=\"flightForm\"\n  class=\"FormularioVacio\"\n  style=\"\n    align-self: stretch;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: flex-start;\n    gap: 24px;\n    display: flex;\n  \">\n  <!-- <mat-radio-group aria-label=\"Select an option\">\n    <mat-radio-button value=\"1\">Solo ida</mat-radio-button>\n    <mat-radio-button value=\"2\">Ida y regreso</mat-radio-button>\n  </mat-radio-group> -->\n  <div\n    class=\"Inputs\"\n    style=\"\n      align-self: stretch;\n      height: 408px;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n      gap: 24px;\n      display: flex;\n    \">\n    <input type=\"text\" placeholder=\"Desde\" formControlName=\"from\" />\n    <input type=\"text\" placeholder=\"Hacia\" formControlName=\"to\" />\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Ida\n        </div>\n      </div>\n      <img src=\"/assets/icons/calendar_month.svg\" alt=\"\" />\n    </div>\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Regreso\n        </div>\n      </div>\n      <img src=\"/assets/icons/calendar_month.svg\" alt=\"\" />\n    </div>\n    <ng-select\n      class=\"input\"\n      formControlName=\"passengersNumber\"\n      [items]=\"passengers\"\n      bindLabel=\"viewValue\"\n      bindValue=\"value\"\n      placeholder=\"Número de pasajeros\"></ng-select>\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Número de pasajeros\n        </div>\n      </div>\n      <div\n        class=\"KeyboardArrowDown\"\n        style=\"width: 24px; height: 24px; position: relative\">\n        <div\n          class=\"Vector\"\n          style=\"\n            width: 11.18px;\n            height: 6.59px;\n            left: 6.41px;\n            top: 8.71px;\n            position: absolute;\n            background: #a7b0bf;\n          \"></div>\n      </div>\n    </div>\n    <div\n      class=\"InputItem\"\n      style=\"\n        align-self: stretch;\n        height: 48px;\n        padding-left: 16px;\n        padding-right: 16px;\n        background: white;\n        border-radius: 10px;\n        border: 2px #f7f7f7 solid;\n        justify-content: space-between;\n        align-items: center;\n        display: inline-flex;\n      \">\n      <div\n        class=\"Frame80\"\n        style=\"\n          flex: 1 1 0;\n          height: 17px;\n          justify-content: flex-start;\n          align-items: center;\n          gap: 8px;\n          display: flex;\n        \">\n        <div\n          class=\"Placeholder\"\n          style=\"\n            color: #a7b0bf;\n            font-size: 14px;\n            font-family: Inter;\n            font-weight: 400;\n            word-wrap: break-word;\n          \">\n          Categoria\n        </div>\n      </div>\n      <div\n        class=\"KeyboardArrowDown\"\n        style=\"width: 24px; height: 24px; position: relative\">\n        <div\n          class=\"Vector\"\n          style=\"\n            width: 11.18px;\n            height: 6.59px;\n            left: 6.41px;\n            top: 8.71px;\n            position: absolute;\n            background: #a7b0bf;\n          \"></div>\n      </div>\n    </div>\n  </div>\n</form>\n<form\n  class=\"Cta\"\n  style=\"\n    align-self: stretch;\n    height: 40px;\n    padding-left: 16px;\n    padding-right: 16px;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    background: #f1a501;\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);\n    border-radius: 5px;\n    justify-content: center;\n    align-items: center;\n    gap: 10px;\n    display: inline-flex;\n  \">\n  <div\n    class=\"Boton\"\n    style=\"\n      color: white;\n      font-size: 14px;\n      font-family: Inter;\n      font-weight: 500;\n      word-wrap: break-word;\n    \">\n    Buscar\n  </div>\n</form>\n"
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "buttonSize": {
+                    "name": "buttonSize",
+                    "getSignature": {
+                        "name": "buttonSize",
+                        "type": "",
+                        "returnType": "",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<form [formGroup]=\"flightForm\" class=\"flights-form\">\n  <mat-radio-group class=\"flights-form__radio-buttons\">\n    <mat-radio-button value=\"1\">Solo ida</mat-radio-button>\n    <mat-radio-button value=\"2\">Ida y regreso</mat-radio-button>\n  </mat-radio-group>\n  <div class=\"flights-form__input-container\">\n    <input\n      class=\"flights-form__input\"\n      type=\"text\"\n      placeholder=\"Desde\"\n      formControlName=\"from\" />\n    <mat-icon\n      class=\"flights-form__input-clear\"\n      *ngIf=\"flightForm.get('from')?.value\"\n      (click)=\"clearInput('from')\"\n      (keyup)=\"clearInput('from')\"\n      >cancel</mat-icon\n    >\n  </div>\n  <div class=\"flights-form__input-container\">\n    <input\n      class=\"flights-form__input\"\n      type=\"text\"\n      placeholder=\"Hacia\"\n      formControlName=\"to\" />\n    <mat-icon\n      class=\"flights-form__input-clear\"\n      *ngIf=\"flightForm.get('to')?.value\"\n      (click)=\"clearInput('to')\"\n      (keyup)=\"clearInput('to')\"\n      >cancel</mat-icon\n    >\n  </div>\n  <mat-form-field class=\"flights-form__date-picker\">\n    <input\n      matInput\n      [matDatepicker]=\"departureDatePicker\"\n      placeholder=\"Ida\"\n      formControlName=\"departureDate\" />\n    <mat-datepicker-toggle matIconSuffix [for]=\"departureDatePicker\">\n      <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>\n    </mat-datepicker-toggle>\n    <mat-datepicker #departureDatePicker></mat-datepicker>\n  </mat-form-field>\n  <mat-form-field class=\"flights-form__date-picker\">\n    <input\n      matInput\n      [matDatepicker]=\"returnDatePicker\"\n      placeholder=\"Regreso\"\n      formControlName=\"returnDate\" />\n    <mat-datepicker-toggle matIconSuffix [for]=\"returnDatePicker\">\n      <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>\n    </mat-datepicker-toggle>\n    <mat-datepicker #returnDatePicker></mat-datepicker>\n  </mat-form-field>\n  <ng-select\n    class=\"flights-form__select\"\n    [clearable]=\"false\"\n    [searchable]=\"false\"\n    formControlName=\"passengersNumber\"\n    [items]=\"passengers\"\n    bindLabel=\"viewValue\"\n    bindValue=\"value\"\n    placeholder=\"Número de pasajeros\"></ng-select>\n  <ng-select\n    class=\"flights-form__select\"\n    [clearable]=\"false\"\n    [searchable]=\"false\"\n    formControlName=\"category\"\n    [items]=\"categories\"\n    bindLabel=\"viewValue\"\n    bindValue=\"value\"\n    placeholder=\"Categoría\"></ng-select>\n</form>\n<app-button class=\"flights-form__submit\" label=\"Buscar\" [size]=\"buttonSize\" />\n"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-53bc80862ac78159f362fbbd89e750845eec8559c4ccae2cd9bbe7318e77d197dda4f1e23786106a637fd83dc78ff4b959b8823b0457ef4ae4950921e549fae4",
+            "id": "component-FooterComponent-6c3cccc4f8bf11415736dda26d50ba3fb62a96d94d877e0285dfbdb7aaa3657854de071c08af5dbb0d1264a48ae15f26729737ed289c5e852f3271991e216f09",
             "file": "src/app/components/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -948,7 +1151,18 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "breakpointManager",
+                    "defaultValue": "inject(BreakpointManagerService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -959,21 +1173,32 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {\n  breakpointManager = inject(BreakpointManagerService);\n\n  public get logoSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 32px;\r\n    display: inline-flex;\r\n\r\n    .social-media__container {\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: inline-flex;\r\n\r\n        .social-media__icon {\r\n            width: 41px;\r\n            height: 41px;\r\n            background: white;\r\n            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);\r\n            border-radius: 50%;\r\n            display: flex;\r\n            align-items: center;\r\n            justify-content: center;\r\n        }\r\n    }\r\n\r\n    .footer__text-container {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 16px;\r\n        display: flex;\r\n\r\n        .footer__text {\r\n            color: #5E6282;\r\n            font-size: 12px;\r\n            font-weight: 400;\r\n            line-height: 20.40px;\r\n            word-wrap: break-word;\r\n\r\n            &--bold {\r\n                color: #5E6282;\r\n                font-size: 12px;\r\n                font-weight: 700;\r\n                word-wrap: break-word;\r\n            }\r\n        }\r\n    }\r\n}",
+                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 32px;\r\n    display: inline-flex;\r\n\r\n    .social-media__container {\r\n        cursor: pointer;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: inline-flex;\r\n\r\n        .social-media__icon {\r\n            width: 41px;\r\n            height: 41px;\r\n            background: white;\r\n            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);\r\n            border-radius: 50%;\r\n            display: flex;\r\n            align-items: center;\r\n            justify-content: center;\r\n        }\r\n    }\r\n\r\n    .footer__text-container {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 16px;\r\n        display: flex;\r\n\r\n        .footer__text {\r\n            font-size: 12px;\r\n            font-weight: 400;\r\n            line-height: 20.40px;\r\n            word-wrap: break-word;\r\n            text-align: center;\r\n\r\n            &--bold {\r\n                font-weight: 700;\r\n                word-wrap: break-word;\r\n            }\r\n\r\n            @include breakpoint-up(md) {\r\n                font-size: 16px;\r\n            }\r\n\r\n            @include breakpoint-up(lg) {\r\n                font-size: 18px;\r\n            }\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./footer.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<img src=\"/assets/images/satena_logo.svg\" alt=\"\" />\n<div class=\"social-media__container\">\n  <div class=\"social-media__icon\">\n    <img src=\"/assets/icons/facebook.svg\" alt=\"\" />\n  </div>\n  <div class=\"social-media__icon\">\n    <img src=\"/assets/icons/instagram.svg\" alt=\"\" />\n  </div>\n  <div class=\"social-media__icon\">\n    <img src=\"/assets/icons/twitter.svg\" alt=\"\" />\n  </div>\n</div>\n<div class=\"footer__text-container\">\n  <p class=\"footer__text--bold\">Líneas de atención al cliente</p>\n  <p class=\"footer__text\">\n    Lunes a viernes de 6:00am a 9:00pm.<br />Sábados, domingos y festivos de\n    6:00am a 6:00pm\n  </p>\n  <p class=\"footer__text\">(601) 390 6962<br />Línea directa Bogotá</p>\n  <p class=\"footer__text\">\n    Avenida El Dorado # 103-08 Interior 11 Bogotá-Colombia.\n  </p>\n</div>\n"
+            "accessors": {
+                "logoSize": {
+                    "name": "logoSize",
+                    "getSignature": {
+                        "name": "logoSize",
+                        "type": "",
+                        "returnType": "",
+                        "line": 12
+                    }
+                }
+            },
+            "templateData": "<app-logo [size]=\"logoSize\" />\n<div class=\"social-media__container\">\n  <div class=\"social-media__icon\">\n    <img src=\"assets/icons/facebook.svg\" alt=\"\" />\n  </div>\n  <div class=\"social-media__icon\">\n    <img src=\"assets/icons/instagram.svg\" alt=\"\" />\n  </div>\n  <div class=\"social-media__icon\">\n    <img src=\"assets/icons/twitter.svg\" alt=\"\" />\n  </div>\n</div>\n<div class=\"footer__text-container\">\n  <p class=\"footer__text--bold\">Líneas de atención al cliente</p>\n  <p class=\"footer__text\">\n    Lunes a viernes de 6:00am a 9:00pm.<br />Sábados, domingos y festivos de\n    6:00am a 6:00pm\n  </p>\n  <p class=\"footer__text\">(601) 390 6962<br />Línea directa Bogotá</p>\n  <p class=\"footer__text\">\n    Avenida El Dorado # 103-08 Interior 11 Bogotá-Colombia.\n  </p>\n</div>\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-923107e1dbbaa3e13ea2a7752dcae733941ac535b7d232ed3bcd72471ac7c82e00d9725127ab62dbbb0d12273e6ec606725f42ac8875ab6a1a22674b80ee8359",
+            "id": "component-HeaderComponent-b53e587873dc4a11c798497ec903bb3290d9da31b84751961496158b2d56850bd2c0019ea259cc3f3ab6df7c799e7c0cc430db861e6a8f934edb029c9bdfb9f0",
             "file": "src/app/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -992,8 +1217,43 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "breakpointManager",
+                    "defaultValue": "inject(BreakpointManagerService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "isMenuOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "toggleMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1003,21 +1263,32 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  isMenuOpen = false;\n\n  public get logoSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Large') {\n      return 'big';\n    } else {\n      return 'small';\n    }\n  }\n\n  public toggleMenu(): void {\n    this.isMenuOpen = !this.isMenuOpen;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  position: fixed;\n  width: 100%;\n  padding-left: 16px;\n  padding-right: 16px;\n  padding-top: 20px;\n  padding-bottom: 12px;\n  justify-content: space-between;\n  align-items: center;\n  display: inline-flex;\n  top: 0;\n  left: 0;\n  z-index: 50;\n}\n",
+                    "data": "@import '../../../styles/setting/mixins';\n\n:host {\n  position: fixed;\n  width: 100%;\n  top: 0;\n  left: 0;\n  z-index: 50;\n\n  .navbar {\n    height: 64px;\n    \n    ul {\n      justify-content: space-between;\n      align-items: center;\n      display: inline-flex;\n      flex-wrap: nowrap;\n      list-style-type: none;\n      margin: 0;\n      padding-left: 16px;\n      padding-right: 16px;\n      padding-top: 20px;\n      padding-bottom: 12px;\n      width: 100%;\n\n      .navbar__burguer {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        height: 32px;\n        width: 32px;\n\n        .mat-icon {\n          transform: scale(calc(4/3));\n        }\n      }\n\n      .navbar__menu {\n        display: none;\n\n        &.is-open {\n          display: flex;\n          flex-direction: column;\n          gap: 8px;\n          position: absolute;\n          top: 64px;\n          left: 0 ;\n          width: 100%;\n          align-items: center;\n          padding: 16px;\n        }\n\n        .navbar__menu-item {\n          text-decoration: none;\n          \n          &:hover {\n            text-decoration: underline;\n          }\n        }\n      }\n    }\n    \n    @include breakpoint-up(md) {\n      height: 48px;\n\n      ul {\n        padding-left: 60px;\n        padding-right: 60px;\n        padding-top: 32px;\n\n        .navbar__burguer {\n          display: none;\n        }\n\n        .navbar__menu {\n          display: flex;\n          flex-direction: row;\n          flex-wrap: nowrap;\n          align-items: center;\n          justify-content: space-between;\n          flex-grow: 1;\n        }\n      }\n    }\n\n    @include breakpoint-up(lg) {\n      ul {\n        padding-left: 80px;\n        padding-right: 80px;\n        padding-top: 40px;\n\n\n        .navbar__menu {\n          justify-content: flex-end;\n          gap: 54px;\n        }\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./header.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-logo size=\"small\" />\n<img src=\"assets/images/nav_mobile.svg\" alt=\"\" />\n"
+            "accessors": {
+                "logoSize": {
+                    "name": "logoSize",
+                    "getSignature": {
+                        "name": "logoSize",
+                        "type": "",
+                        "returnType": "",
+                        "line": 13
+                    }
+                }
+            },
+            "templateData": "<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->\n<nav class=\"navbar\">\n  <ul>\n    <li class=\"navbar__logo\"><app-logo [size]=\"logoSize\" /></li>\n    <li\n      class=\"navbar__burguer\"\n      (click)=\"toggleMenu()\"\n      (keypress)=\"toggleMenu()\">\n      <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>\n    </li>\n    <li class=\"navbar__menu\" [class.is-open]=\"isMenuOpen\">\n      <a class=\"navbar__menu-item\" href=\"#\">Destinos</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Vuelos</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Check in</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Iniciar sesión</a>\n      <app-button\n        class=\"navbar__menu-item\"\n        label=\"Registrarse\"\n        type=\"secondary\" />\n      <app-theme class=\"navbar__menu-item\" />\n    </li>\n  </ul>\n</nav>\n"
         },
         {
             "name": "LogoComponent",
-            "id": "component-LogoComponent-868b095971cbad53d3be8ebcdb4cdfcb990112b377aeb4808ad6769dc20125831768c426a5f7b6e5f35d2232221e10f5b61d24a66dcfdc11d7b5fca70852d643",
+            "id": "component-LogoComponent-9d78fc8c0d889f3a5ee2a401315874cde3efaf3b72eb586a22e3af5bd9fb61bf7a42ac99a80c70755cd211ae387a64341c0ec7080f3869648b8ea03c1c194ae7",
             "file": "src/app/components/logo/logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1040,22 +1311,34 @@
                     "defaultValue": "'big'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "\"big\" | \"small\"",
-                    "decorators": []
-                },
-                {
-                    "name": "type",
-                    "defaultValue": "'full-color'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "\"full-color\" | \"white\"",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isDark$",
+                    "defaultValue": "this.themeManager.isDark$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "themeManager",
+                    "defaultValue": "inject(ThemeManager)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1066,17 +1349,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss'],\n})\nexport class LogoComponent {\n  @Input()\n  type: 'full-color' | 'white' = 'full-color';\n\n  @Input()\n  size: 'big' | 'small' = 'big';\n}\n",
+            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { Observable, map } from 'rxjs';\nimport { ThemeManager } from 'src/app/theme-manager.service';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss'],\n})\nexport class LogoComponent {\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  @Input()\n  size: 'big' | 'small' = 'big';\n\n  public get type$(): Observable<string> {\n    return this.isDark$.pipe(map(isDark => (isDark ? 'white' : 'full-color')));\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "img {\r\n    cursor: pointer;\r\n}",
                     "styleUrl": "./logo.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<img\n  src=\"/assets/images/logo_full-color.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"type === 'full-color' && size === 'big'\" />\n<img\n  src=\"/assets/images/logo_white.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"type === 'white' && size === 'big'\" />\n<img\n  src=\"/assets/images/logo_small.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"size === 'small'\" />\n"
+            "accessors": {
+                "type$": {
+                    "name": "type$",
+                    "getSignature": {
+                        "name": "type$",
+                        "type": "",
+                        "returnType": "Observable<string>",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<img\n  src=\"assets/images/logo_full-color.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"(type$ | async) === 'full-color' && size === 'big'\" />\n<img\n  src=\"assets/images/logo_white.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"(type$ | async) === 'white' && size === 'big'\" />\n<img\n  src=\"assets/images/logo_small.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"size === 'small'\" />\n"
         },
         {
             "name": "TestimonialCardComponent",
@@ -1143,7 +1437,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".testimonial-card {\r\n    width: 250px;\r\n    padding: 24px 32px;\r\n    background: white;\r\n    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.05);\r\n    border-radius: 10px;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: flex-start;\r\n    gap: 24px;\r\n    display: inline-flex;\r\n    position: relative;\r\n\r\n    &__img {\r\n        position: absolute;\r\n        top: -16px;\r\n        left: 50%;\r\n        transform: translate(-50%, 0);\r\n        height: 68px;\r\n        width: 68px;\r\n        border-radius: 50%;\r\n    }\r\n\r\n    &__main {\r\n        align-self: stretch;\r\n        color: #5e6282;\r\n        font-size: 12px;\r\n        font-weight: 400;\r\n        line-height: 20.4px;\r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &__bottom {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 8px;\r\n        display: flex;\r\n    }\r\n\r\n    &__name {\r\n        color: #5e6282;\r\n        font-size: 18px;\r\n        font-family: Inter;\r\n        font-weight: 600;\r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &__places {\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 8px;\r\n        display: inline-flex;\r\n\r\n        span {\r\n            color: #5e6282;\r\n            font-size: 12px;\r\n            font-family: Inter;\r\n            font-weight: 400;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    background: transparent;\r\n    border: 3px #F7F7F7 solid;\r\n    .testimonial-card__img {\r\n        width: 40px;\r\n        height: 40px;\r\n    }\r\n}\r\n\r\n.big {\r\n    width: 500px;\r\n    height: 232px;\r\n    justify-content: space-between;\r\n\r\n    .testimonial-card__img {\r\n        position: absolute;\r\n        top: -26px;\r\n        left: -36px;\r\n        border-radius: 50%;\r\n        transform: translate(0,0);\r\n    }\r\n}",
+                    "data": ".testimonial-card {\r\n    width: 250px;\r\n    padding: 24px 32px;\r\n    border-radius: 10px;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: flex-start;\r\n    gap: 24px;\r\n    display: inline-flex;\r\n    position: relative;\r\n    font-size: 12px;\r\n    line-height: 20.4px;\r\n    font-weight: 400;\r\n\r\n\r\n    &__img {\r\n        position: absolute;\r\n        top: -44px;\r\n        left: 50%;\r\n        transform: translate(-50%, 0);\r\n        height: 68px;\r\n        width: 68px;\r\n        border-radius: 50%;\r\n    }\r\n\r\n    &__main {\r\n        align-self: stretch;\r\n    }\r\n\r\n    &__bottom {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 8px;\r\n        display: flex;\r\n    }\r\n\r\n    &__name {\r\n        font-size: 18px;\r\n        font-weight: 600;\r\n    }\r\n\r\n    &__places {\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 8px;\r\n        display: inline-flex;\r\n    }\r\n}\r\n\r\n.secondary {\r\n    border: 3px  solid;\r\n    .testimonial-card__img {\r\n        width: 40px;\r\n        height: 40px;\r\n    }\r\n}\r\n\r\n.big {\r\n    width: 500px;\r\n    height: 232px;\r\n    justify-content: space-between;\r\n    font-size: 18px;\r\n    line-height: 24px;\r\n    font-weight: 500;\r\n\r\n    .testimonial-card__img {\r\n        position: absolute;\r\n        top: -26px;\r\n        left: -36px;\r\n        border-radius: 50%;\r\n        transform: translate(0,0);\r\n    }\r\n\r\n    .testimonial-card__places {\r\n        font-weight: 400;\r\n    }\r\n}",
                     "styleUrl": "./testimonial-card.component.scss"
                 }
             ],
@@ -1160,11 +1454,11 @@
                     }
                 }
             },
-            "templateData": "<div [ngClass]=\"classes\">\n  <img\n    class=\"testimonial-card__img\"\n    alt=\"\"\n    [src]=\"testimonial.profilePicture\" />\n  <p class=\"testimonial-card__main\">\n    {{ testimonial.commentary }}\n  </p>\n  <div class=\"testimonial-card__bottom\">\n    <div class=\"testimonial-card__name\">\n      {{ testimonial.userName }}\n    </div>\n    <div class=\"testimonial-card__places\">\n      <span>\n        {{ testimonial.origin }}\n      </span>\n      <img src=\"/assets/icons/flight_takeoff.svg\" alt=\"\" />\n      <span>\n        {{ testimonial.destination }}\n      </span>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div [ngClass]=\"classes\">\n  <img\n    class=\"testimonial-card__img\"\n    alt=\"\"\n    [src]=\"testimonial.profilePicture\" />\n  <p class=\"testimonial-card__main\">\"{{ testimonial.commentary }}\"</p>\n  <div class=\"testimonial-card__bottom\">\n    <div class=\"testimonial-card__name\">\n      {{ testimonial.userName }}\n    </div>\n    <div class=\"testimonial-card__places\">\n      <span>\n        {{ testimonial.origin }}\n      </span>\n      <mat-icon>flight_takeoff</mat-icon>\n      <span>\n        {{ testimonial.destination }}\n      </span>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "TestimonialsComponent",
-            "id": "component-TestimonialsComponent-5c0ce353f7ab0bef7f8b3dd107bddc90a5202379afb308cdbae6a0afab85b8b940ef27894d238093d0bd83d5caf3227b49c36b10ab325d11fca5f1dd51974b01",
+            "id": "component-TestimonialsComponent-7552ca8d55c0c2f8c6ff342bfff7770b8a1199adab2970259cc0049a1545ce3900cd569ce952cf4749abf5299f8259eabc261e4f05c62ad5ff123807e21959da",
             "file": "src/app/components/testimonials/testimonials.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1194,17 +1488,27 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 13
+                },
+                {
+                    "name": "breakpointManager",
+                    "defaultValue": "inject(BreakpointManagerService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
                 },
                 {
                     "name": "testimonials",
-                    "defaultValue": "[\n    {\n      userName: 'Erick Padilla',\n      profilePicture: '/assets/images/erick',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: '/assets/images/andres',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ]",
+                    "defaultValue": "[\n    {\n      userName: 'Erick Padilla',\n      profilePicture: 'assets/images/users/erick.png',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: 'assets/images/users/andres.png',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Testimonial[]",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 14
                 }
             ],
             "methodsClass": [
@@ -1214,7 +1518,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1227,7 +1531,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 49,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1244,28 +1548,37 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\nimport { Testimonial } from 'src/models';\n\n@Component({\n  selector: 'app-testimonials',\n  templateUrl: './testimonials.component.html',\n  styleUrls: ['./testimonials.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TestimonialsComponent {\n  activeIndex = 0;\n  testimonials: Testimonial[] = [\n    {\n      userName: 'Erick Padilla',\n      profilePicture: '/assets/images/erick',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: '/assets/images/andres',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ];\n\n  public get nextIndex() {\n    return (this.activeIndex + 1) % this.testimonials.length;\n  }\n\n  public next() {\n    this.activeIndex = this.nextIndex;\n  }\n\n  public prev() {\n    if (this.activeIndex === 0) {\n      this.activeIndex = this.testimonials.length - 1;\n    } else {\n      this.activeIndex -= 1;\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation, inject } from '@angular/core';\nimport { Testimonial } from 'src/models';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-testimonials',\n  templateUrl: './testimonials.component.html',\n  styleUrls: ['./testimonials.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TestimonialsComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  activeIndex = 0;\n  testimonials: Testimonial[] = [\n    {\n      userName: 'Erick Padilla',\n      profilePicture: 'assets/images/users/erick.png',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: 'assets/images/users/andres.png',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ];\n\n  public get cardSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n\n  public get nextIndex() {\n    return (this.activeIndex + 1) % this.testimonials.length;\n  }\n\n  public next() {\n    this.activeIndex = this.nextIndex;\n  }\n\n  public prev() {\n    if (this.activeIndex === 0) {\n      this.activeIndex = this.testimonials.length - 1;\n    } else {\n      this.activeIndex -= 1;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "app-testimonials {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 80px;\r\n    display: inline-flex;\r\n\r\n    .testimonials__title {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 48px;\r\n        display: flex;\r\n\r\n        .testimonials__dots {\r\n            width: 50px;\r\n            height: 12px;\r\n            position: relative;\r\n\r\n            .testimonials__dot {\r\n                width: 12px;\r\n                height: 12px;\r\n                top: 0px;\r\n                position: absolute;\r\n                border-radius: 50%;\r\n\r\n                &--primary {\r\n                    left: 0px;\r\n                    background: #181e4b;\r\n                }\r\n\r\n                &--secondary {\r\n                    left: 38px;\r\n                    background: #f7f7f7;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .testimonials__card-container {\r\n        width: 292px;\r\n        height: 499px;\r\n        position: relative;\r\n    \r\n        app-testimonial-card {\r\n            >div {\r\n                z-index: 1;\r\n            }\r\n            \r\n            &[type='secondary'] {\r\n                z-index: 0;\r\n                position: absolute;\r\n                right: 0;\r\n                top: 143px;\r\n            }\r\n        }\r\n\r\n        .testimonials__card-navigation {\r\n            height: 14px;\r\n            left: 110px;\r\n            top: 485px;\r\n            position: absolute;\r\n\r\n            img {\r\n                width: 14px;\r\n                height: 7px;\r\n                left: 0px;\r\n                top: 14px;\r\n                position: absolute;\r\n                transform: rotate(-90deg);\r\n                transform-origin: 0 0;\r\n            }\r\n\r\n            :last-child {\r\n                left: 64.5px;\r\n            }\r\n        }\r\n    }\r\n}",
+                    "data": "@import '../../../styles/setting/mixins';\r\n\r\napp-testimonials {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 80px;\r\n    display: inline-flex;\r\n\r\n    .testimonials__title {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 48px;\r\n        display: flex;\r\n\r\n        .testimonials__dots {\r\n            width: 50px;\r\n            height: 12px;\r\n            position: relative;\r\n\r\n            .testimonials__dot {\r\n                width: 12px;\r\n                height: 12px;\r\n                top: 0px;\r\n                position: absolute;\r\n                border-radius: 50%;\r\n\r\n                &--primary {\r\n                    left: 0px;\r\n                }\r\n\r\n                &--secondary {\r\n                    left: 38px;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .testimonials__card-container {\r\n        width: 292px;\r\n        height: 499px;\r\n        position: relative;\r\n        padding-top: 64px;\r\n    \r\n        app-testimonial-card {\r\n            >div {\r\n                z-index: 1;\r\n            }\r\n            \r\n            &[type='secondary'] {\r\n                z-index: 0;\r\n                position: absolute;\r\n                right: 0;\r\n                top: 159px;\r\n            }\r\n        }\r\n\r\n        .testimonials__card-navigation {\r\n            height: 14px;\r\n            left: 110px;\r\n            top: 485px;\r\n            position: absolute;\r\n\r\n            img {\r\n                cursor: pointer;\r\n                width: 14px;\r\n                height: 7px;\r\n                left: 0px;\r\n                top: 14px;\r\n                position: absolute;\r\n                transform: rotate(-90deg);\r\n                transform-origin: 0 0;\r\n            }\r\n\r\n            :last-child {\r\n                left: 64.5px;\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-up(md) {\r\n    app-testimonials {\r\n        .testimonials__card-container {\r\n            display: inline-flex;\r\n            flex-direction: row;\r\n            justify-content: space-between;\r\n            width: 632px;\r\n            height: 321px;\r\n            padding-top: 0;\r\n\r\n            app-testimonial-card {\r\n                &[type='secondary'] {\r\n                    left: 49px;\r\n                    bottom: 0;\r\n                    top: unset;\r\n                    right: unset;\r\n                }\r\n            }\r\n\r\n            .testimonials__card-navigation {\r\n                height: 71.50px;\r\n                width: 14px;\r\n                position: relative;\r\n                top: unset;\r\n                left: unset;\r\n                align-self: center;\r\n\r\n                img {\r\n                    width: 14px;\r\n                    height: 7px;\r\n                    left: 0px;\r\n                    top: 0px;\r\n                    position: absolute;\r\n                    transform: rotate(0deg);\r\n                    transform-origin: 0 0;\r\n                }\r\n\r\n                :last-child {\r\n                    top: 64.5px;\r\n                    left: unset;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-up(lg) {\r\n    app-testimonials {\r\n        flex-direction: row;\r\n        flex-wrap: nowrap;\r\n        justify-content: space-between;\r\n\r\n        .testimonials__title {\r\n            align-items: flex-start;\r\n\r\n            .section__title {\r\n                align-items: flex-start;\r\n\r\n                .section__title-heading,\r\n                .section__title-subheading {\r\n                    text-align: start;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./testimonials.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
             "accessors": {
+                "cardSize": {
+                    "name": "cardSize",
+                    "getSignature": {
+                        "name": "cardSize",
+                        "type": "",
+                        "returnType": "",
+                        "line": 33
+                    }
+                },
                 "nextIndex": {
                     "name": "nextIndex",
                     "getSignature": {
                         "name": "nextIndex",
                         "type": "",
                         "returnType": "",
-                        "line": 31
+                        "line": 41
                     }
                 }
             },
-            "templateData": "<div class=\"testimonials__title\">\n  <div class=\"section__title\">\n    <div class=\"section__title-subheading\">Testimonios</div>\n    <h2 class=\"section__title-heading\">Comentarios de<br />otros viajeros</h2>\n  </div>\n  <div class=\"testimonials__dots\">\n    <div class=\"testimonials__dot testimonials__dot--primary\"></div>\n    <div class=\"testimonials__dot testimonials__dot--secondary\"></div>\n  </div>\n</div>\n<div class=\"testimonials__card-container\">\n  <app-testimonial-card [testimonial]=\"testimonials[activeIndex]\" />\n  <app-testimonial-card\n    [testimonial]=\"testimonials[nextIndex]\"\n    type=\"secondary\" />\n  <div class=\"testimonials__card-navigation\">\n    <img\n      (click)=\"prev()\"\n      (keypress)=\"prev()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"/assets/icons/arrow_up.svg\"\n      alt=\"\" />\n    <img\n      (click)=\"next()\"\n      (keypress)=\"next()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"/assets/icons/arrow_down.svg\"\n      alt=\"\" />\n  </div>\n</div>\n"
+            "templateData": "<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->\n<div class=\"testimonials__title\">\n  <div class=\"section__title\">\n    <div class=\"section__title-subheading\">Testimonios</div>\n    <h2 class=\"section__title-heading\">Comentarios de<br />otros viajeros</h2>\n  </div>\n  <div class=\"testimonials__dots\">\n    <div class=\"testimonials__dot testimonials__dot--primary\"></div>\n    <div class=\"testimonials__dot testimonials__dot--secondary\"></div>\n  </div>\n</div>\n<div class=\"testimonials__card-container\">\n  <app-testimonial-card\n    [testimonial]=\"testimonials[activeIndex]\"\n    [size]=\"cardSize\" />\n  <app-testimonial-card\n    [testimonial]=\"testimonials[nextIndex]\"\n    [size]=\"cardSize\"\n    type=\"secondary\" />\n  <div class=\"testimonials__card-navigation\">\n    <img\n      (click)=\"prev()\"\n      (keypress)=\"prev()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"assets/icons/arrow_up.svg\"\n      alt=\"\" />\n    <img\n      (click)=\"next()\"\n      (keypress)=\"next()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"assets/icons/arrow_down.svg\"\n      alt=\"\" />\n  </div>\n</div>\n"
         },
         {
             "name": "ThemeComponent",
@@ -1363,25 +1676,25 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".theme-switcher {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 96px;\r\n\r\n    .theme-switcher__toggle {\r\n        cursor: pointer;\r\n        transform: scale(2);\r\n    }\r\n}",
                     "styleUrl": "./theme.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div>\n  <h1>Angular Material Theming System: Complete Guide</h1>\n  <button\n    mat-icon-button\n    class=\"theme-toggle\"\n    aria-label=\"Change theme\"\n    [matMenuTriggerFor]=\"themeMenu\">\n    <mat-icon>{{\n      (isDark$ | async) === true ? 'dark_mode' : 'light_mode'\n    }}</mat-icon>\n  </button>\n  <mat-menu #themeMenu=\"matMenu\">\n    <button mat-menu-item (click)=\"changeTheme('auto')\">System</button>\n    <button mat-menu-item (click)=\"changeTheme('light')\">Light</button>\n    <button mat-menu-item (click)=\"changeTheme('dark')\">Dark</button>\n  </mat-menu>\n  <div class=\"demo-buttons\">\n    <button mat-raised-button color=\"primary\">Raised</button>\n    <button mat-raised-button color=\"accent\">Accent</button>\n    <button mat-raised-button color=\"warn\">Warn</button>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"theme-switcher\" *ngIf=\"{ value: isDark$ | async } as isDark\" ng>\n  <mat-icon>light_mode</mat-icon>\n  <mat-icon\n    class=\"theme-switcher__toggle\"\n    (click)=\"changeTheme(isDark.value ? 'light' : 'dark')\"\n    >{{ isDark.value ? 'toggle_on' : 'toggle_off' }}</mat-icon\n  >\n  <mat-icon>dark_mode</mat-icon>\n</div>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-12fff83b2cde194a214230d8f2853b81e2ca6bc63c783603919aab97e6b172be732d736fab095c00a79d141883fdc6ef3946d159f10d97036aa5ecbd084cfb4d",
+            "id": "module-AppModule-223e74d5f7f1c28bd3f1cd297d702969e9500c9558058ed44e5d72749fc376c59868621230ded955f37b955640252c9532bf92ef70ee467718def105425c7708",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { CommonModule } from '@angular/common';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { ThemeComponent } from './components/theme/theme.component';\nimport { HeaderComponent } from './components/header/header.component';\nimport { BannerComponent } from './components/banner/banner.component';\nimport { TestimonialsComponent } from './components/testimonials/testimonials.component';\nimport { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';\nimport { DestinationsComponent } from './components/destinations/destinations.component';\nimport { DestinationCardComponent } from './components/destination-card/destination-card.component';\nimport { FlightsComponent } from './components/flights/flights.component';\nimport { FlightsFormComponent } from './components/flights-form/flights-form.component';\nimport { FooterComponent } from './components/footer/footer.component';\nimport { ButtonComponent } from './components/button/button.component';\nimport { LogoComponent } from './components/logo/logo.component';\nimport { NgSelectModule } from '@ng-select/ng-select';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    ThemeComponent,\n    HeaderComponent,\n    BannerComponent,\n    TestimonialsComponent,\n    TestimonialCardComponent,\n    DestinationsComponent,\n    DestinationCardComponent,\n    FlightsComponent,\n    FlightsFormComponent,\n    FooterComponent,\n    ButtonComponent,\n    LogoComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    CommonModule,\n    MatButtonModule,\n    MatIconModule,\n    MatMenuModule,\n    MatRadioModule,\n    NgSelectModule,\n    FormsModule,\n    ReactiveFormsModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { CommonModule } from '@angular/common';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatSlideToggleModule } from '@angular/material/slide-toggle';\nimport { ThemeComponent } from './components/theme/theme.component';\nimport { HeaderComponent } from './components/header/header.component';\nimport { BannerComponent } from './components/banner/banner.component';\nimport { TestimonialsComponent } from './components/testimonials/testimonials.component';\nimport { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';\nimport { DestinationsComponent } from './components/destinations/destinations.component';\nimport { DestinationCardComponent } from './components/destination-card/destination-card.component';\nimport { FlightsComponent } from './components/flights/flights.component';\nimport { FlightsFormComponent } from './components/flights-form/flights-form.component';\nimport { FooterComponent } from './components/footer/footer.component';\nimport { ButtonComponent } from './components/button/button.component';\nimport { LogoComponent } from './components/logo/logo.component';\nimport { NgSelectModule } from '@ng-select/ng-select';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    ThemeComponent,\n    HeaderComponent,\n    BannerComponent,\n    TestimonialsComponent,\n    TestimonialCardComponent,\n    DestinationsComponent,\n    DestinationCardComponent,\n    FlightsComponent,\n    FlightsFormComponent,\n    FooterComponent,\n    ButtonComponent,\n    LogoComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    CommonModule,\n    MatButtonModule,\n    MatIconModule,\n    MatMenuModule,\n    MatRadioModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatDatepickerModule,\n    MatNativeDateModule,\n    MatSelectModule,\n    MatSlideToggleModule,\n    NgSelectModule,\n    FormsModule,\n    ReactiveFormsModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1634,7 +1947,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn<FlightsFormComponent>",
-                "defaultValue": "(\r\n  args: FlightsFormComponent\r\n) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(\n  args: FlightsFormComponent\n) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1949,7 +2262,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn<FlightsFormComponent>",
-                    "defaultValue": "(\r\n  args: FlightsFormComponent\r\n) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(\n  args: FlightsFormComponent\n) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/components/testimonial-card/testimonial-card.component.stories.ts": [
@@ -2132,6 +2445,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/breakpoint-manager.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "BreakpointManagerService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/browser-storage.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
@@ -2156,7 +2478,7 @@
                 "linktype": "component",
                 "name": "BannerComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2252,7 +2574,7 @@
                 "linktype": "component",
                 "name": "FlightsFormComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -2270,7 +2592,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -2279,7 +2601,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2328,7 +2650,7 @@
                 "linktype": "component",
                 "name": "LogoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2376,7 +2698,7 @@
                 "linktype": "component",
                 "name": "TestimonialsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { ThemeManager } from 'src/app/theme-manager.service';
 
 @Component({
   selector: 'app-logo',
@@ -6,9 +8,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent {
-  @Input()
-  type: 'full-color' | 'white' = 'full-color';
+  themeManager = inject(ThemeManager);
+  isDark$ = this.themeManager.isDark$;
 
   @Input()
   size: 'big' | 'small' = 'big';
+
+  public get type$(): Observable<string> {
+    return this.isDark$.pipe(map(isDark => (isDark ? 'white' : 'full-color')));
+  }
 }
