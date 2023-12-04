@@ -16,7 +16,8 @@
   <app-testimonial-card
     [testimonial]="testimonials[nextIndex]"
     [size]="cardSize"
-    [type]="componentTypes.SECONDARY" />
+    [type]="componentTypes.SECONDARY"
+    [ngClass]="componentTypes.SECONDARY" />
   <div class="testimonials__card-navigation">
     <img
       (click)="prev()"

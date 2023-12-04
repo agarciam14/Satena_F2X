@@ -49,7 +49,7 @@ app-testimonials {
                 z-index: 1;
             }
             
-            &[type='secondary'] {
+            &.secondary {
                 z-index: 0;
                 position: absolute;
                 right: 0;
@@ -92,7 +92,7 @@ app-testimonials {
             padding-top: 0;
 
             app-testimonial-card {
-                &[type='secondary'] {
+                &.secondary {
                     left: 49px;
                     bottom: 0;
                     top: unset;
