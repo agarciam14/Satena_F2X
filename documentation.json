@@ -637,7 +637,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/setting/mixins';\n\n.landing-satena {\n  width: 100vw;\n  height: 100%;\n  padding-top: 64px;\n  padding-bottom: 40px;\n  padding-left: 16px;\n  padding-right: 16px;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  gap: 62px;\n  display: inline-flex;\n  overflow-x: hidden;\n\n  @include breakpoint-up(md){\n    padding-bottom: 62px;\n    padding-left: 60px;\n    padding-right: 60px;\n    gap: 80px;\n  }\n  \n  @include breakpoint-up(lg){\n    padding-left: 80px;\n    padding-right: 80px;\n    gap: 100px;\n  }\n\n}\n",
+                    "data": "@import '../styles/setting/mixins';\r\n\r\n.landing-satena {\r\n  width: 100vw;\r\n  height: 100%;\r\n  padding-top: 64px;\r\n  padding-bottom: 40px;\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n  flex-direction: column;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  gap: 62px;\r\n  display: inline-flex;\r\n  overflow-x: hidden;\r\n\r\n  @include breakpoint-up(md){\r\n    padding-bottom: 62px;\r\n    padding-left: 60px;\r\n    padding-right: 60px;\r\n    gap: 80px;\r\n  }\r\n  \r\n  @include breakpoint-up(lg){\r\n    padding-left: 80px;\r\n    padding-right: 80px;\r\n    gap: 100px;\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -712,7 +712,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\n\n:host {\n  width: 100%;\n  .banner {\n    height: 328px;\n    justify-content: flex-start;\n    align-items: center;\n    display: flex;\n    position: relative;\n    .section__title {\n      padding: 12px 0;\n      z-index: 10;\n      align-items: flex-start;\n      gap: 24px;\n      width: 210px;\n  \n      &-heading {\n        text-align: start;\n      }\n  \n      p {\n        font-size: 14px;\n        font-weight: 600;\n        text-transform: uppercase;\n        word-wrap: break-word;\n      }\n    }\n  \n    .banner__traveler {\n      position: absolute;\n      right: -40px;\n      bottom: -16px;\n      z-index: 5;\n      width: 289px;\n      height: 288px;\n    }\n  \n    .banner__decore {\n      position: absolute;\n      right: -16px;\n      top: -64px;\n      z-index: 0;\n      width: 175px;\n      height: 320px;\n    }\n  }\n\n\n  @include breakpoint-up(md) {\n    .banner {\n      height: 524px;\n\n      .section__title {\n        width: 349px;\n      }\n  \n      .banner__traveler {\n        right: -40px;\n        bottom: -60px;\n        width: 522px;\n        height: 521px;\n      }\n\n      .banner__decore {\n        height: 577px;\n        width: 390px;\n        top: -64px;\n        right: -60px;\n      }\n    }\n  }\n\n  @include breakpoint-up(lg) {\n    .banner {\n      height: 748px;\n\n      .section__title {\n        width: 566px;\n      }\n\n      .banner__traveler {\n        width: 695px;\n        height: 694px;\n        right: -40px;\n        bottom: -30px;\n      }\n\n      .banner__decore {\n        height: 760px;\n        width: 552px;\n        top: -64px;\n        right: -80px;\n      }\n    }\n  }\n}\n",
+                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n  width: 100%;\r\n  .banner {\r\n    height: 328px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: flex;\r\n    position: relative;\r\n    .section__title {\r\n      padding: 12px 0;\r\n      z-index: 10;\r\n      align-items: flex-start;\r\n      gap: 24px;\r\n      width: 210px;\r\n  \r\n      &-heading {\r\n        text-align: start;\r\n      }\r\n  \r\n      p {\r\n        font-size: 14px;\r\n        font-weight: 600;\r\n        text-transform: uppercase;\r\n        word-wrap: break-word;\r\n      }\r\n    }\r\n  \r\n    .banner__traveler {\r\n      position: absolute;\r\n      right: -40px;\r\n      bottom: -16px;\r\n      z-index: 5;\r\n      width: 289px;\r\n      height: 288px;\r\n    }\r\n  \r\n    .banner__decore {\r\n      position: absolute;\r\n      right: -16px;\r\n      top: -64px;\r\n      z-index: 0;\r\n      width: 175px;\r\n      height: 320px;\r\n    }\r\n  }\r\n\r\n\r\n  @include breakpoint-up(md) {\r\n    .banner {\r\n      height: 524px;\r\n\r\n      .section__title {\r\n        width: 349px;\r\n      }\r\n  \r\n      .banner__traveler {\r\n        right: -40px;\r\n        bottom: -60px;\r\n        width: 522px;\r\n        height: 521px;\r\n      }\r\n\r\n      .banner__decore {\r\n        height: 577px;\r\n        width: 390px;\r\n        top: -64px;\r\n        right: -60px;\r\n      }\r\n    }\r\n  }\r\n\r\n  @include breakpoint-up(lg) {\r\n    .banner {\r\n      height: 748px;\r\n\r\n      .section__title {\r\n        width: 566px;\r\n      }\r\n\r\n      .banner__traveler {\r\n        width: 695px;\r\n        height: 694px;\r\n        right: -40px;\r\n        bottom: -30px;\r\n      }\r\n\r\n      .banner__decore {\r\n        height: 760px;\r\n        width: 552px;\r\n        top: -64px;\r\n        right: -80px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./banner.component.scss"
                 }
             ],
@@ -738,7 +738,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"banner\">\n  <div class=\"section__title\">\n    <h1 class=\"section__title-heading\">\n      Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\n    </h1>\n    <p>Conoce más sobre nuestras políticas pensadas para ti</p>\n    <app-button label=\"Conoce más aquí\" [size]=\"buttonSize\" />\n  </div>\n  <img class=\"banner__traveler\" src=\"assets/images/traveler.png\" alt=\"\" />\n  <img class=\"banner__decore\" [src]=\"decoreUrl$ | async\" alt=\"\" />\n</div>\n"
+            "templateData": "<div class=\"banner\">\r\n  <div class=\"section__title\">\r\n    <h1 class=\"section__title-heading\">\r\n      Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\r\n    </h1>\r\n    <p>Conoce más sobre nuestras políticas pensadas para ti</p>\r\n    <app-button label=\"Conoce más aquí\" [size]=\"buttonSize\" />\r\n  </div>\r\n  <img class=\"banner__traveler\" src=\"assets/images/traveler.png\" alt=\"\" />\r\n  <img class=\"banner__decore\" [src]=\"decoreUrl$ | async\" alt=\"\" />\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1276,7 +1276,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\n\n:host {\n  position: fixed;\n  width: 100%;\n  top: 0;\n  left: 0;\n  z-index: 50;\n\n  .navbar {\n    height: 64px;\n    \n    ul {\n      justify-content: space-between;\n      align-items: center;\n      display: inline-flex;\n      flex-wrap: nowrap;\n      list-style-type: none;\n      margin: 0;\n      padding-left: 16px;\n      padding-right: 16px;\n      padding-top: 20px;\n      padding-bottom: 12px;\n      width: 100%;\n\n      .navbar__burguer {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        height: 32px;\n        width: 32px;\n\n        .mat-icon {\n          transform: scale(calc(4/3));\n        }\n      }\n\n      .navbar__menu {\n        display: none;\n\n        &.is-open {\n          display: flex;\n          flex-direction: column;\n          gap: 8px;\n          position: absolute;\n          top: 64px;\n          left: 0 ;\n          width: 100%;\n          align-items: center;\n          padding: 16px;\n        }\n\n        .navbar__menu-item {\n          text-decoration: none;\n          \n          &:hover {\n            text-decoration: underline;\n          }\n        }\n      }\n    }\n    \n    @include breakpoint-up(md) {\n      height: 48px;\n\n      ul {\n        padding-left: 60px;\n        padding-right: 60px;\n        padding-top: 32px;\n\n        .navbar__burguer {\n          display: none;\n        }\n\n        .navbar__menu {\n          display: flex;\n          flex-direction: row;\n          flex-wrap: nowrap;\n          align-items: center;\n          justify-content: space-between;\n          flex-grow: 1;\n        }\n      }\n    }\n\n    @include breakpoint-up(lg) {\n      ul {\n        padding-left: 80px;\n        padding-right: 80px;\n        padding-top: 40px;\n\n\n        .navbar__menu {\n          justify-content: flex-end;\n          gap: 54px;\n        }\n      }\n    }\n  }\n}\n",
+                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n  position: fixed;\r\n  width: 100%;\r\n  top: 0;\r\n  left: 0;\r\n  z-index: 50;\r\n\r\n  .navbar {\r\n    height: 64px;\r\n    \r\n    ul {\r\n      justify-content: space-between;\r\n      align-items: center;\r\n      display: inline-flex;\r\n      flex-wrap: nowrap;\r\n      list-style-type: none;\r\n      margin: 0;\r\n      padding-left: 16px;\r\n      padding-right: 16px;\r\n      padding-top: 20px;\r\n      padding-bottom: 12px;\r\n      width: 100%;\r\n\r\n      .navbar__burguer {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        height: 32px;\r\n        width: 32px;\r\n\r\n        .mat-icon {\r\n          transform: scale(calc(4/3));\r\n        }\r\n      }\r\n\r\n      .navbar__menu {\r\n        display: none;\r\n\r\n        &.is-open {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 8px;\r\n          position: absolute;\r\n          top: 64px;\r\n          left: 0 ;\r\n          width: 100%;\r\n          align-items: center;\r\n          padding: 16px;\r\n        }\r\n\r\n        .navbar__menu-item {\r\n          text-decoration: none;\r\n          \r\n          &:hover {\r\n            text-decoration: underline;\r\n          }\r\n        }\r\n      }\r\n    }\r\n    \r\n    @include breakpoint-up(md) {\r\n      height: 48px;\r\n\r\n      ul {\r\n        padding-left: 60px;\r\n        padding-right: 60px;\r\n        padding-top: 32px;\r\n\r\n        .navbar__burguer {\r\n          display: none;\r\n        }\r\n\r\n        .navbar__menu {\r\n          display: flex;\r\n          flex-direction: row;\r\n          flex-wrap: nowrap;\r\n          align-items: center;\r\n          justify-content: space-between;\r\n          flex-grow: 1;\r\n        }\r\n      }\r\n    }\r\n\r\n    @include breakpoint-up(lg) {\r\n      ul {\r\n        padding-left: 80px;\r\n        padding-right: 80px;\r\n        padding-top: 40px;\r\n\r\n\r\n        .navbar__menu {\r\n          justify-content: flex-end;\r\n          gap: 54px;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./header.component.scss"
                 }
             ],
@@ -1876,7 +1876,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
-                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
+                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
             },
             {
                 "name": "CustomButtonSize",
@@ -1996,7 +1996,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {},\r\n}"
+                "defaultValue": "{\n  parameters: {},\n}"
             },
             {
                 "name": "Primary",
@@ -2417,7 +2417,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
-                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
+                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
                 }
             ],
             "src/app/components/logo/logo.component.stories.ts": [
@@ -2571,7 +2571,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {},\r\n}"
+                    "defaultValue": "{\n  parameters: {},\n}"
                 }
             ],
             "src/app/components/flights-form/flights-form.component.stories.ts": [

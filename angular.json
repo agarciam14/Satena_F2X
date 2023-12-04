@@ -124,7 +124,17 @@
               "-d",
               "."
             ],
-            "port": 6006
+            "port": 6006,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ]
           }
         },
         "build-storybook": {

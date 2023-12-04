@@ -3,7 +3,7 @@ import type { StorybookConfig } from '@storybook/angular';
 const config: StorybookConfig = {
   framework: '@storybook/angular',
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  staticDirs: ['../assets'],
+  staticDirs: ['../'],
 
   webpackFinal: async config => {
     config.module?.rules?.push({
