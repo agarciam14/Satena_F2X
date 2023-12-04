@@ -4,6 +4,7 @@ import { BreakpointManagerService } from '@services/breakpoint-manager.service';
 import { ThemeManager } from '@services/theme-manager.service';
 import { BreakpointSize } from '@models';
 import { of } from 'rxjs';
+import { ButtonModule } from '../button/button.module';
 
 // Mock services
 const breakpointManagerMock = {
@@ -15,11 +16,11 @@ const themeManagerMock = {
 };
 
 export default {
-  title: 'Components/Banner',
   component: BannerComponent,
   decorators: [
     moduleMetadata({
       declarations: [BannerComponent],
+      imports: [ButtonModule],
       providers: [
         { provide: BreakpointManagerService, useValue: breakpointManagerMock },
         { provide: ThemeManager, useValue: themeManagerMock },
@@ -33,13 +34,17 @@ const Template: StoryFn<BannerComponent> = (args: BannerComponent) => ({
   props: args,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
-
 export const SmallSize = Template.bind({});
 SmallSize.args = {
   breakpointManager: {
     currentBreakpoint: BreakpointSize.SMALL,
+  } as BreakpointManagerService,
+};
+
+export const MediumSize = Template.bind({});
+MediumSize.args = {
+  breakpointManager: {
+    currentBreakpoint: BreakpointSize.MEDIUM,
   } as BreakpointManagerService,
 };
 

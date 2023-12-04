@@ -637,7 +637,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../styles/setting/mixins';\r\n\r\n.landing-satena {\r\n  width: 100vw;\r\n  height: 100%;\r\n  padding-top: 64px;\r\n  padding-bottom: 40px;\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n  flex-direction: column;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  gap: 62px;\r\n  display: inline-flex;\r\n  overflow-x: hidden;\r\n\r\n  @include breakpoint-up(md){\r\n    padding-bottom: 62px;\r\n    padding-left: 60px;\r\n    padding-right: 60px;\r\n    gap: 80px;\r\n  }\r\n  \r\n  @include breakpoint-up(lg){\r\n    padding-left: 80px;\r\n    padding-right: 80px;\r\n    gap: 100px;\r\n  }\r\n\r\n}\r\n",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\n.landing-satena {\r\n  width: 100vw;\r\n  height: 100%;\r\n  padding-top: 64px;\r\n  padding-bottom: 40px;\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n  flex-direction: column;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n  gap: 62px;\r\n  display: inline-flex;\r\n  overflow-x: hidden;\r\n\r\n  @include breakpoint-up(md){\r\n    padding-bottom: 62px;\r\n    padding-left: 60px;\r\n    padding-right: 60px;\r\n    gap: 80px;\r\n  }\r\n  \r\n  @include breakpoint-up(lg){\r\n    padding-left: 80px;\r\n    padding-right: 80px;\r\n    gap: 100px;\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -712,7 +712,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n  width: 100%;\r\n  .banner {\r\n    height: 328px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: flex;\r\n    position: relative;\r\n    .section__title {\r\n      padding: 12px 0;\r\n      z-index: 10;\r\n      align-items: flex-start;\r\n      gap: 24px;\r\n      width: 210px;\r\n  \r\n      &-heading {\r\n        text-align: start;\r\n      }\r\n  \r\n      p {\r\n        font-size: 14px;\r\n        font-weight: 600;\r\n        text-transform: uppercase;\r\n        word-wrap: break-word;\r\n      }\r\n    }\r\n  \r\n    .banner__traveler {\r\n      position: absolute;\r\n      right: -40px;\r\n      bottom: -16px;\r\n      z-index: 5;\r\n      width: 289px;\r\n      height: 288px;\r\n    }\r\n  \r\n    .banner__decore {\r\n      position: absolute;\r\n      right: -16px;\r\n      top: -64px;\r\n      z-index: 0;\r\n      width: 175px;\r\n      height: 320px;\r\n    }\r\n  }\r\n\r\n\r\n  @include breakpoint-up(md) {\r\n    .banner {\r\n      height: 524px;\r\n\r\n      .section__title {\r\n        width: 349px;\r\n      }\r\n  \r\n      .banner__traveler {\r\n        right: -40px;\r\n        bottom: -60px;\r\n        width: 522px;\r\n        height: 521px;\r\n      }\r\n\r\n      .banner__decore {\r\n        height: 577px;\r\n        width: 390px;\r\n        top: -64px;\r\n        right: -60px;\r\n      }\r\n    }\r\n  }\r\n\r\n  @include breakpoint-up(lg) {\r\n    .banner {\r\n      height: 748px;\r\n\r\n      .section__title {\r\n        width: 566px;\r\n      }\r\n\r\n      .banner__traveler {\r\n        width: 695px;\r\n        height: 694px;\r\n        right: -40px;\r\n        bottom: -30px;\r\n      }\r\n\r\n      .banner__decore {\r\n        height: 760px;\r\n        width: 552px;\r\n        top: -64px;\r\n        right: -80px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\n:host {\r\n  width: 100%;\r\n  .banner {\r\n    height: 328px;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: flex;\r\n    position: relative;\r\n    .section__title {\r\n      padding: 12px 0;\r\n      z-index: 10;\r\n      align-items: flex-start;\r\n      gap: 24px;\r\n      width: 210px;\r\n  \r\n      &-heading {\r\n        text-align: start;\r\n      }\r\n  \r\n      p {\r\n        font-size: 14px;\r\n        font-weight: 600;\r\n        text-transform: uppercase;\r\n        word-wrap: break-word;\r\n      }\r\n    }\r\n  \r\n    .banner__traveler {\r\n      position: absolute;\r\n      right: -40px;\r\n      bottom: -16px;\r\n      z-index: 5;\r\n      width: 289px;\r\n      height: 288px;\r\n    }\r\n  \r\n    .banner__decore {\r\n      position: absolute;\r\n      right: -16px;\r\n      top: -64px;\r\n      z-index: 0;\r\n      width: 175px;\r\n      height: 320px;\r\n    }\r\n  }\r\n\r\n\r\n  @include breakpoint-up(md) {\r\n    .banner {\r\n      height: 524px;\r\n\r\n      .section__title {\r\n        width: 349px;\r\n      }\r\n  \r\n      .banner__traveler {\r\n        right: -40px;\r\n        bottom: -60px;\r\n        width: 522px;\r\n        height: 521px;\r\n      }\r\n\r\n      .banner__decore {\r\n        height: 577px;\r\n        width: 390px;\r\n        top: -64px;\r\n        right: -60px;\r\n      }\r\n    }\r\n  }\r\n\r\n  @include breakpoint-up(lg) {\r\n    .banner {\r\n      height: 748px;\r\n\r\n      .section__title {\r\n        width: 566px;\r\n      }\r\n\r\n      .banner__traveler {\r\n        width: 695px;\r\n        height: 694px;\r\n        right: -40px;\r\n        bottom: -30px;\r\n      }\r\n\r\n      .banner__decore {\r\n        height: 760px;\r\n        width: 552px;\r\n        top: -64px;\r\n        right: -80px;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./banner.component.scss"
                 }
             ],
@@ -738,7 +738,7 @@
                     }
                 }
             },
-            "templateData": "<div class=\"banner\">\r\n  <div class=\"section__title\">\r\n    <h1 class=\"section__title-heading\">\r\n      Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\r\n    </h1>\r\n    <p>Conoce más sobre nuestras políticas pensadas para ti</p>\r\n    <app-button label=\"Conoce más aquí\" [size]=\"buttonSize\" />\r\n  </div>\r\n  <img class=\"banner__traveler\" src=\"assets/images/traveler.png\" alt=\"\" />\r\n  <img class=\"banner__decore\" [src]=\"decoreUrl$ | async\" alt=\"\" />\r\n</div>\r\n"
+            "templateData": "<div class=\"banner\">\n  <div class=\"section__title\">\n    <h1 class=\"section__title-heading\">\n      Vuelve a volar<br />en cielos<br />claros y sin<br />turbulencias\n    </h1>\n    <p>Conoce más sobre nuestras políticas pensadas para ti</p>\n    <app-button label=\"Conoce más aquí\" [size]=\"buttonSize\" />\n  </div>\n  <img class=\"banner__traveler\" src=\"assets/images/traveler.png\" alt=\"\" />\n  <img class=\"banner__decore\" [src]=\"decoreUrl$ | async\" alt=\"\" />\n</div>\n"
         },
         {
             "name": "ButtonComponent",
@@ -804,7 +804,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '../../../styles/setting/variables' as var;\r\n\r\n.button {\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 8px 16px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.primary {\r\n    background: var.$app-primary;\r\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n    border-radius: 10px;\r\n\r\n    &:hover {\r\n        background: var.$app-primary-hover;\r\n    }\r\n\r\n    &:active {\r\n        background: var.$app-primary-pressed;\r\n    }\r\n\r\n    span {\r\n        color: var.$app-primary-text;\r\n        font-size: 14px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &.big {\r\n        height: 60px;\r\n        span {\r\n            font-size: 18px;\r\n            font-weight: 500;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    border-radius: 5px;\r\n    border: 1px solid;\r\n    background: transparent;\r\n    height: 38px;\r\n\r\n    span {\r\n        font-size: 18px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &:hover {\r\n        border: 2px solid;\r\n    }\r\n    \r\n    &:active {\r\n        border: 1px solid;\r\n    }\r\n}\r\n",
+                    "data": "@use 'src/styles/setting/variables' as var;\r\n\r\n.button {\r\n    width: 100%;\r\n    height: 40px;\r\n    padding: 8px 16px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.primary {\r\n    background: var.$app-primary;\r\n    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);\r\n    border-radius: 10px;\r\n\r\n    &:hover {\r\n        background: var.$app-primary-hover;\r\n    }\r\n\r\n    &:active {\r\n        background: var.$app-primary-pressed;\r\n    }\r\n\r\n    span {\r\n        color: var.$app-primary-text;\r\n        font-size: 14px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &.big {\r\n        height: 60px;\r\n        span {\r\n            font-size: 18px;\r\n            font-weight: 500;\r\n            word-wrap: break-word;\r\n        }\r\n    }\r\n}\r\n\r\n.secondary {\r\n    border-radius: 5px;\r\n    border: 1px solid;\r\n    background: transparent;\r\n    height: 38px;\r\n\r\n    span {\r\n        font-size: 18px;\r\n        font-weight: 500;   \r\n        word-wrap: break-word;\r\n    }\r\n\r\n    &:hover {\r\n        border: 2px solid;\r\n    }\r\n    \r\n    &:active {\r\n        border: 1px solid;\r\n    }\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -826,7 +826,7 @@
         {
             "name": "DestinationCardComponent",
             "id": "component-DestinationCardComponent-e6803ea5a0cd759964518391cf4df0b5252770925649bcc1adf8eb225af839b218edb10048475ab9fb7a3de40abc654c8bdbbcea563280b867eef9079f020e3d",
-            "file": "src/app/components/destination-card/destination-card.component.ts",
+            "file": "src/app/components/destinations/destination-card/destination-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -925,7 +925,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 60px;\r\n    display: flex;\r\n\r\n    .destinations__card-container {\r\n        align-self: stretch;\r\n        align-items: center;\r\n        gap: 40px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n\r\n    @include breakpoint-up(md){\r\n        .destinations__card-container {\r\n            padding-left: 60px;\r\n            padding-right: 60px;\r\n            justify-content: space-between;\r\n            align-items: flex-start;\r\n            flex-direction: row;\r\n            flex-wrap: wrap;\r\n        }\r\n    }\r\n}",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\n:host {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 60px;\r\n    display: flex;\r\n\r\n    .destinations__card-container {\r\n        align-self: stretch;\r\n        align-items: center;\r\n        gap: 40px;\r\n        display: flex;\r\n        flex-direction: column;\r\n    }\r\n\r\n    @include breakpoint-up(md){\r\n        .destinations__card-container {\r\n            padding-left: 60px;\r\n            padding-right: 60px;\r\n            justify-content: space-between;\r\n            align-items: flex-start;\r\n            flex-direction: row;\r\n            flex-wrap: wrap;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./destinations.component.scss"
                 }
             ],
@@ -980,7 +980,7 @@
         {
             "name": "FlightsFormComponent",
             "id": "component-FlightsFormComponent-31d0e08de2fca97e3fb03533a537dfed79f52372c16229c96802c9cef29848d8a0d6f2234ec4b1266c6a902070bc24f936ee614a8e06ee1a49480bf2c3636c7b",
-            "file": "src/app/components/flights-form/flights-form.component.ts",
+            "file": "src/app/components/flights/flights-form/flights-form.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -1107,7 +1107,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\r\n\r\napp-flights-form {\r\n    align-self: stretch;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 40px;\r\n    display: flex;\r\n\r\n    .flights-form {\r\n        align-self: stretch;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: flex;\r\n\r\n        &__radio-buttons {\r\n            justify-content: flex-start;\r\n            align-items: flex-start;\r\n            gap: 40px;\r\n            display: inline-flex;\r\n\r\n            .mdc-form-field {\r\n                height: 24px;\r\n            }\r\n        }\r\n\r\n        &__input-container {\r\n            align-self: stretch;\r\n            height: 48px;\r\n            justify-content: space-between;\r\n            align-items: center;\r\n            display: inline-flex;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            position: relative;\r\n            \r\n            .flights-form__input {\r\n                border-width: 2px;\r\n                border-style: solid;\r\n                padding-right: 16px;\r\n                padding-left: 16px;\r\n                height: 100%;\r\n                width: 100%;\r\n                border-radius: 10px;\r\n                font-size: 14px;\r\n                font-weight: 400;\r\n            }\r\n\r\n            .flights-form__input-clear {\r\n                position: absolute;\r\n                right: 16px;\r\n                cursor: pointer;\r\n            }\r\n        }\r\n\r\n        &__date-picker {\r\n            align-self: stretch;\r\n            border: 2px solid;\r\n            border-radius: 10px;\r\n            height: 48px;\r\n            padding-left: 16px;\r\n            padding-right: 16px;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n\r\n            .mat-mdc-text-field-wrapper {\r\n                padding: 0;\r\n\r\n                .mat-mdc-form-field-flex {\r\n                    align-items: center;\r\n                    height: 48px;\r\n                }\r\n            }\r\n            \r\n\r\n            .mat-mdc-form-field-subscript-wrapper,\r\n            .mdc-line-ripple {\r\n                display: none;\r\n            }\r\n\r\n            .mat-mdc-icon-button.mat-mdc-button-base,\r\n            .mat-mdc-icon-button .mat-mdc-button-touch-target {\r\n                width: 24px;\r\n                height: 24px;\r\n                padding: 0;\r\n            }\r\n\r\n        }\r\n\r\n        &__select.ng-select.ng-select-single {\r\n            align-self: stretch;\r\n\r\n            &.ng-select-focused {\r\n                .ng-select-container {\r\n                    border: 2px solid;\r\n                }\r\n\r\n                &:not(.ng-select-opened) {\r\n                    .ng-select-container {\r\n                        box-shadow: none;\r\n                    }\r\n                }\r\n            }\r\n            \r\n            .ng-select-container {\r\n                border: 2px solid;\r\n                border-radius: 10px;\r\n                height: 48px;\r\n                padding-left: 16px;\r\n                padding-right: 16px;\r\n                font-size: 14px;\r\n                font-weight: 400;\r\n\r\n                .ng-value-container {\r\n                    padding: 0;\r\n                }\r\n\r\n                .ng-arrow-wrapper {\r\n                    display: flex;\r\n                    align-items: center;\r\n                    justify-content: center;\r\n                    padding: 0;\r\n                    background-image: url('https://agarciam14.github.io/Satena_F2X/assets/icons/keyboard_arrow_down.svg');\r\n                    background-repeat: no-repeat;\r\n                    background-size: 24px 24px;\r\n                    width: 24px;\r\n                    height: 24px;\r\n\r\n                    .ng-arrow {\r\n                        border-color: none;\r\n                        border-style: none;\r\n                        border-width: 0;\r\n                        \r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .flights-form__submit {\r\n        width: 100%;\r\n    }\r\n\r\n    @include breakpoint-up(md) {\r\n        .flights-form {\r\n            flex-direction: row;\r\n            flex-wrap: wrap;\r\n            max-width: 740px;\r\n            align-self: unset;\r\n    \r\n            & > * {\r\n                width: calc( 50% - 12px);\r\n            }\r\n    \r\n            &__radio-buttons {\r\n                width: 100%;\r\n            }\r\n        }\r\n\r\n        .flights-form__submit {\r\n            width: 300px;\r\n        }\r\n\r\n    }\r\n}",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\napp-flights-form {\r\n    align-self: stretch;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 40px;\r\n    display: flex;\r\n\r\n    .flights-form {\r\n        align-self: stretch;\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: flex;\r\n\r\n        &__radio-buttons {\r\n            justify-content: flex-start;\r\n            align-items: flex-start;\r\n            gap: 40px;\r\n            display: inline-flex;\r\n\r\n            .mdc-form-field {\r\n                height: 24px;\r\n            }\r\n        }\r\n\r\n        &__input-container {\r\n            align-self: stretch;\r\n            height: 48px;\r\n            justify-content: space-between;\r\n            align-items: center;\r\n            display: inline-flex;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n            position: relative;\r\n            \r\n            .flights-form__input {\r\n                border-width: 2px;\r\n                border-style: solid;\r\n                padding-right: 16px;\r\n                padding-left: 16px;\r\n                height: 100%;\r\n                width: 100%;\r\n                border-radius: 10px;\r\n                font-size: 14px;\r\n                font-weight: 400;\r\n            }\r\n\r\n            .flights-form__input-clear {\r\n                position: absolute;\r\n                right: 16px;\r\n                cursor: pointer;\r\n            }\r\n        }\r\n\r\n        &__date-picker {\r\n            align-self: stretch;\r\n            border: 2px solid;\r\n            border-radius: 10px;\r\n            height: 48px;\r\n            padding-left: 16px;\r\n            padding-right: 16px;\r\n            font-size: 14px;\r\n            font-weight: 400;\r\n\r\n            .mat-mdc-text-field-wrapper {\r\n                padding: 0;\r\n\r\n                .mat-mdc-form-field-flex {\r\n                    align-items: center;\r\n                    height: 48px;\r\n                }\r\n            }\r\n            \r\n\r\n            .mat-mdc-form-field-subscript-wrapper,\r\n            .mdc-line-ripple {\r\n                display: none;\r\n            }\r\n\r\n            .mat-mdc-icon-button.mat-mdc-button-base,\r\n            .mat-mdc-icon-button .mat-mdc-button-touch-target {\r\n                width: 24px;\r\n                height: 24px;\r\n                padding: 0;\r\n            }\r\n\r\n        }\r\n\r\n        &__select.ng-select.ng-select-single {\r\n            align-self: stretch;\r\n\r\n            &.ng-select-focused {\r\n                .ng-select-container {\r\n                    border: 2px solid;\r\n                }\r\n\r\n                &:not(.ng-select-opened) {\r\n                    .ng-select-container {\r\n                        box-shadow: none;\r\n                    }\r\n                }\r\n            }\r\n            \r\n            .ng-select-container {\r\n                border: 2px solid;\r\n                border-radius: 10px;\r\n                height: 48px;\r\n                padding-left: 16px;\r\n                padding-right: 16px;\r\n                font-size: 14px;\r\n                font-weight: 400;\r\n\r\n                .ng-value-container {\r\n                    padding: 0;\r\n                }\r\n\r\n                .ng-arrow-wrapper {\r\n                    display: flex;\r\n                    align-items: center;\r\n                    justify-content: center;\r\n                    padding: 0;\r\n                    background-image: url('https://agarciam14.github.io/Satena_F2X/assets/icons/keyboard_arrow_down.svg');\r\n                    background-repeat: no-repeat;\r\n                    background-size: 24px 24px;\r\n                    width: 24px;\r\n                    height: 24px;\r\n\r\n                    .ng-arrow {\r\n                        border-color: none;\r\n                        border-style: none;\r\n                        border-width: 0;\r\n                        \r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .flights-form__submit {\r\n        width: 100%;\r\n    }\r\n\r\n    @include breakpoint-up(md) {\r\n        .flights-form {\r\n            flex-direction: row;\r\n            flex-wrap: wrap;\r\n            max-width: 740px;\r\n            align-self: unset;\r\n    \r\n            & > * {\r\n                width: calc( 50% - 12px);\r\n            }\r\n    \r\n            &__radio-buttons {\r\n                width: 100%;\r\n            }\r\n        }\r\n\r\n        .flights-form__submit {\r\n            width: 300px;\r\n        }\r\n\r\n    }\r\n}",
                     "styleUrl": "./flights-form.component.scss"
                 }
             ],
@@ -1176,7 +1176,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 32px;\r\n    display: inline-flex;\r\n\r\n    .social-media__container {\r\n        cursor: pointer;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: inline-flex;\r\n\r\n        .social-media__icon {\r\n            width: 41px;\r\n            height: 41px;\r\n            background: white;\r\n            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);\r\n            border-radius: 50%;\r\n            display: flex;\r\n            align-items: center;\r\n            justify-content: center;\r\n        }\r\n    }\r\n\r\n    .footer__text-container {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 16px;\r\n        display: flex;\r\n\r\n        .footer__text {\r\n            font-size: 12px;\r\n            font-weight: 400;\r\n            line-height: 20.40px;\r\n            word-wrap: break-word;\r\n            text-align: center;\r\n\r\n            &--bold {\r\n                font-weight: 700;\r\n                word-wrap: break-word;\r\n            }\r\n\r\n            @include breakpoint-up(md) {\r\n                font-size: 16px;\r\n            }\r\n\r\n            @include breakpoint-up(lg) {\r\n                font-size: 18px;\r\n            }\r\n        }\r\n    }\r\n}",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\n:host {\r\n    width: 100%;\r\n    height: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 32px;\r\n    display: inline-flex;\r\n\r\n    .social-media__container {\r\n        cursor: pointer;\r\n        justify-content: flex-start;\r\n        align-items: flex-start;\r\n        gap: 24px;\r\n        display: inline-flex;\r\n\r\n        .social-media__icon {\r\n            width: 41px;\r\n            height: 41px;\r\n            background: white;\r\n            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);\r\n            border-radius: 50%;\r\n            display: flex;\r\n            align-items: center;\r\n            justify-content: center;\r\n        }\r\n    }\r\n\r\n    .footer__text-container {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 16px;\r\n        display: flex;\r\n\r\n        .footer__text {\r\n            font-size: 12px;\r\n            font-weight: 400;\r\n            line-height: 20.40px;\r\n            word-wrap: break-word;\r\n            text-align: center;\r\n\r\n            &--bold {\r\n                font-weight: 700;\r\n                word-wrap: break-word;\r\n            }\r\n\r\n            @include breakpoint-up(md) {\r\n                font-size: 16px;\r\n            }\r\n\r\n            @include breakpoint-up(lg) {\r\n                font-size: 18px;\r\n            }\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./footer.component.scss"
                 }
             ],
@@ -1276,7 +1276,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\r\n\r\n:host {\r\n  position: fixed;\r\n  width: 100%;\r\n  top: 0;\r\n  left: 0;\r\n  z-index: 50;\r\n\r\n  .navbar {\r\n    height: 64px;\r\n    \r\n    ul {\r\n      justify-content: space-between;\r\n      align-items: center;\r\n      display: inline-flex;\r\n      flex-wrap: nowrap;\r\n      list-style-type: none;\r\n      margin: 0;\r\n      padding-left: 16px;\r\n      padding-right: 16px;\r\n      padding-top: 20px;\r\n      padding-bottom: 12px;\r\n      width: 100%;\r\n\r\n      .navbar__burguer {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        height: 32px;\r\n        width: 32px;\r\n\r\n        .mat-icon {\r\n          transform: scale(calc(4/3));\r\n        }\r\n      }\r\n\r\n      .navbar__menu {\r\n        display: none;\r\n\r\n        &.is-open {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 8px;\r\n          position: absolute;\r\n          top: 64px;\r\n          left: 0 ;\r\n          width: 100%;\r\n          align-items: center;\r\n          padding: 16px;\r\n        }\r\n\r\n        .navbar__menu-item {\r\n          text-decoration: none;\r\n          \r\n          &:hover {\r\n            text-decoration: underline;\r\n          }\r\n        }\r\n      }\r\n    }\r\n    \r\n    @include breakpoint-up(md) {\r\n      height: 48px;\r\n\r\n      ul {\r\n        padding-left: 60px;\r\n        padding-right: 60px;\r\n        padding-top: 32px;\r\n\r\n        .navbar__burguer {\r\n          display: none;\r\n        }\r\n\r\n        .navbar__menu {\r\n          display: flex;\r\n          flex-direction: row;\r\n          flex-wrap: nowrap;\r\n          align-items: center;\r\n          justify-content: space-between;\r\n          flex-grow: 1;\r\n        }\r\n      }\r\n    }\r\n\r\n    @include breakpoint-up(lg) {\r\n      ul {\r\n        padding-left: 80px;\r\n        padding-right: 80px;\r\n        padding-top: 40px;\r\n\r\n\r\n        .navbar__menu {\r\n          justify-content: flex-end;\r\n          gap: 54px;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\n:host {\r\n  position: fixed;\r\n  width: 100%;\r\n  top: 0;\r\n  left: 0;\r\n  z-index: 50;\r\n\r\n  .navbar {\r\n    height: 64px;\r\n    \r\n    ul {\r\n      justify-content: space-between;\r\n      align-items: center;\r\n      display: inline-flex;\r\n      flex-wrap: nowrap;\r\n      list-style-type: none;\r\n      margin: 0;\r\n      padding-left: 16px;\r\n      padding-right: 16px;\r\n      padding-top: 20px;\r\n      padding-bottom: 12px;\r\n      width: 100%;\r\n\r\n      .navbar__burguer {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        height: 32px;\r\n        width: 32px;\r\n\r\n        .mat-icon {\r\n          transform: scale(calc(4/3));\r\n        }\r\n      }\r\n\r\n      .navbar__menu {\r\n        display: none;\r\n\r\n        &.is-open {\r\n          display: flex;\r\n          flex-direction: column;\r\n          gap: 8px;\r\n          position: absolute;\r\n          top: 64px;\r\n          left: 0 ;\r\n          width: 100%;\r\n          align-items: center;\r\n          padding: 16px;\r\n        }\r\n\r\n        .navbar__menu-item {\r\n          text-decoration: none;\r\n          \r\n          &:hover {\r\n            text-decoration: underline;\r\n          }\r\n        }\r\n      }\r\n    }\r\n    \r\n    @include breakpoint-up(md) {\r\n      height: 48px;\r\n\r\n      ul {\r\n        padding-left: 60px;\r\n        padding-right: 60px;\r\n        padding-top: 32px;\r\n\r\n        .navbar__burguer {\r\n          display: none;\r\n        }\r\n\r\n        .navbar__menu {\r\n          display: flex;\r\n          flex-direction: row;\r\n          flex-wrap: nowrap;\r\n          align-items: center;\r\n          justify-content: space-between;\r\n          flex-grow: 1;\r\n        }\r\n      }\r\n    }\r\n\r\n    @include breakpoint-up(lg) {\r\n      ul {\r\n        padding-left: 80px;\r\n        padding-right: 80px;\r\n        padding-top: 40px;\r\n\r\n\r\n        .navbar__menu {\r\n          justify-content: flex-end;\r\n          gap: 54px;\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./header.component.scss"
                 }
             ],
@@ -1404,7 +1404,7 @@
         {
             "name": "TestimonialCardComponent",
             "id": "component-TestimonialCardComponent-0bd578a860e621827f0b87cc03edf472973cfd20a9010784c060496d6dc912871c8925ab899466465f75c6836ebc7652da2367e908479d2391dc65fdbf4929ef",
-            "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
+            "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1591,7 +1591,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../styles/setting/mixins';\r\n\r\napp-testimonials {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 80px;\r\n    display: inline-flex;\r\n\r\n    .testimonials__title {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 48px;\r\n        display: flex;\r\n\r\n        .testimonials__dots {\r\n            width: 50px;\r\n            height: 12px;\r\n            position: relative;\r\n\r\n            .testimonials__dot {\r\n                width: 12px;\r\n                height: 12px;\r\n                top: 0px;\r\n                position: absolute;\r\n                border-radius: 50%;\r\n\r\n                &--primary {\r\n                    left: 0px;\r\n                }\r\n\r\n                &--secondary {\r\n                    left: 38px;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .testimonials__card-container {\r\n        width: 292px;\r\n        height: 499px;\r\n        position: relative;\r\n        padding-top: 64px;\r\n    \r\n        app-testimonial-card {\r\n            >div {\r\n                z-index: 1;\r\n            }\r\n            \r\n            &[type='secondary'] {\r\n                z-index: 0;\r\n                position: absolute;\r\n                right: 0;\r\n                top: 159px;\r\n            }\r\n        }\r\n\r\n        .testimonials__card-navigation {\r\n            height: 14px;\r\n            left: 110px;\r\n            top: 485px;\r\n            position: absolute;\r\n\r\n            img {\r\n                cursor: pointer;\r\n                width: 14px;\r\n                height: 7px;\r\n                left: 0px;\r\n                top: 14px;\r\n                position: absolute;\r\n                transform: rotate(-90deg);\r\n                transform-origin: 0 0;\r\n            }\r\n\r\n            :last-child {\r\n                left: 64.5px;\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-up(md) {\r\n    app-testimonials {\r\n        .testimonials__card-container {\r\n            display: inline-flex;\r\n            flex-direction: row;\r\n            justify-content: space-between;\r\n            width: 632px;\r\n            height: 321px;\r\n            padding-top: 0;\r\n\r\n            app-testimonial-card {\r\n                &[type='secondary'] {\r\n                    left: 49px;\r\n                    bottom: 0;\r\n                    top: unset;\r\n                    right: unset;\r\n                }\r\n            }\r\n\r\n            .testimonials__card-navigation {\r\n                height: 71.50px;\r\n                width: 14px;\r\n                position: relative;\r\n                top: unset;\r\n                left: unset;\r\n                align-self: center;\r\n\r\n                img {\r\n                    width: 14px;\r\n                    height: 7px;\r\n                    left: 0px;\r\n                    top: 0px;\r\n                    position: absolute;\r\n                    transform: rotate(0deg);\r\n                    transform-origin: 0 0;\r\n                }\r\n\r\n                :last-child {\r\n                    top: 64.5px;\r\n                    left: unset;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-up(lg) {\r\n    app-testimonials {\r\n        flex-direction: row;\r\n        flex-wrap: nowrap;\r\n        justify-content: space-between;\r\n\r\n        .testimonials__title {\r\n            align-items: flex-start;\r\n\r\n            .section__title {\r\n                align-items: flex-start;\r\n\r\n                .section__title-heading,\r\n                .section__title-subheading {\r\n                    text-align: start;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+                    "data": "@import 'src/styles/setting/mixins';\r\n\r\napp-testimonials {\r\n    width: 100%;\r\n    flex-direction: column;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 80px;\r\n    display: inline-flex;\r\n\r\n    .testimonials__title {\r\n        flex-direction: column;\r\n        justify-content: flex-start;\r\n        align-items: center;\r\n        gap: 48px;\r\n        display: flex;\r\n\r\n        .testimonials__dots {\r\n            width: 50px;\r\n            height: 12px;\r\n            position: relative;\r\n\r\n            .testimonials__dot {\r\n                width: 12px;\r\n                height: 12px;\r\n                top: 0px;\r\n                position: absolute;\r\n                border-radius: 50%;\r\n\r\n                &--primary {\r\n                    left: 0px;\r\n                }\r\n\r\n                &--secondary {\r\n                    left: 38px;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .testimonials__card-container {\r\n        width: 292px;\r\n        height: 499px;\r\n        position: relative;\r\n        padding-top: 64px;\r\n    \r\n        app-testimonial-card {\r\n            >div {\r\n                z-index: 1;\r\n            }\r\n            \r\n            &[type='secondary'] {\r\n                z-index: 0;\r\n                position: absolute;\r\n                right: 0;\r\n                top: 159px;\r\n            }\r\n        }\r\n\r\n        .testimonials__card-navigation {\r\n            height: 14px;\r\n            left: 110px;\r\n            top: 485px;\r\n            position: absolute;\r\n\r\n            img {\r\n                cursor: pointer;\r\n                width: 14px;\r\n                height: 7px;\r\n                left: 0px;\r\n                top: 14px;\r\n                position: absolute;\r\n                transform: rotate(-90deg);\r\n                transform-origin: 0 0;\r\n            }\r\n\r\n            :last-child {\r\n                left: 64.5px;\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-up(md) {\r\n    app-testimonials {\r\n        .testimonials__card-container {\r\n            display: inline-flex;\r\n            flex-direction: row;\r\n            justify-content: space-between;\r\n            width: 632px;\r\n            height: 321px;\r\n            padding-top: 0;\r\n\r\n            app-testimonial-card {\r\n                &[type='secondary'] {\r\n                    left: 49px;\r\n                    bottom: 0;\r\n                    top: unset;\r\n                    right: unset;\r\n                }\r\n            }\r\n\r\n            .testimonials__card-navigation {\r\n                height: 71.50px;\r\n                width: 14px;\r\n                position: relative;\r\n                top: unset;\r\n                left: unset;\r\n                align-self: center;\r\n\r\n                img {\r\n                    width: 14px;\r\n                    height: 7px;\r\n                    left: 0px;\r\n                    top: 0px;\r\n                    position: absolute;\r\n                    transform: rotate(0deg);\r\n                    transform-origin: 0 0;\r\n                }\r\n\r\n                :last-child {\r\n                    top: 64.5px;\r\n                    left: unset;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-up(lg) {\r\n    app-testimonials {\r\n        flex-direction: row;\r\n        flex-wrap: nowrap;\r\n        justify-content: space-between;\r\n\r\n        .testimonials__title {\r\n            align-items: flex-start;\r\n\r\n            .section__title {\r\n                align-items: flex-start;\r\n\r\n                .section__title-heading,\r\n                .section__title-subheading {\r\n                    text-align: start;\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./testimonials.component.scss"
                 }
             ],
@@ -1727,13 +1727,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-223e74d5f7f1c28bd3f1cd297d702969e9500c9558058ed44e5d72749fc376c59868621230ded955f37b955640252c9532bf92ef70ee467718def105425c7708",
+            "id": "module-AppModule-c3733441deefd8ef86aefa1effd8af96d2ef9fcf0111bc0cc1a1e27994c5458d3d44dd2498b5cd6d493e073edf2158c4764d778ce49b7b9d3be6e7b7229fa681",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { CommonModule } from '@angular/common';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatSlideToggleModule } from '@angular/material/slide-toggle';\nimport { ThemeComponent } from './components/theme/theme.component';\nimport { HeaderComponent } from './components/header/header.component';\nimport { BannerComponent } from './components/banner/banner.component';\nimport { TestimonialsComponent } from './components/testimonials/testimonials.component';\nimport { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';\nimport { DestinationsComponent } from './components/destinations/destinations.component';\nimport { DestinationCardComponent } from './components/destination-card/destination-card.component';\nimport { FlightsComponent } from './components/flights/flights.component';\nimport { FlightsFormComponent } from './components/flights-form/flights-form.component';\nimport { FooterComponent } from './components/footer/footer.component';\nimport { ButtonComponent } from './components/button/button.component';\nimport { LogoComponent } from './components/logo/logo.component';\nimport { NgSelectModule } from '@ng-select/ng-select';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    ThemeComponent,\n    HeaderComponent,\n    BannerComponent,\n    TestimonialsComponent,\n    TestimonialCardComponent,\n    DestinationsComponent,\n    DestinationCardComponent,\n    FlightsComponent,\n    FlightsFormComponent,\n    FooterComponent,\n    ButtonComponent,\n    LogoComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    CommonModule,\n    MatButtonModule,\n    MatIconModule,\n    MatMenuModule,\n    MatRadioModule,\n    MatFormFieldModule,\n    MatInputModule,\n    MatDatepickerModule,\n    MatNativeDateModule,\n    MatSelectModule,\n    MatSlideToggleModule,\n    NgSelectModule,\n    FormsModule,\n    ReactiveFormsModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { CommonModule } from '@angular/common';\nimport { ComponentsModule } from './components/components.module';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [\n    ComponentsModule,\n    BrowserModule,\n    AppRoutingModule,\n    BrowserAnimationsModule,\n    CommonModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1744,42 +1744,6 @@
                     "elements": [
                         {
                             "name": "AppComponent"
-                        },
-                        {
-                            "name": "BannerComponent"
-                        },
-                        {
-                            "name": "ButtonComponent"
-                        },
-                        {
-                            "name": "DestinationCardComponent"
-                        },
-                        {
-                            "name": "DestinationsComponent"
-                        },
-                        {
-                            "name": "FlightsComponent"
-                        },
-                        {
-                            "name": "FlightsFormComponent"
-                        },
-                        {
-                            "name": "FooterComponent"
-                        },
-                        {
-                            "name": "HeaderComponent"
-                        },
-                        {
-                            "name": "LogoComponent"
-                        },
-                        {
-                            "name": "TestimonialCardComponent"
-                        },
-                        {
-                            "name": "TestimonialsComponent"
-                        },
-                        {
-                            "name": "ThemeComponent"
                         }
                     ]
                 },
@@ -1844,6 +1808,525 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "BannerModule",
+            "id": "module-BannerModule-e66d49bd6e67ec63e45788037c9150268d19b20f1731e3fa3c0255cdab479c647caa83d0590b015eb6a80045faed7e266687b88567d296c403a7f5aa367955a0",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/banner/banner.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { BannerComponent } from './banner.component';\nimport { ButtonModule } from '../button/button.module';\n\n@NgModule({\n  declarations: [BannerComponent],\n  imports: [CommonModule, ButtonModule],\n  exports: [BannerComponent],\n})\nexport class BannerModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BannerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BannerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ButtonModule",
+            "id": "module-ButtonModule-09baf7c1f36db99d346bca37b7c56f05e73977143b3c2735e86fac237c9bb4e9aac5b5926674fc49d314eff763f71e32152e4a6f66d4124ee512f68d70a71729",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/button/button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [CommonModule],\n  exports: [ButtonComponent],\n})\nexport class ButtonModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ComponentsModule",
+            "id": "module-ComponentsModule-37f328cfac6e62028bf80a800aa6a8228e66672a923c8ac7ff6618ea5d4d8b9b9df2d8e15360e65e12fa691e78e3bcd93d2d9f50cde0cb088364e2cdb21ff2b4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/components.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from './button/button.module';\nimport { HeaderModule } from './header/header.module';\nimport { BannerModule } from './banner/banner.module';\nimport { ThemeModule } from './theme/theme.module';\nimport { LogoModule } from './logo/logo.module';\nimport { FooterModule } from './footer/footer.module';\nimport { FlightsModule } from './flights/flights.module';\nimport { DestinationsModule } from './destinations/destinations.module';\nimport { TestimonialsModule } from './testimonials/testimonials.module';\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    ButtonModule,\n    HeaderModule,\n    BannerModule,\n    ThemeModule,\n    LogoModule,\n    FooterModule,\n    FlightsModule,\n    DestinationsModule,\n    TestimonialsModule,\n  ],\n  exports: [\n    ButtonModule,\n    HeaderModule,\n    BannerModule,\n    ThemeModule,\n    LogoModule,\n    FooterModule,\n    FlightsModule,\n    DestinationsModule,\n    TestimonialsModule,\n  ],\n})\nexport class ComponentsModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "BannerModule"
+                        },
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "DestinationsModule"
+                        },
+                        {
+                            "name": "FlightsModule"
+                        },
+                        {
+                            "name": "FooterModule"
+                        },
+                        {
+                            "name": "HeaderModule"
+                        },
+                        {
+                            "name": "LogoModule"
+                        },
+                        {
+                            "name": "TestimonialsModule"
+                        },
+                        {
+                            "name": "ThemeModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BannerModule"
+                        },
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "DestinationsModule"
+                        },
+                        {
+                            "name": "FlightsModule"
+                        },
+                        {
+                            "name": "FooterModule"
+                        },
+                        {
+                            "name": "HeaderModule"
+                        },
+                        {
+                            "name": "LogoModule"
+                        },
+                        {
+                            "name": "TestimonialsModule"
+                        },
+                        {
+                            "name": "ThemeModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DestinationsModule",
+            "id": "module-DestinationsModule-88b137850e681affd74e1c0c7cb7398ce6f659c8f40b1d8c0f0fa200212d3058175f417c99685e453b9ec26fb9d71f306b5a8eb6b2d53edb7ce512a163f1a5e0",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/destinations/destinations.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DestinationsComponent } from './destinations.component';\nimport { DestinationCardComponent } from './destination-card/destination-card.component';\nimport { MatIconModule } from '@angular/material/icon';\n\n@NgModule({\n  declarations: [DestinationsComponent, DestinationCardComponent],\n  imports: [CommonModule, MatIconModule],\n  exports: [DestinationsComponent],\n})\nexport class DestinationsModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DestinationCardComponent"
+                        },
+                        {
+                            "name": "DestinationsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "DestinationsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FlightsModule",
+            "id": "module-FlightsModule-d9a8e4e022d9629010693d977076e4233e3a18fcbe9f48c2cb104ac35ba7dd162f71996e0e7916de1c3750ccff458ad1785593fce556aff5687ee8b0f682ac62",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/flights/flights.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FlightsComponent } from './flights.component';\nimport { FlightsFormComponent } from './flights-form/flights-form.component';\nimport { ButtonModule } from '../button/button.module';\nimport { NgSelectModule } from '@ng-select/ng-select';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatRadioModule } from '@angular/material/radio';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\n\n@NgModule({\n  declarations: [FlightsComponent, FlightsFormComponent],\n  imports: [\n    CommonModule,\n    ReactiveFormsModule,\n    ButtonModule,\n    NgSelectModule,\n    MatIconModule,\n    MatRadioModule,\n    MatFormFieldModule,\n    MatDatepickerModule,\n  ],\n  exports: [FlightsComponent],\n})\nexport class FlightsModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FlightsComponent"
+                        },
+                        {
+                            "name": "FlightsFormComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FlightsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FooterModule",
+            "id": "module-FooterModule-c4c80976754c9bb88a84a2f337f218a540e337af9e0138664ab6404ce000e12a82d9e98b6bdca9a9ab36d7e505f611f1b4ef97e35037a9427624c5acb743d1f6",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/footer/footer.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FooterComponent } from './footer.component';\nimport { LogoModule } from '../logo/logo.module';\n\n@NgModule({\n  declarations: [FooterComponent],\n  imports: [CommonModule, LogoModule],\n  exports: [FooterComponent],\n})\nexport class FooterModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "LogoModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HeaderModule",
+            "id": "module-HeaderModule-46b313c53ef72f16a6ceac2af7588385bada8e3d9c6e3747b148aec68ffd6207b40b2cf52ef8c207515609c4d08c3384af30217399d5aa42b826ad38d2dd7367",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/header/header.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HeaderComponent } from './header.component';\nimport { ButtonModule } from '../button/button.module';\nimport { MatIconModule } from '@angular/material/icon';\nimport { ThemeModule } from '../theme/theme.module';\nimport { LogoModule } from '../logo/logo.module';\n\n@NgModule({\n  declarations: [HeaderComponent],\n  imports: [CommonModule, ButtonModule, MatIconModule, ThemeModule, LogoModule],\n  exports: [HeaderComponent],\n})\nexport class HeaderModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "LogoModule"
+                        },
+                        {
+                            "name": "ThemeModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LogoModule",
+            "id": "module-LogoModule-818b70f0702c9ad1cc6a68252450308d5170d5bb1ad9e6ff1ac7d1fc7cccf91f978ad215182a59c6414757b74a9ac4a5049b0fa40893f08c01ea35ad837f7185",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/logo/logo.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { LogoComponent } from './logo.component';\n\n@NgModule({\n  declarations: [LogoComponent],\n  imports: [CommonModule],\n  exports: [LogoComponent],\n})\nexport class LogoModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "LogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TestimonialsModule",
+            "id": "module-TestimonialsModule-b144dc160e3fc9f57be0c40ce8d22a8270a47204821b58dd4cb7510729366b88f833a1fb1e89f37b070f1c55eab1599461d5babc6aedb6d1a4be4d1c549f3676",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/testimonials/testimonials.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { TestimonialsComponent } from './testimonials.component';\nimport { TestimonialCardComponent } from './testimonial-card/testimonial-card.component';\nimport { MatIconModule } from '@angular/material/icon';\n\n@NgModule({\n  declarations: [TestimonialsComponent, TestimonialCardComponent],\n  imports: [CommonModule, MatIconModule],\n  exports: [TestimonialsComponent],\n})\nexport class TestimonialsModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TestimonialCardComponent"
+                        },
+                        {
+                            "name": "TestimonialsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TestimonialsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ThemeModule",
+            "id": "module-ThemeModule-9b89fe7b816bfe7f09f7d9c9d7ed13b62c62153b95696138d3cdff2c60848f6e41ba18fcb58316f1f0855a55f1ab57ff2fac85dfe01797fd59f12136bafd2388",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/theme/theme.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ThemeComponent } from './theme.component';\nimport { MatIconModule } from '@angular/material/icon';\n\n@NgModule({\n  declarations: [ThemeComponent],\n  imports: [CommonModule, MatIconModule],\n  exports: [ThemeComponent],\n})\nexport class ThemeModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ThemeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ThemeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -1876,13 +2359,23 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
-                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
+                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  addons: [\n    '@storybook/addon-links',\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n  ],\n  staticDirs: ['../'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
             },
             {
                 "name": "CustomButtonSize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "CustomLogoSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/header/header.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1902,7 +2395,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/banner/banner.component.stories.ts",
+                "file": "src/app/components/destinations/destination-card/destination-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/flights/flights-form/flights-form.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1926,7 +2429,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({\n  size: ComponentSize.SMALL,\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "getStyles",
@@ -1942,7 +2445,7 @@
                 "name": "getStyles",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1959,6 +2462,16 @@
                 "defaultValue": "'Click me'"
             },
             {
+                "name": "LargeBreakpoint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/header/header.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "LOCAL_STORAGE_KEY",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1969,6 +2482,26 @@
                 "defaultValue": "'angular-material.dev'"
             },
             {
+                "name": "MediumSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "MenuOpen",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/header/header.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1976,7 +2509,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta",
-                "defaultValue": "{\n  title: 'Button Component',\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ButtonComponent],\n    }),\n  ],\n}"
+                "defaultValue": "{\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ButtonComponent],\n    }),\n  ],\n}"
             },
             {
                 "name": "preview",
@@ -1999,16 +2532,6 @@
                 "defaultValue": "{\n  parameters: {},\n}"
             },
             {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/flights-form/flights-form.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "PrimaryBig",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2019,6 +2542,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "PrimaryBig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "PrimarySmall",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2032,7 +2565,7 @@
                 "name": "PrimarySmall",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2043,6 +2576,36 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SecondaryBig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SecondarySmall",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SmallBreakpoint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/header/header.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2082,11 +2645,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "file": "src/app/components/header/header.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "StoryFn<FlightsFormComponent>",
-                "defaultValue": "(\n  args: FlightsFormComponent\n) => ({\n  props: args,\n})"
+                "type": "StoryFn<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2102,7 +2665,27 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "file": "src/app/components/destinations/destination-card/destination-card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<DestinationCardComponent>",
+                "defaultValue": "(\n  args: DestinationCardComponent\n) => ({\n  component: DestinationCardComponent,\n  props: args,\n  decorators: [\n    moduleMetadata({\n      declarations: [DestinationCardComponent],\n      imports: [MatIconModule],\n    }),\n  ],\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/flights/flights-form/flights-form.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<FlightsFormComponent>",
+                "defaultValue": "(\n  args: FlightsFormComponent\n) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn<TestimonialCardComponent>",
@@ -2117,6 +2700,16 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  isDark$: of(false),\n}"
+            },
+            {
+                "name": "WhiteBig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/logo/logo.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [
@@ -2356,7 +2949,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "Default",
+                    "name": "MediumSize",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/components/banner/banner.component.stories.ts",
@@ -2417,7 +3010,103 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
-                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
+                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  addons: [\n    '@storybook/addon-links',\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n  ],\n  staticDirs: ['../'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
+                }
+            ],
+            "src/app/components/header/header.component.stories.ts": [
+                {
+                    "name": "CustomLogoSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/header/header.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LargeBreakpoint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/header/header.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "MenuOpen",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/header/header.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SmallBreakpoint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/header/header.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/header/header.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/components/destinations/destination-card/destination-card.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/destinations/destination-card/destination-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/destinations/destination-card/destination-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<DestinationCardComponent>",
+                    "defaultValue": "(\n  args: DestinationCardComponent\n) => ({\n  component: DestinationCardComponent,\n  props: args,\n  decorators: [\n    moduleMetadata({\n      declarations: [DestinationCardComponent],\n      imports: [MatIconModule],\n    }),\n  ],\n})"
+                }
+            ],
+            "src/app/components/flights/flights-form/flights-form.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/flights/flights-form/flights-form.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/flights/flights-form/flights-form.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<FlightsFormComponent>",
+                    "defaultValue": "(\n  args: FlightsFormComponent\n) => ({\n  props: args,\n})"
                 }
             ],
             "src/app/components/logo/logo.component.stories.ts": [
@@ -2439,7 +3128,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({\n  size: ComponentSize.SMALL,\n})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "Template",
@@ -2450,6 +3139,16 @@
                     "deprecationMessage": "",
                     "type": "StoryFn<LogoComponent>",
                     "defaultValue": "(args: LogoComponent) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "WhiteBig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/logo/logo.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/app/components/button/button.component.ts": [
@@ -2464,12 +3163,12 @@
                     "defaultValue": "(...args: string[]) => ['button', ...args].filter(Boolean)"
                 }
             ],
-            "src/app/components/testimonial-card/testimonial-card.component.ts": [
+            "src/app/components/testimonials/testimonial-card/testimonial-card.component.ts": [
                 {
                     "name": "getStyles",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                    "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2495,7 +3194,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta",
-                    "defaultValue": "{\n  title: 'Button Component',\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ButtonComponent],\n    }),\n  ],\n}"
+                    "defaultValue": "{\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ButtonComponent],\n    }),\n  ],\n}"
                 },
                 {
                     "name": "PrimaryBig",
@@ -2574,34 +3273,42 @@
                     "defaultValue": "{\n  parameters: {},\n}"
                 }
             ],
-            "src/app/components/flights-form/flights-form.component.stories.ts": [
+            "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts": [
                 {
-                    "name": "Primary",
+                    "name": "PrimaryBig",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                    "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/flights-form/flights-form.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn<FlightsFormComponent>",
-                    "defaultValue": "(\n  args: FlightsFormComponent\n) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/app/components/testimonial-card/testimonial-card.component.stories.ts": [
                 {
                     "name": "PrimarySmall",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                    "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SecondaryBig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SecondarySmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2611,7 +3318,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                    "file": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn<TestimonialCardComponent>",
@@ -2902,7 +3609,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "MediumSize",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3026,7 +3733,27 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/destination-card/destination-card.component.ts",
+                "filePath": "src/app/components/destinations/destination-card/destination-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/destinations/destination-card/destination-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/destinations/destination-card/destination-card.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DestinationCardComponent",
@@ -3044,17 +3771,17 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "filePath": "src/app/components/flights/flights-form/flights-form.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "filePath": "src/app/components/flights/flights-form/flights-form.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3064,7 +3791,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/flights-form/flights-form.component.ts",
+                "filePath": "src/app/components/flights/flights-form/flights-form.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FlightsFormComponent",
@@ -3088,6 +3815,56 @@
                 "name": "FooterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomLogoSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargeBreakpoint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MenuOpen",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallBreakpoint",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3130,6 +3907,16 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/logo/logo.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WhiteBig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/logo/logo.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3139,7 +3926,17 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryBig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3149,7 +3946,27 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/testimonial-card/testimonial-card.component.stories.ts",
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecondaryBig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecondarySmall",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -3159,7 +3976,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TestimonialCardComponent",
@@ -3168,7 +3985,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/testimonial-card/testimonial-card.component.ts",
+                "filePath": "src/app/components/testimonials/testimonial-card/testimonial-card.component.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
