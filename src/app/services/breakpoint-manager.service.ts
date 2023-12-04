@@ -1,5 +1,6 @@
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
+import { BreakpointSize } from '@models';
 import { distinctUntilChanged } from 'rxjs';
 
 @Injectable({
@@ -15,7 +16,7 @@ export class BreakpointManagerService {
     .pipe(distinctUntilChanged());
 
   breakpoints = Breakpoints;
-  currentBreakpoint = '';
+  currentBreakpoint!: BreakpointSize;
 
   constructor(public breakpointObserver: BreakpointObserver) {
     this.breakpoint$.subscribe(() => this.breakpointChanged());
@@ -23,15 +24,15 @@ export class BreakpointManagerService {
 
   private breakpointChanged() {
     if (this.breakpointObserver.isMatched('(max-width: 833.8px)')) {
-      this.currentBreakpoint = 'Small';
+      this.currentBreakpoint = BreakpointSize.SMALL;
     } else if (
       this.breakpointObserver.isMatched(
         '(min-width: 834px) and (max-width: 1023.8px)'
       )
     ) {
-      this.currentBreakpoint = 'Medium';
+      this.currentBreakpoint = BreakpointSize.MEDIUM;
     } else if (this.breakpointObserver.isMatched('(min-width: 1024px)')) {
-      this.currentBreakpoint = 'Large';
+      this.currentBreakpoint = BreakpointSize.LARGE;
     }
   }
 }

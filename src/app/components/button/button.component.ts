@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ComponentSize, ComponentTypes } from '@models';
 
 const getStyles = (...args: string[]) => ['button', ...args].filter(Boolean);
 
@@ -12,10 +13,11 @@ export class ButtonComponent {
   label = '';
 
   @Input()
-  type: 'primary' | 'secondary' = 'primary';
+  type: ComponentTypes.PRIMARY | ComponentTypes.SECONDARY =
+    ComponentTypes.PRIMARY;
 
   @Input()
-  size: 'big' | 'small' = 'big';
+  size: ComponentSize = ComponentSize.BIG;
 
   public get classes(): string[] {
     return getStyles(this.type, this.size);

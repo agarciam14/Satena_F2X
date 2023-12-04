@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
+import { BreakpointSize, ComponentSize } from '@models';
+import { BreakpointManagerService } from '@services//breakpoint-manager.service';
 
 @Component({
   selector: 'app-flights-form',
@@ -38,11 +39,11 @@ export class FlightsFormComponent implements OnInit {
     });
   }
 
-  public get buttonSize() {
-    if (this.breakpointManager.currentBreakpoint === 'Small') {
-      return 'small';
+  public get buttonSize(): ComponentSize {
+    if (this.breakpointManager.currentBreakpoint === BreakpointSize.SMALL) {
+      return ComponentSize.SMALL;
     } else {
-      return 'big';
+      return ComponentSize.BIG;
     }
   }
 

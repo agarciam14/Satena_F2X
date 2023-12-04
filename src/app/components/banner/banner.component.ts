@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Observable, map, take } from 'rxjs';
-import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
-import { ThemeManager } from 'src/app/theme-manager.service';
+import { BreakpointManagerService } from '@services//breakpoint-manager.service';
+import { ThemeManager } from '@services//theme-manager.service';
+import { BreakpointSize, ComponentSize } from '@models';
 
 @Component({
   selector: 'app-banner',
@@ -13,11 +14,11 @@ export class BannerComponent {
   themeManager = inject(ThemeManager);
   isDark$ = this.themeManager.isDark$;
 
-  public get buttonSize() {
-    if (this.breakpointManager.currentBreakpoint === 'Small') {
-      return 'small';
+  public get buttonSize(): ComponentSize {
+    if (this.breakpointManager.currentBreakpoint === BreakpointSize.SMALL) {
+      return ComponentSize.SMALL;
     } else {
-      return 'big';
+      return ComponentSize.BIG;
     }
   }
 

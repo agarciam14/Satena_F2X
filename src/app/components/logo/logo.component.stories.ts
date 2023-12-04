@@ -1,5 +1,6 @@
 import { StoryFn, Meta } from '@storybook/angular';
 import { LogoComponent } from './logo.component';
+import { ComponentSize } from '@models';
 
 export default {
   title: 'Components/Logo',
@@ -14,9 +15,5 @@ const Template: StoryFn<LogoComponent> = (args: LogoComponent) => ({
 export const FullColorBig = Template.bind({});
 
 export const FullColorSmall = Template.bind({
-  size: 'small',
-});
-
-export const White = Template.bind({
-  type: 'white',
+  size: ComponentSize.SMALL,
 });

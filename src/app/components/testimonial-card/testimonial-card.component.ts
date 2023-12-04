@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Testimonial } from '../../../models';
+import { ComponentSize, ComponentTypes, Testimonial } from '@models';
 
 const getStyles = (...args: string[]) =>
   ['testimonial-card', ...args].filter(Boolean);
@@ -11,10 +11,11 @@ const getStyles = (...args: string[]) =>
 })
 export class TestimonialCardComponent {
   @Input()
-  type: 'primary' | 'secondary' = 'primary';
+  type: ComponentTypes.PRIMARY | ComponentTypes.SECONDARY =
+    ComponentTypes.PRIMARY;
 
   @Input()
-  size: 'big' | 'small' = 'small';
+  size: ComponentSize = ComponentSize.SMALL;
 
   @Input({ required: true })
   testimonial!: Testimonial;

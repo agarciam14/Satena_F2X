@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Destination } from 'src/models';
+import { Destination } from '@models';
 
 @Component({
   selector: 'app-destination-card',

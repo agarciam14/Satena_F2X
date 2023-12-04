@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ThemeManager } from 'src/app/theme-manager.service';
+import { ThemeManager } from '@services//theme-manager.service';
 
 @Component({
   selector: 'app-theme',

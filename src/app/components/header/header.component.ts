@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
+import { BreakpointSize, ComponentSize, ComponentTypes } from '@models';
+import { BreakpointManagerService } from '@services//breakpoint-manager.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,14 @@ import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
 })
 export class HeaderComponent {
   breakpointManager = inject(BreakpointManagerService);
+  componentTypes = ComponentTypes;
   isMenuOpen = false;
 
-  public get logoSize() {
-    if (this.breakpointManager.currentBreakpoint === 'Large') {
-      return 'big';
+  public get logoSize(): ComponentSize {
+    if (this.breakpointManager.currentBreakpoint === BreakpointSize.LARGE) {
+      return ComponentSize.BIG;
     } else {
-      return 'small';
+      return ComponentSize.SMALL;
     }
   }
 

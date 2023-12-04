@@ -1,12 +1,16 @@
 <img
   src="assets/images/logo_full-color.png"
   alt="Satena Logo"
-  *ngIf="(type$ | async) === 'full-color' && size === 'big'" />
+  *ngIf="
+    (type$ | async) === componentTypes.FULL_COLOR && size === componentSize.BIG
+  " />
 <img
   src="assets/images/logo_white.png"
   alt="Satena Logo"
-  *ngIf="(type$ | async) === 'white' && size === 'big'" />
+  *ngIf="
+    (type$ | async) === componentTypes.WHITE && size === componentSize.BIG
+  " />
 <img
   src="assets/images/logo_small.png"
   alt="Satena Logo"
-  *ngIf="size === 'small'" />
+  *ngIf="size === componentSize.SMALL" />

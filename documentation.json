@@ -125,8 +125,8 @@
     "injectables": [
         {
             "name": "BreakpointManagerService",
-            "id": "injectable-BreakpointManagerService-c7f017fb647cb08e0cf127a1a00d1609ef123f2eaa0673dd68120a28e920f7ffdad054ddc87ac149f72e0a3a2fd244649d38469a91ef31b527e33b0554d7d861",
-            "file": "src/app/breakpoint-manager.service.ts",
+            "id": "injectable-BreakpointManagerService-e5b627499c51d794aa6dadc696a878c85a5745509e2d60c8adfdb8c3ea2a8129179372dd0ad320630f05c231ab3004940d6dd710fdd94df058f507fb638a39c3",
+            "file": "src/app/services/breakpoint-manager.service.ts",
             "properties": [
                 {
                     "name": "breakpoint$",
@@ -136,7 +136,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 9,
+                    "line": 10,
                     "modifierKind": [
                         148
                     ]
@@ -148,7 +148,7 @@
                     "type": "BreakpointObserver",
                     "optional": false,
                     "description": "",
-                    "line": 20,
+                    "line": 21,
                     "modifierKind": [
                         125
                     ]
@@ -161,17 +161,16 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 18
                 },
                 {
                     "name": "currentBreakpoint",
-                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
+                    "type": "BreakpointSize",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 19
                 }
             ],
             "methods": [
@@ -181,7 +180,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -193,7 +192,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';\nimport { Injectable } from '@angular/core';\nimport { distinctUntilChanged } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class BreakpointManagerService {\n  readonly breakpoint$ = this.breakpointObserver\n    .observe([\n      '(max-width: 833.8px)',\n      '(min-width: 834px) and (max-width: 1023.8px)',\n      '(min-width: 1024px)',\n    ])\n    .pipe(distinctUntilChanged());\n\n  breakpoints = Breakpoints;\n  currentBreakpoint = '';\n\n  constructor(public breakpointObserver: BreakpointObserver) {\n    this.breakpoint$.subscribe(() => this.breakpointChanged());\n  }\n\n  private breakpointChanged() {\n    if (this.breakpointObserver.isMatched('(max-width: 833.8px)')) {\n      this.currentBreakpoint = 'Small';\n    } else if (\n      this.breakpointObserver.isMatched(\n        '(min-width: 834px) and (max-width: 1023.8px)'\n      )\n    ) {\n      this.currentBreakpoint = 'Medium';\n    } else if (this.breakpointObserver.isMatched('(min-width: 1024px)')) {\n      this.currentBreakpoint = 'Large';\n    }\n  }\n}\n",
+            "sourceCode": "import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';\nimport { Injectable } from '@angular/core';\nimport { BreakpointSize } from '@models';\nimport { distinctUntilChanged } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class BreakpointManagerService {\n  readonly breakpoint$ = this.breakpointObserver\n    .observe([\n      '(max-width: 833.8px)',\n      '(min-width: 834px) and (max-width: 1023.8px)',\n      '(min-width: 1024px)',\n    ])\n    .pipe(distinctUntilChanged());\n\n  breakpoints = Breakpoints;\n  currentBreakpoint!: BreakpointSize;\n\n  constructor(public breakpointObserver: BreakpointObserver) {\n    this.breakpoint$.subscribe(() => this.breakpointChanged());\n  }\n\n  private breakpointChanged() {\n    if (this.breakpointObserver.isMatched('(max-width: 833.8px)')) {\n      this.currentBreakpoint = BreakpointSize.SMALL;\n    } else if (\n      this.breakpointObserver.isMatched(\n        '(min-width: 834px) and (max-width: 1023.8px)'\n      )\n    ) {\n      this.currentBreakpoint = BreakpointSize.MEDIUM;\n    } else if (this.breakpointObserver.isMatched('(min-width: 1024px)')) {\n      this.currentBreakpoint = BreakpointSize.LARGE;\n    }\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -207,7 +206,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 18,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "breakpointObserver",
@@ -226,7 +225,7 @@
         {
             "name": "BrowserStorageService",
             "id": "injectable-BrowserStorageService-825b79e1ce1b63e9063fa52d95d067b593be965c34b5916d38d6807016e067798d885d5059a34d61979dccce3bc04886376b30a4bcbee8dec9865442fc201ae9",
-            "file": "src/app/browser-storage.service.ts",
+            "file": "src/app/services/browser-storage.service.ts",
             "properties": [
                 {
                     "name": "storage",
@@ -396,7 +395,7 @@
         {
             "name": "ThemeManager",
             "id": "injectable-ThemeManager-350a1b4c416f37f5b8a804f94f09ae9c09a75aa0b2a29c19fbcfb4353381424a803240531db7ae19f98ab2a7422736d53a92f97d02f7996efeee81d98278d5c9",
-            "file": "src/app/theme-manager.service.ts",
+            "file": "src/app/services/theme-manager.service.ts",
             "properties": [
                 {
                     "name": "_isDarkSub",
@@ -648,7 +647,7 @@
         },
         {
             "name": "BannerComponent",
-            "id": "component-BannerComponent-5ee026c8993b0327403376caf7ae53f49d9f6888cdb3db863cbc1341db9662624c92157f9778a222c247f735cac68fd4ec02d531ae369e34e4c8c8a652954f82",
+            "id": "component-BannerComponent-0dc96d768fb1a057fddfed22c64546bbd5ca822448c9f2c2192e9854763bcf718d0dc3424c1cab0dac2d2f42117da8390f6c1a880cbe5eeb934d53a8040798ff",
             "file": "src/app/components/banner/banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -676,7 +675,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "isDark$",
@@ -686,7 +685,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 },
                 {
                     "name": "themeManager",
@@ -696,7 +695,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 14
                 }
             ],
             "methodsClass": [],
@@ -709,7 +708,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { Observable, map, take } from 'rxjs';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\nimport { ThemeManager } from 'src/app/theme-manager.service';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n})\nexport class BannerComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  public get buttonSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n\n  public get decoreUrl$(): Observable<string> {\n    let url = 'assets/images/decore';\n    return this.themeManager.isDark$.pipe(\n      take(1),\n      map(isDark => {\n        url += isDark ? '_dark.svg' : '_light.svg';\n        return url;\n      })\n    );\n  }\n}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { Observable, map, take } from 'rxjs';\nimport { BreakpointManagerService } from '@services//breakpoint-manager.service';\nimport { ThemeManager } from '@services//theme-manager.service';\nimport { BreakpointSize, ComponentSize } from '@models';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n})\nexport class BannerComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  public get buttonSize(): ComponentSize {\n    if (this.breakpointManager.currentBreakpoint === BreakpointSize.SMALL) {\n      return ComponentSize.SMALL;\n    } else {\n      return ComponentSize.BIG;\n    }\n  }\n\n  public get decoreUrl$(): Observable<string> {\n    let url = 'assets/images/decore';\n    return this.themeManager.isDark$.pipe(\n      take(1),\n      map(isDark => {\n        url += isDark ? '_dark.svg' : '_light.svg';\n        return url;\n      })\n    );\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -725,8 +724,8 @@
                     "getSignature": {
                         "name": "buttonSize",
                         "type": "",
-                        "returnType": "",
-                        "line": 16
+                        "returnType": "ComponentSize",
+                        "line": 17
                     }
                 },
                 "decoreUrl$": {
@@ -735,7 +734,7 @@
                         "name": "decoreUrl$",
                         "type": "",
                         "returnType": "Observable<string>",
-                        "line": 24
+                        "line": 25
                     }
                 }
             },
@@ -743,7 +742,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-572e1d85b3b24371d98a915fac36973c5fe4eaca1e52bd971209f17909c4e922f328bf67219673935f8ecc8d2fa90c3fd7182cd4e622e1395d6adbb5f0e01a75",
+            "id": "component-ButtonComponent-5b3cbf1366eb8ecbd27de142cf64226cbd6111c2995bfd0b699f55a2415d444a9f06ca235da820aedc0c88e0ca76e51779743e29746aecacb1e555de3eeb268c",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -766,26 +765,26 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'big'",
+                    "defaultValue": "ComponentSize.BIG",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
-                    "type": "\"big\" | \"small\"",
+                    "line": 20,
+                    "type": "ComponentSize",
                     "decorators": []
                 },
                 {
                     "name": "type",
-                    "defaultValue": "'primary'",
+                    "defaultValue": "ComponentTypes.PRIMARY",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
-                    "type": "\"primary\" | \"secondary\"",
+                    "line": 16,
+                    "type": "ComponentTypes.PRIMARY | ComponentTypes.SECONDARY",
                     "decorators": []
                 }
             ],
@@ -801,7 +800,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nconst getStyles = (...args: string[]) => ['button', ...args].filter(Boolean);\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent {\n  @Input()\n  label = '';\n\n  @Input()\n  type: 'primary' | 'secondary' = 'primary';\n\n  @Input()\n  size: 'big' | 'small' = 'big';\n\n  public get classes(): string[] {\n    return getStyles(this.type, this.size);\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { ComponentSize, ComponentTypes } from '@models';\n\nconst getStyles = (...args: string[]) => ['button', ...args].filter(Boolean);\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent {\n  @Input()\n  label = '';\n\n  @Input()\n  type: ComponentTypes.PRIMARY | ComponentTypes.SECONDARY =\n    ComponentTypes.PRIMARY;\n\n  @Input()\n  size: ComponentSize = ComponentSize.BIG;\n\n  public get classes(): string[] {\n    return getStyles(this.type, this.size);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -818,7 +817,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 20
+                        "line": 22
                     }
                 }
             },
@@ -826,7 +825,7 @@
         },
         {
             "name": "DestinationCardComponent",
-            "id": "component-DestinationCardComponent-50ddd7766a8f0e93525be99c4b829d3a0094e5c2c1f6ce8410fce8e5cf73e19ac8c8250f0503076840359db9f36b9e0c75c6f1bfcee07c5cd4a18ee421b6e3d4",
+            "id": "component-DestinationCardComponent-e6803ea5a0cd759964518391cf4df0b5252770925649bcc1adf8eb225af839b218edb10048475ab9fb7a3de40abc654c8bdbbcea563280b867eef9079f020e3d",
             "file": "src/app/components/destination-card/destination-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -867,7 +866,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Destination } from 'src/models';\n\n@Component({\n  selector: 'app-destination-card',\n  templateUrl: './destination-card.component.html',\n  styleUrls: ['./destination-card.component.scss'],\n})\nexport class DestinationCardComponent {\n  @Input({ required: true }) destination!: Destination;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Destination } from '@models';\n\n@Component({\n  selector: 'app-destination-card',\n  templateUrl: './destination-card.component.html',\n  styleUrls: ['./destination-card.component.scss'],\n})\nexport class DestinationCardComponent {\n  @Input({ required: true }) destination!: Destination;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -881,7 +880,7 @@
         },
         {
             "name": "DestinationsComponent",
-            "id": "component-DestinationsComponent-f266c3aaeaee854ec9c5fe412794730d9ab5640bbb53aebce3219e8fa9733cd4f384988a61864fdc6c693c4c2346da7459b3fcc0d336c5296e46170e2275151d",
+            "id": "component-DestinationsComponent-9935324861238396a9292823307ef7665565ed0b8f141ad5ac5493207c4e3f45f48e19602f16a64f1881539249f161bd0e8c5783874bcf9c97787f019704dec5",
             "file": "src/app/components/destinations/destinations.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -922,7 +921,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Destination } from 'src/models';\n\n@Component({\n  selector: 'app-destinations',\n  templateUrl: './destinations.component.html',\n  styleUrls: ['./destinations.component.scss'],\n})\nexport class DestinationsComponent {\n  destinations: Destination[] = [\n    {\n      imgSrc: 'assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ];\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Destination } from '@models';\n\n@Component({\n  selector: 'app-destinations',\n  templateUrl: './destinations.component.html',\n  styleUrls: ['./destinations.component.scss'],\n})\nexport class DestinationsComponent {\n  destinations: Destination[] = [\n    {\n      imgSrc: 'assets/images/destinations/la-macarena.jpg',\n      name: 'La macarena',\n      formattedPrice: '$130.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/nuqui.jpg',\n      name: 'Nuquí',\n      formattedPrice: '$197.000',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n    {\n      imgSrc: 'assets/images/destinations/quibdo.jpg',\n      name: 'Quibdó',\n      formattedPrice: '$184.900',\n      initialDate: '5 nov',\n      finalDate: '13 dic',\n    },\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -980,7 +979,7 @@
         },
         {
             "name": "FlightsFormComponent",
-            "id": "component-FlightsFormComponent-c4f8e0a5f17af025c66ac3e8574f1aefcec3c5e10ca606e16fe7f75e3d284f0e4e20e19339714e4fc14d11c7c5a31608e3bb3ebfd2c7cb3fb33542c89bbf6199",
+            "id": "component-FlightsFormComponent-31d0e08de2fca97e3fb03533a537dfed79f52372c16229c96802c9cef29848d8a0d6f2234ec4b1266c6a902070bc24f936ee614a8e06ee1a49480bf2c3636c7b",
             "file": "src/app/components/flights-form/flights-form.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1010,7 +1009,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 14
                 },
                 {
                     "name": "categories",
@@ -1020,7 +1019,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 24
                 },
                 {
                     "name": "fb",
@@ -1030,7 +1029,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "flightForm",
@@ -1039,7 +1038,7 @@
                     "type": "FormGroup",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 },
                 {
                     "name": "passengers",
@@ -1049,7 +1048,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 16
                 }
             ],
             "methodsClass": [
@@ -1066,7 +1065,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 50,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1090,7 +1089,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1104,7 +1103,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';\nimport { FormBuilder, FormGroup } from '@angular/forms';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-flights-form',\n  templateUrl: './flights-form.component.html',\n  styleUrls: ['./flights-form.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FlightsFormComponent implements OnInit {\n  fb = inject(FormBuilder);\n  breakpointManager = inject(BreakpointManagerService);\n  flightForm!: FormGroup;\n  passengers = [\n    { viewValue: '1 persona', value: 1 },\n    { viewValue: '2 personas', value: 2 },\n    { viewValue: '3 personas', value: 3 },\n    { viewValue: '4 personas', value: 4 },\n    { viewValue: '5 personas', value: 5 },\n  ];\n\n  categories = [\n    { viewValue: 'Económica', value: 'Económica' },\n    { viewValue: 'Ejecutiva', value: 'Ejecutiva' },\n    { viewValue: 'Primera Clase', value: 'Primera Clase' },\n  ];\n\n  ngOnInit() {\n    this.flightForm = this.fb.group({\n      type: '',\n      from: '',\n      to: '',\n      departureDate: '',\n      returnDate: '',\n      passengersNumber: [],\n      category: [],\n    });\n  }\n\n  public get buttonSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n\n  public clearInput(formControlName: string): void {\n    this.flightForm.get(formControlName)?.setValue('');\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';\nimport { FormBuilder, FormGroup } from '@angular/forms';\nimport { BreakpointSize, ComponentSize } from '@models';\nimport { BreakpointManagerService } from '@services//breakpoint-manager.service';\n\n@Component({\n  selector: 'app-flights-form',\n  templateUrl: './flights-form.component.html',\n  styleUrls: ['./flights-form.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FlightsFormComponent implements OnInit {\n  fb = inject(FormBuilder);\n  breakpointManager = inject(BreakpointManagerService);\n  flightForm!: FormGroup;\n  passengers = [\n    { viewValue: '1 persona', value: 1 },\n    { viewValue: '2 personas', value: 2 },\n    { viewValue: '3 personas', value: 3 },\n    { viewValue: '4 personas', value: 4 },\n    { viewValue: '5 personas', value: 5 },\n  ];\n\n  categories = [\n    { viewValue: 'Económica', value: 'Económica' },\n    { viewValue: 'Ejecutiva', value: 'Ejecutiva' },\n    { viewValue: 'Primera Clase', value: 'Primera Clase' },\n  ];\n\n  ngOnInit() {\n    this.flightForm = this.fb.group({\n      type: '',\n      from: '',\n      to: '',\n      departureDate: '',\n      returnDate: '',\n      passengersNumber: [],\n      category: [],\n    });\n  }\n\n  public get buttonSize(): ComponentSize {\n    if (this.breakpointManager.currentBreakpoint === BreakpointSize.SMALL) {\n      return ComponentSize.SMALL;\n    } else {\n      return ComponentSize.BIG;\n    }\n  }\n\n  public clearInput(formControlName: string): void {\n    this.flightForm.get(formControlName)?.setValue('');\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1123,8 +1122,8 @@
                     "getSignature": {
                         "name": "buttonSize",
                         "type": "",
-                        "returnType": "",
-                        "line": 41
+                        "returnType": "ComponentSize",
+                        "line": 42
                     }
                 }
             },
@@ -1132,7 +1131,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-6c3cccc4f8bf11415736dda26d50ba3fb62a96d94d877e0285dfbdb7aaa3657854de071c08af5dbb0d1264a48ae15f26729737ed289c5e852f3271991e216f09",
+            "id": "component-FooterComponent-85e5ecb528978e11d39000256a6c5f58d430c7cf2d92b9d98444bc953bb60d67b097d57a79c3430f8982bb537593388005b7bdc8835adb5086da4876842901aa",
             "file": "src/app/components/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1160,7 +1159,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 11
                 }
             ],
             "methodsClass": [],
@@ -1173,7 +1172,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {\n  breakpointManager = inject(BreakpointManagerService);\n\n  public get logoSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { BreakpointSize, ComponentSize } from '@models';\nimport { BreakpointManagerService } from '@services//breakpoint-manager.service';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {\n  breakpointManager = inject(BreakpointManagerService);\n\n  public get logoSize(): ComponentSize {\n    if (this.breakpointManager.currentBreakpoint === BreakpointSize.SMALL) {\n      return ComponentSize.SMALL;\n    } else {\n      return ComponentSize.BIG;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1189,8 +1188,8 @@
                     "getSignature": {
                         "name": "logoSize",
                         "type": "",
-                        "returnType": "",
-                        "line": 12
+                        "returnType": "ComponentSize",
+                        "line": 13
                     }
                 }
             },
@@ -1198,7 +1197,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-b53e587873dc4a11c798497ec903bb3290d9da31b84751961496158b2d56850bd2c0019ea259cc3f3ab6df7c799e7c0cc430db861e6a8f934edb029c9bdfb9f0",
+            "id": "component-HeaderComponent-39eb424b9bf29ecf5abc3da054824772ad5c8924eec415d4045c5eb160c7383e34841e5d6578420e24def7b13c13688910f5b6403fa8876d9d23194bc0bec596",
             "file": "src/app/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1226,7 +1225,17 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 11
+                },
+                {
+                    "name": "componentTypes",
+                    "defaultValue": "ComponentTypes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
                 },
                 {
                     "name": "isMenuOpen",
@@ -1236,7 +1245,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 13
                 }
             ],
             "methodsClass": [
@@ -1246,7 +1255,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1263,7 +1272,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  isMenuOpen = false;\n\n  public get logoSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Large') {\n      return 'big';\n    } else {\n      return 'small';\n    }\n  }\n\n  public toggleMenu(): void {\n    this.isMenuOpen = !this.isMenuOpen;\n  }\n}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { BreakpointSize, ComponentSize, ComponentTypes } from '@models';\nimport { BreakpointManagerService } from '@services//breakpoint-manager.service';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  componentTypes = ComponentTypes;\n  isMenuOpen = false;\n\n  public get logoSize(): ComponentSize {\n    if (this.breakpointManager.currentBreakpoint === BreakpointSize.LARGE) {\n      return ComponentSize.BIG;\n    } else {\n      return ComponentSize.SMALL;\n    }\n  }\n\n  public toggleMenu(): void {\n    this.isMenuOpen = !this.isMenuOpen;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1279,16 +1288,16 @@
                     "getSignature": {
                         "name": "logoSize",
                         "type": "",
-                        "returnType": "",
-                        "line": 13
+                        "returnType": "ComponentSize",
+                        "line": 15
                     }
                 }
             },
-            "templateData": "<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->\n<nav class=\"navbar\">\n  <ul>\n    <li class=\"navbar__logo\"><app-logo [size]=\"logoSize\" /></li>\n    <li\n      class=\"navbar__burguer\"\n      (click)=\"toggleMenu()\"\n      (keypress)=\"toggleMenu()\">\n      <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>\n    </li>\n    <li class=\"navbar__menu\" [class.is-open]=\"isMenuOpen\">\n      <a class=\"navbar__menu-item\" href=\"#\">Destinos</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Vuelos</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Check in</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Iniciar sesión</a>\n      <app-button\n        class=\"navbar__menu-item\"\n        label=\"Registrarse\"\n        type=\"secondary\" />\n      <app-theme class=\"navbar__menu-item\" />\n    </li>\n  </ul>\n</nav>\n"
+            "templateData": "<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->\n<nav class=\"navbar\">\n  <ul>\n    <li class=\"navbar__logo\"><app-logo [size]=\"logoSize\" /></li>\n    <li\n      class=\"navbar__burguer\"\n      (click)=\"toggleMenu()\"\n      (keypress)=\"toggleMenu()\">\n      <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>\n    </li>\n    <li class=\"navbar__menu\" [class.is-open]=\"isMenuOpen\">\n      <a class=\"navbar__menu-item\" href=\"#\">Destinos</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Vuelos</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Check in</a>\n      <a class=\"navbar__menu-item\" href=\"#\">Iniciar sesión</a>\n      <app-button\n        class=\"navbar__menu-item\"\n        label=\"Registrarse\"\n        [type]=\"componentTypes.SECONDARY\" />\n      <app-theme class=\"navbar__menu-item\" />\n    </li>\n  </ul>\n</nav>\n"
         },
         {
             "name": "LogoComponent",
-            "id": "component-LogoComponent-9d78fc8c0d889f3a5ee2a401315874cde3efaf3b72eb586a22e3af5bd9fb61bf7a42ac99a80c70755cd211ae387a64341c0ec7080f3869648b8ea03c1c194ae7",
+            "id": "component-LogoComponent-78f83f254ab180550f7a045bde1909696c9dda91116ffd33e5dc6fafbc3b8db5e6f222035f1dbf0b0f928c1fbba50e0e434bea006764be28f721d2219d354b4a",
             "file": "src/app/components/logo/logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1308,16 +1317,36 @@
             "inputsClass": [
                 {
                     "name": "size",
-                    "defaultValue": "'big'",
+                    "defaultValue": "ComponentSize.BIG",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
-                    "type": "\"big\" | \"small\"",
+                    "line": 18,
+                    "type": "ComponentSize",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [
+                {
+                    "name": "componentSize",
+                    "defaultValue": "ComponentSize",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "componentTypes",
+                    "defaultValue": "ComponentTypes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
                 {
                     "name": "isDark$",
                     "defaultValue": "this.themeManager.isDark$",
@@ -1326,7 +1355,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "themeManager",
@@ -1336,7 +1365,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 }
             ],
             "methodsClass": [],
@@ -1349,7 +1378,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { Observable, map } from 'rxjs';\nimport { ThemeManager } from 'src/app/theme-manager.service';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss'],\n})\nexport class LogoComponent {\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  @Input()\n  size: 'big' | 'small' = 'big';\n\n  public get type$(): Observable<string> {\n    return this.isDark$.pipe(map(isDark => (isDark ? 'white' : 'full-color')));\n  }\n}\n",
+            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { Observable, map } from 'rxjs';\nimport { ThemeManager } from '@services//theme-manager.service';\nimport { ComponentSize, ComponentTypes } from '@models';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: ['./logo.component.scss'],\n})\nexport class LogoComponent {\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n  componentSize = ComponentSize;\n  componentTypes = ComponentTypes;\n\n  @Input()\n  size: ComponentSize = ComponentSize.BIG;\n\n  public get type$(): Observable<\n    ComponentTypes.FULL_COLOR | ComponentTypes.WHITE\n  > {\n    return this.isDark$.pipe(\n      map(isDark => (isDark ? ComponentTypes.WHITE : ComponentTypes.FULL_COLOR))\n    );\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1365,16 +1394,16 @@
                     "getSignature": {
                         "name": "type$",
                         "type": "",
-                        "returnType": "Observable<string>",
-                        "line": 17
+                        "returnType": "Observable<ComponentTypes.FULL_COLOR | ComponentTypes.WHITE>",
+                        "line": 20
                     }
                 }
             },
-            "templateData": "<img\n  src=\"assets/images/logo_full-color.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"(type$ | async) === 'full-color' && size === 'big'\" />\n<img\n  src=\"assets/images/logo_white.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"(type$ | async) === 'white' && size === 'big'\" />\n<img\n  src=\"assets/images/logo_small.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"size === 'small'\" />\n"
+            "templateData": "<img\n  src=\"assets/images/logo_full-color.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"\n    (type$ | async) === componentTypes.FULL_COLOR && size === componentSize.BIG\n  \" />\n<img\n  src=\"assets/images/logo_white.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"\n    (type$ | async) === componentTypes.WHITE && size === componentSize.BIG\n  \" />\n<img\n  src=\"assets/images/logo_small.png\"\n  alt=\"Satena Logo\"\n  *ngIf=\"size === componentSize.SMALL\" />\n"
         },
         {
             "name": "TestimonialCardComponent",
-            "id": "component-TestimonialCardComponent-b8d68fe0733d473bb72b9316bba8b4e001f9b0b73afa7c16dd75ee35bc6605e5933b7a4d0d557c0196173752a06a7ee070f0b89dbe370cd31456a99b8b5703dc",
+            "id": "component-TestimonialCardComponent-0bd578a860e621827f0b87cc03edf472973cfd20a9010784c060496d6dc912871c8925ab899466465f75c6836ebc7652da2367e908479d2391dc65fdbf4929ef",
             "file": "src/app/components/testimonial-card/testimonial-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1394,11 +1423,11 @@
             "inputsClass": [
                 {
                     "name": "size",
-                    "defaultValue": "'small'",
+                    "defaultValue": "ComponentSize.SMALL",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
-                    "type": "\"big\" | \"small\"",
+                    "line": 18,
+                    "type": "ComponentSize",
                     "decorators": []
                 },
                 {
@@ -1407,17 +1436,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 20,
+                    "line": 21,
                     "type": "Testimonial",
                     "decorators": []
                 },
                 {
                     "name": "type",
-                    "defaultValue": "'primary'",
+                    "defaultValue": "ComponentTypes.PRIMARY",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 14,
-                    "type": "\"primary\" | \"secondary\"",
+                    "type": "ComponentTypes.PRIMARY | ComponentTypes.SECONDARY",
                     "decorators": []
                 }
             ],
@@ -1433,7 +1462,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Testimonial } from '../../../models';\n\nconst getStyles = (...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean);\n\n@Component({\n  selector: 'app-testimonial-card',\n  templateUrl: './testimonial-card.component.html',\n  styleUrls: ['./testimonial-card.component.scss'],\n})\nexport class TestimonialCardComponent {\n  @Input()\n  type: 'primary' | 'secondary' = 'primary';\n\n  @Input()\n  size: 'big' | 'small' = 'small';\n\n  @Input({ required: true })\n  testimonial!: Testimonial;\n\n  public get classes(): string[] {\n    return getStyles(this.type, this.size);\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { ComponentSize, ComponentTypes, Testimonial } from '@models';\n\nconst getStyles = (...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean);\n\n@Component({\n  selector: 'app-testimonial-card',\n  templateUrl: './testimonial-card.component.html',\n  styleUrls: ['./testimonial-card.component.scss'],\n})\nexport class TestimonialCardComponent {\n  @Input()\n  type: ComponentTypes.PRIMARY | ComponentTypes.SECONDARY =\n    ComponentTypes.PRIMARY;\n\n  @Input()\n  size: ComponentSize = ComponentSize.SMALL;\n\n  @Input({ required: true })\n  testimonial!: Testimonial;\n\n  public get classes(): string[] {\n    return getStyles(this.type, this.size);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1450,7 +1479,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 22
+                        "line": 23
                     }
                 }
             },
@@ -1458,7 +1487,7 @@
         },
         {
             "name": "TestimonialsComponent",
-            "id": "component-TestimonialsComponent-7552ca8d55c0c2f8c6ff342bfff7770b8a1199adab2970259cc0049a1545ce3900cd569ce952cf4749abf5299f8259eabc261e4f05c62ad5ff123807e21959da",
+            "id": "component-TestimonialsComponent-34dff0ad2ce899c92f34b255b13ed0eabeafc7d5ed1d3daa817565b110fbf5c840836e5b98995b7fec84a4473bae9195f0365e711fc2542a413ba94a265e11ea",
             "file": "src/app/components/testimonials/testimonials.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1488,7 +1517,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 19
                 },
                 {
                     "name": "breakpointManager",
@@ -1498,7 +1527,17 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 17
+                },
+                {
+                    "name": "componentTypes",
+                    "defaultValue": "ComponentTypes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
                 },
                 {
                     "name": "testimonials",
@@ -1508,7 +1547,7 @@
                     "type": "Testimonial[]",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 20
                 }
             ],
             "methodsClass": [
@@ -1518,7 +1557,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 51,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1531,7 +1570,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 55,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1548,7 +1587,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ViewEncapsulation, inject } from '@angular/core';\nimport { Testimonial } from 'src/models';\nimport { BreakpointManagerService } from 'src/app/breakpoint-manager.service';\n\n@Component({\n  selector: 'app-testimonials',\n  templateUrl: './testimonials.component.html',\n  styleUrls: ['./testimonials.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TestimonialsComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  activeIndex = 0;\n  testimonials: Testimonial[] = [\n    {\n      userName: 'Erick Padilla',\n      profilePicture: 'assets/images/users/erick.png',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: 'assets/images/users/andres.png',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ];\n\n  public get cardSize() {\n    if (this.breakpointManager.currentBreakpoint === 'Small') {\n      return 'small';\n    } else {\n      return 'big';\n    }\n  }\n\n  public get nextIndex() {\n    return (this.activeIndex + 1) % this.testimonials.length;\n  }\n\n  public next() {\n    this.activeIndex = this.nextIndex;\n  }\n\n  public prev() {\n    if (this.activeIndex === 0) {\n      this.activeIndex = this.testimonials.length - 1;\n    } else {\n      this.activeIndex -= 1;\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, ViewEncapsulation, inject } from '@angular/core';\nimport {\n  BreakpointSize,\n  ComponentSize,\n  ComponentTypes,\n  Testimonial,\n} from '@models';\nimport { BreakpointManagerService } from '@services//breakpoint-manager.service';\n\n@Component({\n  selector: 'app-testimonials',\n  templateUrl: './testimonials.component.html',\n  styleUrls: ['./testimonials.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TestimonialsComponent {\n  breakpointManager = inject(BreakpointManagerService);\n  componentTypes = ComponentTypes;\n  activeIndex = 0;\n  testimonials: Testimonial[] = [\n    {\n      userName: 'Erick Padilla',\n      profilePicture: 'assets/images/users/erick.png',\n      commentary:\n        'Necesitaba cambiar las fechas de mi viaje, me comuniqué con Satena y fue fácil y rápido hacerlo. El mejor servicio al cliente que he usado',\n      origin: 'Medellín',\n      destination: 'Caracas',\n    },\n    {\n      userName: 'Andrés Guzmán',\n      profilePicture: 'assets/images/users/andres.png',\n      commentary:\n        'Fue un vuelo muy puntual, sin ningún problema al momento de comprar. Recomiendo completamente usar Satena para viajar',\n      origin: 'Bogotá',\n      destination: 'Nuquí',\n    },\n  ];\n\n  public get cardSize(): ComponentSize {\n    if (this.breakpointManager.currentBreakpoint === BreakpointSize.SMALL) {\n      return ComponentSize.SMALL;\n    } else {\n      return ComponentSize.BIG;\n    }\n  }\n\n  public get nextIndex() {\n    return (this.activeIndex + 1) % this.testimonials.length;\n  }\n\n  public next() {\n    this.activeIndex = this.nextIndex;\n  }\n\n  public prev() {\n    if (this.activeIndex === 0) {\n      this.activeIndex = this.testimonials.length - 1;\n    } else {\n      this.activeIndex -= 1;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1564,8 +1603,8 @@
                     "getSignature": {
                         "name": "cardSize",
                         "type": "",
-                        "returnType": "",
-                        "line": 33
+                        "returnType": "ComponentSize",
+                        "line": 39
                     }
                 },
                 "nextIndex": {
@@ -1574,15 +1613,15 @@
                         "name": "nextIndex",
                         "type": "",
                         "returnType": "",
-                        "line": 41
+                        "line": 47
                     }
                 }
             },
-            "templateData": "<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->\n<div class=\"testimonials__title\">\n  <div class=\"section__title\">\n    <div class=\"section__title-subheading\">Testimonios</div>\n    <h2 class=\"section__title-heading\">Comentarios de<br />otros viajeros</h2>\n  </div>\n  <div class=\"testimonials__dots\">\n    <div class=\"testimonials__dot testimonials__dot--primary\"></div>\n    <div class=\"testimonials__dot testimonials__dot--secondary\"></div>\n  </div>\n</div>\n<div class=\"testimonials__card-container\">\n  <app-testimonial-card\n    [testimonial]=\"testimonials[activeIndex]\"\n    [size]=\"cardSize\" />\n  <app-testimonial-card\n    [testimonial]=\"testimonials[nextIndex]\"\n    [size]=\"cardSize\"\n    type=\"secondary\" />\n  <div class=\"testimonials__card-navigation\">\n    <img\n      (click)=\"prev()\"\n      (keypress)=\"prev()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"assets/icons/arrow_up.svg\"\n      alt=\"\" />\n    <img\n      (click)=\"next()\"\n      (keypress)=\"next()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"assets/icons/arrow_down.svg\"\n      alt=\"\" />\n  </div>\n</div>\n"
+            "templateData": "<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->\n<div class=\"testimonials__title\">\n  <div class=\"section__title\">\n    <div class=\"section__title-subheading\">Testimonios</div>\n    <h2 class=\"section__title-heading\">Comentarios de<br />otros viajeros</h2>\n  </div>\n  <div class=\"testimonials__dots\">\n    <div class=\"testimonials__dot testimonials__dot--primary\"></div>\n    <div class=\"testimonials__dot testimonials__dot--secondary\"></div>\n  </div>\n</div>\n<div class=\"testimonials__card-container\">\n  <app-testimonial-card\n    [testimonial]=\"testimonials[activeIndex]\"\n    [size]=\"cardSize\" />\n  <app-testimonial-card\n    [testimonial]=\"testimonials[nextIndex]\"\n    [size]=\"cardSize\"\n    [type]=\"componentTypes.SECONDARY\" />\n  <div class=\"testimonials__card-navigation\">\n    <img\n      (click)=\"prev()\"\n      (keypress)=\"prev()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"assets/icons/arrow_up.svg\"\n      alt=\"\" />\n    <img\n      (click)=\"next()\"\n      (keypress)=\"next()\"\n      class=\"testimonials__card-navigation__arrow\"\n      src=\"assets/icons/arrow_down.svg\"\n      alt=\"\" />\n  </div>\n</div>\n"
         },
         {
             "name": "ThemeComponent",
-            "id": "component-ThemeComponent-2be0da783d9901896e2e4e3455c9309432d6d35c41a0e38c4c6962669398ae46ab8ca7daaa3db77eb91289d2d5c7d6c06f13f38f8fa0c0ba8e049fa2d606eb68",
+            "id": "component-ThemeComponent-d18bf163b82cece5fbd9f8f21a3bba151d71fd2cf75abbf150c1af3d8e29107fcf6cc1dff39e38580573cd8ccf77b3d790646cce1d4118139d7e7f5d75b800fd",
             "file": "src/app/components/theme/theme.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1672,7 +1711,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { ThemeManager } from 'src/app/theme-manager.service';\n\n@Component({\n  selector: 'app-theme',\n  templateUrl: './theme.component.html',\n  styleUrls: ['./theme.component.scss'],\n})\nexport class ThemeComponent {\n  title = 'satena_landing';\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  changeTheme(theme: string) {\n    this.themeManager.changeTheme(theme);\n  }\n}\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\nimport { ThemeManager } from '@services//theme-manager.service';\n\n@Component({\n  selector: 'app-theme',\n  templateUrl: './theme.component.html',\n  styleUrls: ['./theme.component.scss'],\n})\nexport class ThemeComponent {\n  title = 'satena_landing';\n  themeManager = inject(ThemeManager);\n  isDark$ = this.themeManager.isDark$;\n\n  changeTheme(theme: string) {\n    this.themeManager.changeTheme(theme);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1810,10 +1849,20 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "breakpointManagerMock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  currentBreakpoint: BreakpointSize.SMALL,\n}"
+            },
+            {
                 "name": "BROWSER_STORAGE",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/browser-storage.service.ts",
+                "file": "src/app/services/browser-storage.service.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1827,7 +1876,37 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
-                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n}"
+                "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
+            },
+            {
+                "name": "CustomButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DarkTheme",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "FullColorBig",
@@ -1847,7 +1926,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({\n  size: 'small',\n})"
+                "defaultValue": "Template.bind({\n  size: ComponentSize.SMALL,\n})"
             },
             {
                 "name": "getStyles",
@@ -1870,14 +1949,34 @@
                 "defaultValue": "(...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean)"
             },
             {
+                "name": "label",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'Click me'"
+            },
+            {
                 "name": "LOCAL_STORAGE_KEY",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/theme-manager.service.ts",
+                "file": "src/app/services/theme-manager.service.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "'angular-material.dev'"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\n  title: 'Button Component',\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ButtonComponent],\n    }),\n  ],\n}"
             },
             {
                 "name": "preview",
@@ -1890,7 +1989,27 @@
                 "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
             },
             {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\r\n  parameters: {},\r\n}"
+            },
+            {
                 "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryBig",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/button/button.component.stories.ts",
@@ -1900,10 +2019,10 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Primary",
+                "name": "PrimarySmall",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/flights-form/flights-form.component.stories.ts",
+                "file": "src/app/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1927,7 +2046,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({\n  type: 'secondary',\n})"
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SmallSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<BannerComponent>",
+                "defaultValue": "(args: BannerComponent) => ({\n  component: BannerComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1937,7 +2076,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1970,20 +2109,20 @@
                 "defaultValue": "(\n  args: TestimonialCardComponent\n) => ({\n  props: args,\n})"
             },
             {
-                "name": "White",
+                "name": "themeManagerMock",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/logo/logo.component.stories.ts",
+                "file": "src/app/components/banner/banner.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({\n  type: 'white',\n})"
+                "type": "object",
+                "defaultValue": "{\n  isDark$: of(false),\n}"
             }
         ],
         "functions": [
             {
                 "name": "createLinkElementWithKey",
-                "file": "src/app/theme-manager.service.ts",
+                "file": "src/app/services/theme-manager.service.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
@@ -2011,7 +2150,7 @@
             },
             {
                 "name": "getClassNameForKey",
-                "file": "src/app/theme-manager.service.ts",
+                "file": "src/app/services/theme-manager.service.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
@@ -2039,7 +2178,7 @@
             },
             {
                 "name": "getExistingLinkElementByKey",
-                "file": "src/app/theme-manager.service.ts",
+                "file": "src/app/services/theme-manager.service.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
@@ -2067,7 +2206,7 @@
             },
             {
                 "name": "getLinkElementForKey",
-                "file": "src/app/theme-manager.service.ts",
+                "file": "src/app/services/theme-manager.service.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
@@ -2095,14 +2234,174 @@
             }
         ],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "BreakpointSize",
+                "childs": [
+                    {
+                        "name": "SMALL",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "small"
+                    },
+                    {
+                        "name": "MEDIUM",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "medium"
+                    },
+                    {
+                        "name": "LARGE",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "large"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/models/size.ts"
+            },
+            {
+                "name": "ComponentSize",
+                "childs": [
+                    {
+                        "name": "SMALL",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "small"
+                    },
+                    {
+                        "name": "BIG",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "big"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/models/size.ts"
+            },
+            {
+                "name": "ComponentTypes",
+                "childs": [
+                    {
+                        "name": "PRIMARY",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "SECONDARY",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "secondary"
+                    },
+                    {
+                        "name": "FULL_COLOR",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "full-color"
+                    },
+                    {
+                        "name": "WHITE",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "white"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/models/types.ts"
+            }
+        ],
         "groupedVariables": {
-            "src/app/browser-storage.service.ts": [
+            "src/app/components/banner/banner.component.stories.ts": [
+                {
+                    "name": "breakpointManagerMock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  currentBreakpoint: BreakpointSize.SMALL,\n}"
+                },
+                {
+                    "name": "CustomButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DarkTheme",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SmallSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<BannerComponent>",
+                    "defaultValue": "(args: BannerComponent) => ({\n  component: BannerComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "themeManagerMock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  isDark$: of(false),\n}"
+                }
+            ],
+            "src/app/services/browser-storage.service.ts": [
                 {
                     "name": "BROWSER_STORAGE",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/browser-storage.service.ts",
+                    "file": "src/app/services/browser-storage.service.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2118,7 +2417,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
-                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n}"
+                    "defaultValue": "{\n  framework: '@storybook/angular',\n  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],\n  staticDirs: ['../assets'],\n\n  webpackFinal: async config => {\n    config.module?.rules?.push({\n      test: /\\.(png|svg|jpg|gif)$/,\n      use: ['file-loader'],\n    });\n    return config;\n  },\n}"
                 }
             ],
             "src/app/components/logo/logo.component.stories.ts": [
@@ -2140,7 +2439,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({\n  size: 'small',\n})"
+                    "defaultValue": "Template.bind({\n  size: ComponentSize.SMALL,\n})"
                 },
                 {
                     "name": "Template",
@@ -2151,16 +2450,6 @@
                     "deprecationMessage": "",
                     "type": "StoryFn<LogoComponent>",
                     "defaultValue": "(args: LogoComponent) => ({\n  props: args,\n})"
-                },
-                {
-                    "name": "White",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/logo/logo.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({\n  type: 'white',\n})"
                 }
             ],
             "src/app/components/button/button.component.ts": [
@@ -2187,12 +2476,74 @@
                     "defaultValue": "(...args: string[]) =>\n  ['testimonial-card', ...args].filter(Boolean)"
                 }
             ],
-            "src/app/theme-manager.service.ts": [
+            "src/app/components/button/button.component.stories.ts": [
+                {
+                    "name": "label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'Click me'"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta",
+                    "defaultValue": "{\n  title: 'Button Component',\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [ButtonComponent],\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "PrimaryBig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "PrimarySmall",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/services/theme-manager.service.ts": [
                 {
                     "name": "LOCAL_STORAGE_KEY",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/theme-manager.service.ts",
+                    "file": "src/app/services/theme-manager.service.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -2211,36 +2562,16 @@
                     "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
                 }
             ],
-            "src/app/components/button/button.component.stories.ts": [
+            "src/stories/preview.ts": [
                 {
-                    "name": "Primary",
+                    "name": "preview",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/button/button.component.stories.ts",
+                    "file": "src/stories/preview.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({\n  type: 'secondary',\n})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/button/button.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
+                    "type": "Preview",
+                    "defaultValue": "{\r\n  parameters: {},\r\n}"
                 }
             ],
             "src/app/components/flights-form/flights-form.component.stories.ts": [
@@ -2289,10 +2620,10 @@
             ]
         },
         "groupedFunctions": {
-            "src/app/theme-manager.service.ts": [
+            "src/app/services/theme-manager.service.ts": [
                 {
                     "name": "createLinkElementWithKey",
-                    "file": "src/app/theme-manager.service.ts",
+                    "file": "src/app/services/theme-manager.service.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "deprecated": false,
@@ -2320,7 +2651,7 @@
                 },
                 {
                     "name": "getClassNameForKey",
-                    "file": "src/app/theme-manager.service.ts",
+                    "file": "src/app/services/theme-manager.service.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "deprecated": false,
@@ -2348,7 +2679,7 @@
                 },
                 {
                     "name": "getExistingLinkElementByKey",
-                    "file": "src/app/theme-manager.service.ts",
+                    "file": "src/app/services/theme-manager.service.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "deprecated": false,
@@ -2376,7 +2707,7 @@
                 },
                 {
                     "name": "getLinkElementForKey",
-                    "file": "src/app/theme-manager.service.ts",
+                    "file": "src/app/services/theme-manager.service.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "deprecated": false,
@@ -2404,7 +2735,99 @@
                 }
             ]
         },
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "src/models/size.ts": [
+                {
+                    "name": "BreakpointSize",
+                    "childs": [
+                        {
+                            "name": "SMALL",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "small"
+                        },
+                        {
+                            "name": "MEDIUM",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "medium"
+                        },
+                        {
+                            "name": "LARGE",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "large"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/models/size.ts"
+                },
+                {
+                    "name": "ComponentSize",
+                    "childs": [
+                        {
+                            "name": "SMALL",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "small"
+                        },
+                        {
+                            "name": "BIG",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "big"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/models/size.ts"
+                }
+            ],
+            "src/models/types.ts": [
+                {
+                    "name": "ComponentTypes",
+                    "childs": [
+                        {
+                            "name": "PRIMARY",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "SECONDARY",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "secondary"
+                        },
+                        {
+                            "name": "FULL_COLOR",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "full-color"
+                        },
+                        {
+                            "name": "WHITE",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "white"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/models/types.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": {
@@ -2445,29 +2868,71 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/breakpoint-manager.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "BreakpointManagerService",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/browser-storage.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "BrowserStorageService",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/browser-storage.service.ts",
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "BROWSER_STORAGE",
+                "name": "breakpointManagerMock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomButtonSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DarkTheme",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "themeManagerMock",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2486,7 +2951,37 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryBig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimarySmall",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2601,7 +3096,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2635,22 +3130,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/logo/logo.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "White",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/components/logo/logo.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "LogoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -2698,7 +3183,7 @@
                 "linktype": "component",
                 "name": "TestimonialsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -2711,7 +3196,35 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/theme-manager.service.ts",
+                "filePath": "src/app/services/breakpoint-manager.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "BreakpointManagerService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/browser-storage.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "BrowserStorageService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/browser-storage.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BROWSER_STORAGE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/theme-manager.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "ThemeManager",
@@ -2720,7 +3233,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/theme-manager.service.ts",
+                "filePath": "src/app/services/theme-manager.service.ts",
                 "type": "function",
                 "linktype": "miscellaneous",
                 "linksubtype": "function",
@@ -2730,7 +3243,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/theme-manager.service.ts",
+                "filePath": "src/app/services/theme-manager.service.ts",
                 "type": "function",
                 "linktype": "miscellaneous",
                 "linksubtype": "function",
@@ -2740,7 +3253,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/theme-manager.service.ts",
+                "filePath": "src/app/services/theme-manager.service.ts",
                 "type": "function",
                 "linktype": "miscellaneous",
                 "linksubtype": "function",
@@ -2750,7 +3263,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/theme-manager.service.ts",
+                "filePath": "src/app/services/theme-manager.service.ts",
                 "type": "function",
                 "linktype": "miscellaneous",
                 "linksubtype": "function",
@@ -2760,7 +3273,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/theme-manager.service.ts",
+                "filePath": "src/app/services/theme-manager.service.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2793,6 +3306,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

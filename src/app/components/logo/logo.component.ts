@@ -1,6 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { ThemeManager } from 'src/app/theme-manager.service';
+import { ThemeManager } from '@services//theme-manager.service';
+import { ComponentSize, ComponentTypes } from '@models';
 
 @Component({
   selector: 'app-logo',
@@ -10,11 +11,17 @@ import { ThemeManager } from 'src/app/theme-manager.service';
 export class LogoComponent {
   themeManager = inject(ThemeManager);
   isDark$ = this.themeManager.isDark$;
+  componentSize = ComponentSize;
+  componentTypes = ComponentTypes;
 
   @Input()
-  size: 'big' | 'small' = 'big';
+  size: ComponentSize = ComponentSize.BIG;
 
-  public get type$(): Observable<string> {
-    return this.isDark$.pipe(map(isDark => (isDark ? 'white' : 'full-color')));
+  public get type$(): Observable<
+    ComponentTypes.FULL_COLOR | ComponentTypes.WHITE
+  > {
+    return this.isDark$.pipe(
+      map(isDark => (isDark ? ComponentTypes.WHITE : ComponentTypes.FULL_COLOR))
+    );
   }
 }
