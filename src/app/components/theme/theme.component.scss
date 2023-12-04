@@ -1,0 +1,10 @@
+.theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 96px;
+
+    .theme-switcher__toggle {
+        transform: scale(2);
+    }
+}

@@ -29,8 +29,8 @@
   
     .banner__traveler {
       position: absolute;
-      right: -2.5rem;
-      bottom: -1rem;
+      right: -40px;
+      bottom: -16px;
       z-index: 5;
       width: 289px;
       height: 288px;
@@ -38,8 +38,8 @@
   
     .banner__decore {
       position: absolute;
-      right: -1rem;
-      top: -4rem;
+      right: -16px;
+      top: -64px;
       z-index: 0;
       width: 175px;
       height: 320px;
@@ -56,12 +56,41 @@
       }
   
       .banner__traveler {
-        position: absolute;
-        right: -2.5rem;
-        bottom: -1rem;
-        z-index: 5;
+        right: -40px;
+        bottom: -60px;
         width: 522px;
         height: 521px;
+      }
+
+      .banner__decore {
+        height: 577px;
+        width: 390px;
+        top: -64px;
+        right: -60px;
+      }
+    }
+  }
+
+  @include breakpoint-up(lg) {
+    .banner {
+      height: 748px;
+
+      .section__title {
+        width: 566px;
+      }
+
+      .banner__traveler {
+        width: 695px;
+        height: 694px;
+        right: -40px;
+        bottom: -30px;
+      }
+
+      .banner__decore {
+        height: 760px;
+        width: 552px;
+        top: -64px;
+        right: -80px;
       }
     }
   }

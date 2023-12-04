@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BreakpointManagerService } from 'src/app/breakpoint-manager.service';
 
 @Component({
   selector: 'app-flights-form',
@@ -23,7 +24,10 @@ export class FlightsFormComponent {
     { viewValue: 'Primera Clase', value: 'Primera Clase' },
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    public breakpointManager: BreakpointManagerService
+  ) {
     this.flightForm = this.fb.group({
       type: '',
       from: '',
@@ -33,5 +37,17 @@ export class FlightsFormComponent {
       passengersNumber: [],
       category: [],
     });
+  }
+
+  public get buttonSize() {
+    if (this.breakpointManager.currentBreakpoint === 'Small') {
+      return 'small';
+    } else {
+      return 'big';
+    }
+  }
+
+  public clearInput(formControlName: string): void {
+    this.flightForm.get(formControlName)?.setValue('');
   }
 }

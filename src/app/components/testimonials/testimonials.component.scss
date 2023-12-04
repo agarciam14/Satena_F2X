@@ -2,7 +2,6 @@
 
 app-testimonials {
     width: 100%;
-    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -30,12 +29,10 @@ app-testimonials {
 
                 &--primary {
                     left: 0px;
-                    background: #181e4b;
                 }
 
                 &--secondary {
                     left: 38px;
-                    background: #f7f7f7;
                 }
             }
         }
@@ -45,6 +42,7 @@ app-testimonials {
         width: 292px;
         height: 499px;
         position: relative;
+        padding-top: 64px;
     
         app-testimonial-card {
             >div {
@@ -55,7 +53,7 @@ app-testimonials {
                 z-index: 0;
                 position: absolute;
                 right: 0;
-                top: 143px;
+                top: 159px;
             }
         }
 
@@ -80,31 +78,69 @@ app-testimonials {
             }
         }
     }
+}
 
-    @include breakpoint-up(md) {
+@include breakpoint-up(md) {
+    app-testimonials {
         .testimonials__card-container {
             display: inline-flex;
             flex-direction: row;
-            gap: 69px;
+            justify-content: space-between;
+            width: 632px;
+            height: 321px;
+            padding-top: 0;
+
+            app-testimonial-card {
+                &[type='secondary'] {
+                    left: 49px;
+                    bottom: 0;
+                    top: unset;
+                    right: unset;
+                }
+            }
 
             .testimonials__card-navigation {
-                height: 14px;
-                left: 110px;
-                top: 485px;
-                position: absolute;
-    
+                height: 71.50px;
+                width: 14px;
+                position: relative;
+                top: unset;
+                left: unset;
+                align-self: center;
+
                 img {
                     width: 14px;
                     height: 7px;
                     left: 0px;
-                    top: 14px;
+                    top: 0px;
                     position: absolute;
-                    transform: rotate(-90deg);
+                    transform: rotate(0deg);
                     transform-origin: 0 0;
                 }
-    
+
                 :last-child {
-                    left: 64.5px;
+                    top: 64.5px;
+                    left: unset;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-up(lg) {
+    app-testimonials {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        .testimonials__title {
+            align-items: flex-start;
+
+            .section__title {
+                align-items: flex-start;
+
+                .section__title-heading,
+                .section__title-subheading {
+                    text-align: start;
                 }
             }
         }

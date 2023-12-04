@@ -16,10 +16,10 @@
         &-text {
             height: 124px;
             padding: 32px 24px;
-            background: white;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            border: 3px #F7F7F7 solid;
+            border-width: 3px;
+            border-style: solid;
             border-top: none;
             flex-direction: column;
             justify-content: flex-end;
@@ -35,7 +35,6 @@
                 display: inline-flex;
 
                 span {
-                    color: #181E4B;
                     font-size: 18px;
                     font-weight: 400;
                     word-wrap: break-word;
@@ -49,7 +48,6 @@
                 display: inline-flex;
 
                 span {
-                    color: #181E4B;
                     font-size: 16px;
                     font-weight: 500;
                     line-height: 30px;

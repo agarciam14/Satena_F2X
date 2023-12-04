@@ -3,16 +3,34 @@
     <mat-radio-button value="1">Solo ida</mat-radio-button>
     <mat-radio-button value="2">Ida y regreso</mat-radio-button>
   </mat-radio-group>
-  <input
-    class="flights-form__input"
-    type="text"
-    placeholder="Desde"
-    formControlName="from" />
-  <input
-    class="flights-form__input"
-    type="text"
-    placeholder="Hacia"
-    formControlName="to" />
+  <div class="flights-form__input-container">
+    <input
+      class="flights-form__input"
+      type="text"
+      placeholder="Desde"
+      formControlName="from" />
+    <mat-icon
+      class="flights-form__input-clear"
+      *ngIf="flightForm.get('from')?.value"
+      (click)="clearInput('from')"
+      (keyup)="clearInput('from')"
+      >cancel</mat-icon
+    >
+  </div>
+  <div class="flights-form__input-container">
+    <input
+      class="flights-form__input"
+      type="text"
+      placeholder="Hacia"
+      formControlName="to" />
+    <mat-icon
+      class="flights-form__input-clear"
+      *ngIf="flightForm.get('to')?.value"
+      (click)="clearInput('to')"
+      (keyup)="clearInput('to')"
+      >cancel</mat-icon
+    >
+  </div>
   <mat-form-field class="flights-form__date-picker">
     <input
       matInput
@@ -54,4 +72,4 @@
     bindValue="value"
     placeholder="Categoría"></ng-select>
 </form>
-<app-button class="flights-form__submit" label="Buscar" size="small" />
+<app-button class="flights-form__submit" label="Buscar" [size]="buttonSize" />

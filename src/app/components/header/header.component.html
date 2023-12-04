@@ -1,2 +1,23 @@
-<app-logo size="small" />
-<img src="assets/images/nav_mobile.svg" alt="" />
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<nav class="navbar">
+  <ul>
+    <li class="navbar__logo"><app-logo [size]="logoSize" /></li>
+    <li
+      class="navbar__burguer"
+      (click)="toggleMenu()"
+      (keypress)="toggleMenu()">
+      <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </li>
+    <li class="navbar__menu" [class.is-open]="isMenuOpen">
+      <a class="navbar__menu-item" href="#">Destinos</a>
+      <a class="navbar__menu-item" href="#">Vuelos</a>
+      <a class="navbar__menu-item" href="#">Check in</a>
+      <a class="navbar__menu-item" href="#">Iniciar sesión</a>
+      <app-button
+        class="navbar__menu-item"
+        label="Registrarse"
+        type="secondary" />
+      <app-theme class="navbar__menu-item" />
+    </li>
+  </ul>
+</nav>

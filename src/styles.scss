@@ -1,21 +1,6 @@
-@use '@angular/material' as mat;
 @use './styles/themes/all' as themes;
-@use './styles/typography/config';
+@import './styles/setting/mixins';
 @import "~@ng-select/ng-select/themes/default.theme.css";
-
-@include mat.core();
-
-@include mat.core-theme(themes.$my-app-light-theme);
-@include mat.button-theme(themes.$my-app-light-theme);
-@include mat.icon-theme(themes.$my-app-light-theme);
-@include mat.menu-theme(themes.$my-app-light-theme);
-
-@include mat.typography-hierarchy(config.$my-app-typography);
-
-@media (prefers-color-scheme: dark) {
-  @include mat.core-color(themes.$my-app-dark-theme);
-  @include mat.button-color(themes.$my-app-dark-theme);
-}
 
 * {
   box-sizing: border-box;
@@ -23,10 +8,8 @@
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 .section__title {
@@ -38,7 +21,6 @@ body {
   
   &-subheading {
     text-align: center;
-    color: #5E6282;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -47,7 +29,6 @@ body {
 
   &-heading {
     text-align: center;
-    color: #181E4B;
     word-wrap: break-word;
   }
 }
@@ -60,4 +41,33 @@ body {
 .mat-typography h2,
 .mat-typography p {
   margin: 0
+}
+
+@include breakpoint-up(md) {
+  .mat-typography h1 {
+    font-size: 50px;
+    line-height: 64px;
+  }
+  
+  .mat-typography h2 {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+@include breakpoint-up(lg) {
+  .mat-typography h1 {
+    font-size: 80px;
+    line-height: 104px;
+  }
+
+  .mat-typography h2 {
+    font-size: 50px;
+    line-height: 64px;
+  }
+
+  .section__title-subheading {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

@@ -1,9 +1,203 @@
 @use '@angular/material' as mat;
-@use './all' as themes;
+@use '../typography/config' as config;
+
+$app-dark-primary: #FFFFFF;
+$app-dark-pressed: #C0C5EF;
+$app-dark-subtext: #38427B;
+$app-dark-placeholder: #6F7DA9;
+$app-dark-border: #423D7E;
+$app-dark-background: #08033D;
+
+$app-primary-palette: (
+  50 : #fefefe,
+  100 : #fdfdfd,
+  200 : #fbfbfb,
+  300 : #f9f9f9,
+  400 : #f8f8f8,
+  500 : $app-dark-border,
+  600 : #f6f6f6,
+  700 : $app-dark-placeholder,
+  800 : #f3f3f3,
+  900 : #f1f1f1,
+  A100 : $app-dark-background,
+  A200 : $app-dark-background,
+  A400 : $app-dark-background,
+  A700 : $app-dark-background,
+  contrast: (
+      50 : $app-dark-primary,
+      100 : $app-dark-primary,
+      200 : $app-dark-primary,
+      300 : $app-dark-primary,
+      400 : $app-dark-primary,
+      500 : $app-dark-primary,
+      600 : $app-dark-primary,
+      700 : $app-dark-primary,
+      800 : $app-dark-primary,
+      900 : $app-dark-primary,
+      A100 : $app-dark-primary,
+      A200 : $app-dark-primary,
+      A400 : $app-dark-primary,
+      A700 : $app-dark-primary,
+  )
+);
+
+$app-accent-palette: (
+  50: #fdf4e1,
+  100: #fbe4b3,
+  200: #f8d280,
+  300: #f5c04d,
+  400: #f3b327,
+  500: #f1a501,
+  600: #E49F1A,
+  700: #DB8C15,
+  800: #eb8a01,
+  900: #e77900,
+  A100: $app-dark-background,
+  A200: #ffecda,
+  A400: #ffd0a7,
+  A700: #ffc38e,
+  contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-app-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette($app-primary-palette, 500, A100, 700),
+      accent: mat.define-palette($app-accent-palette, 500, 600, 700, A100),
+    ),
+    typography: config.$my-app-typography,
+  )
+);
 
 .dark-theme {
-  @include mat.core-color(themes.$my-app-dark-theme);
-  @include mat.button-color(themes.$my-app-dark-theme);
-  @include mat.icon-color(themes.$my-app-dark-theme);
-  @include mat.menu-color(themes.$my-app-dark-theme);
+  .landing-satena {
+    background-color: $app-dark-background;
+    color: $app-dark-primary;
+  
+    .navbar__menu.is-open {  
+      background: $app-dark-background;
+    }
+
+    .navbar__menu-item {
+      color: $app-dark-primary;
+    }
+  
+    .section__title-subheading {
+      color: $app-dark-subtext;
+    }
+  
+    .button.secondary {
+      border-color: $app-dark-primary;
+      color: $app-dark-primary;
+  
+      &:active {
+        background-color: $app-dark-pressed;
+      }
+    }
+  
+    .testimonials__dot--primary {
+      background-color: $app-dark-primary;
+    }
+  
+    .testimonials__dot--secondary {
+      background-color: $app-dark-border;
+    }
+  
+    .testimonial-card {
+      background-color: $app-dark-background;
+      color: $app-dark-primary;
+      
+      &.primary {
+        box-shadow: 0 4px 80px rgba(255, 255, 255, 0.10);
+      }
+  
+      &.secondary {
+        border-color: $app-dark-border;
+      }
+    }
+  
+    .destinations__card-text {
+      border-color: $app-dark-border;
+    }
+  
+    .flights-form__radio-buttons {
+      .mat-mdc-radio-button:not(.mat-mdc-radio-checked){
+        .mdc-label {
+          color: $app-dark-placeholder
+        }
+      }
+    }
+  
+    .flights-form__input-container {
+      .flights-form__input {
+        background-color: $app-dark-background;
+        border-color: $app-dark-border;
+        color: $app-dark-primary;
+    
+        &:focus,
+        &:focus-visible {
+            outline-color: $app-dark-primary;
+        }
+    
+        &::placeholder {
+          color: $app-dark-placeholder;
+        }
+      }
+    }
+  
+    .flights-form__date-picker {
+      border-color: $app-dark-border;
+      .mat-mdc-text-field-wrapper
+      .mat-mdc-form-field-flex 
+      .mat-mdc-input-element::placeholder {
+        color: $app-dark-placeholder;
+      }
+      
+      .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: $app-dark-background;
+      }
+    }
+  
+    .flights-form__select.ng-select.ng-select-single{
+      &.ng-select-focused{
+        border-color: $app-dark-primary;
+      }
+      .ng-select-container {
+        background-color: $app-dark-background;
+        border-color: $app-dark-border;
+        color: $app-dark-primary;
+        .ng-value-container .ng-placeholder {
+          color: $app-dark-placeholder;
+        }
+      }
+
+      .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+        color: $app-dark-primary;
+        background-color: $app-dark-background;
+  
+        &.ng-option-marked{
+          background-color: $app-dark-pressed;
+        }
+      }
+    }
+  
+    .footer-text-container {
+      color: $app-dark-subtext;
+    }
+  }
 }

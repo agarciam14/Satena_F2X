@@ -10,9 +10,12 @@
   </div>
 </div>
 <div class="testimonials__card-container">
-  <app-testimonial-card [testimonial]="testimonials[activeIndex]" />
+  <app-testimonial-card
+    [testimonial]="testimonials[activeIndex]"
+    [size]="cardSize" />
   <app-testimonial-card
     [testimonial]="testimonials[nextIndex]"
+    [size]="cardSize"
     type="secondary" />
   <div class="testimonials__card-navigation">
     <img

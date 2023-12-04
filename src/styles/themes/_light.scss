@@ -1,23 +1,45 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
+@use '../typography/config' as config;
 
-$app-light-primary-text: #181e4b;
+$app-light-primary: #181e4b;
+$app-light-pressed: #C0C5EF;
+$app-light-subtext: #5E6282;
+$app-light-placeholder: #A7B0BF;
+$app-light-border: #F7F7F7;
+$app-light-background: #FFFFFF;
 
 $app-primary-palette: (
-  50: #e3e4e9,
-  100: #C0C5EF,
-  200: #8c8fa5,
-  300: #5E6282,
-  400: #3b4066,
-  500: #181e4b,
-  600: #151a44,
-  700: #11163b,
-  800: #0e1233,
-  900: #080a23,
-  A100: #6169ff,
-  A200: #2e38ff,
-  A400: #000cfa,
-  A700: #000be0,
+  50 : #fefefe,
+  100 : #fdfdfd,
+  200 : #fbfbfb,
+  300 : #f9f9f9,
+  400 : #f8f8f8,
+  500 : $app-light-border,
+  600 : #f6f6f6,
+  700 : $app-light-placeholder,
+  800 : #f3f3f3,
+  900 : #f1f1f1,
+  A100 : $app-light-background,
+  A200 : $app-light-background,
+  A400 : $app-light-background,
+  A700 : $app-light-background,
+  contrast: (
+      50 : $app-light-primary,
+      100 : $app-light-primary,
+      200 : $app-light-primary,
+      300 : $app-light-primary,
+      400 : $app-light-primary,
+      500 : $app-light-primary,
+      600 : $app-light-primary,
+      700 : $app-light-primary,
+      800 : $app-light-primary,
+      900 : $app-light-primary,
+      A100 : $app-light-primary,
+      A200 : $app-light-primary,
+      A400 : $app-light-primary,
+      A700 : $app-light-primary,
+  )
 );
 
 $app-accent-palette: (
@@ -31,24 +53,154 @@ $app-accent-palette: (
   700: #DB8C15,
   800: #eb8a01,
   900: #e77900,
-  A100: #ffffff,
+  A100: $app-light-background,
   A200: #ffecda,
   A400: #ffd0a7,
   A700: #ffc38e,
+  contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
 );
 
 
-$my-app-light-primary: mat.define-palette($app-primary-palette, 500, 100, 300, 500);
+$my-app-light-primary: mat.define-palette($app-primary-palette, 500, A100, 700);
 $my-app-light-accent: mat.define-palette($app-accent-palette, 500, 600, 700, A100);
-
-$my-app-light-warn: mat.define-palette(mat.$red-palette);
 
 $my-app-light-theme: mat.define-light-theme(
   (
     color: (
       primary: $my-app-light-primary,
       accent: $my-app-light-accent,
-      warn: $my-app-light-warn,
     ),
+    typography: config.$my-app-typography,
   )
 );
+
+.landing-satena {
+  background-color: $app-light-background;
+  color: $app-light-primary;
+
+  .navbar__menu.is-open {  
+    background: $app-light-background;
+  }
+
+  .navbar__menu-item {
+    color: $app-light-primary;
+  }
+
+  .section__title-subheading {
+    color: $app-light-subtext;
+  }
+
+  .button.secondary {
+    border-color: $app-light-primary;
+    color: $app-light-primary;
+
+    &:active {
+      background-color: $app-light-pressed;
+    }
+  }
+
+  .testimonials__dot--primary {
+    background-color: $app-light-primary;
+  }
+
+  .testimonials__dot--secondary {
+    background-color: $app-light-border;
+  }
+
+  .testimonial-card {
+    background-color: $app-light-background;
+    color: $app-light-subtext;
+    
+    &.primary {
+      box-shadow: 0 4px 80px rgba(0, 0, 0, 0.05);
+    }
+
+    &.secondary {
+      border-color: $app-light-border;
+    }
+  }
+
+  .destinations__card-text {
+    border-color: $app-light-border;
+  }
+
+  .flights-form__radio-buttons {
+    .mat-mdc-radio-button:not(.mat-mdc-radio-checked){
+      .mdc-label {
+        color: $app-light-placeholder
+      }
+    }
+  }
+
+  .flights-form__input-container {
+    .flights-form__input {
+      background-color: $app-light-background;
+      border-color: $app-light-border;
+
+      &:focus,
+      &:focus-visible {
+          outline-color: $app-light-primary;
+      }
+  
+      &::placeholder {
+        color: $app-light-placeholder;
+      }
+    }
+
+  }
+
+  .flights-form__date-picker {
+    border-color: $app-light-border;
+    .mat-mdc-text-field-wrapper
+    .mat-mdc-form-field-flex 
+    .mat-mdc-input-element::placeholder {
+      color: $app-light-placeholder;
+    }
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: $app-light-background;
+    }
+  }
+
+  .flights-form__select.ng-select.ng-select-single{
+    &.ng-select-focused{
+      border-color: $app-light-primary;
+    }
+    .ng-select-container {
+      background-color: $app-light-background;
+      border-color: $app-light-border;
+      color: $app-light-primary;
+      .ng-value-container .ng-placeholder {
+        color: $app-light-placeholder;
+      }
+    }
+
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+      color: $app-light-primary;
+      background-color: $app-light-background;
+
+      &.ng-option-marked{
+        background-color: $app-light-pressed;
+      }
+    }
+  }
+
+  .footer-text-container {
+    color: $app-light-subtext;
+  }
+}

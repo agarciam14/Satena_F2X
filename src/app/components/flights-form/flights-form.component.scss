@@ -22,45 +22,41 @@ app-flights-form {
             gap: 40px;
             display: inline-flex;
 
-            .mat-mdc-radio-button:not(.mat-mdc-radio-checked){
-                .mdc-label {
-                    color: #A7B0BF
-                }
-            }
-
             .mdc-form-field {
                 height: 24px;
             }
         }
 
-        &__input {
+        &__input-container {
             align-self: stretch;
             height: 48px;
-            padding-left: 16px;
-            padding-right: 16px;
-            background: white;
-            border-radius: 10px;
-            border: 2px #f7f7f7 solid;
             justify-content: space-between;
             align-items: center;
             display: inline-flex;
             font-size: 14px;
             font-weight: 400;
-            word-wrap: break-word;
-    
-            &:focus,
-            &:focus-visible {
-                outline: 2px #181E4B solid;
+            position: relative;
+            
+            .flights-form__input {
+                border-width: 2px;
+                border-style: solid;
+                padding-right: 16px;
+                padding-left: 16px;
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
             }
-    
-            &::placeholder {
-                color: #a7b0bf;
+
+            .flights-form__input-clear {
+                position: absolute;
+                right: 16px;
+                cursor: pointer;
             }
         }
 
         &__date-picker {
             align-self: stretch;
-            border: 2px #f7f7f7 solid;
+            border: 2px solid;
             border-radius: 10px;
             height: 48px;
             padding-left: 16px;
@@ -73,12 +69,7 @@ app-flights-form {
 
                 .mat-mdc-form-field-flex {
                     align-items: center;
-                    
-                    .mat-mdc-input-element {
-                        &::placeholder {
-                            color: #a7b0bf;
-                        }
-                    }
+                    height: 48px;
                 }
             }
             
@@ -88,6 +79,13 @@ app-flights-form {
                 display: none;
             }
 
+            .mat-mdc-icon-button.mat-mdc-button-base,
+            .mat-mdc-icon-button .mat-mdc-button-touch-target {
+                width: 24px;
+                height: 24px;
+                padding: 0;
+            }
+
         }
 
         &__select.ng-select.ng-select-single {
@@ -95,7 +93,7 @@ app-flights-form {
 
             &.ng-select-focused {
                 .ng-select-container {
-                    border: 2px #181E4B solid;
+                    border: 2px solid;
                 }
 
                 &:not(.ng-select-opened) {
@@ -106,7 +104,7 @@ app-flights-form {
             }
             
             .ng-select-container {
-                border: 2px #f7f7f7 solid;
+                border: 2px solid;
                 border-radius: 10px;
                 height: 48px;
                 padding-left: 16px;
@@ -116,10 +114,6 @@ app-flights-form {
 
                 .ng-value-container {
                     padding: 0;
-
-                    .ng-placeholder {
-                        color: #a7b0bf;
-                    }
                 }
 
                 .ng-arrow-wrapper {
