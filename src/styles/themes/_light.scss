@@ -43,20 +43,20 @@ $app-primary-palette: (
 );
 
 $app-accent-palette: (
-  50: #fdf4e1,
-  100: #fbe4b3,
-  200: #f8d280,
-  300: #f5c04d,
-  400: #f3b327,
-  500: #f1a501,
-  600: #E49F1A,
-  700: #DB8C15,
-  800: #eb8a01,
-  900: #e77900,
-  A100: $app-light-background,
-  A200: #ffecda,
-  A400: #ffd0a7,
-  A700: #ffc38e,
+  50: $app-light-primary,
+  100: $app-light-primary,
+  200: $app-light-primary,
+  300: $app-light-primary,
+  400: $app-light-primary,
+  500: $app-light-primary,
+  600: $app-light-primary,
+  700: $app-light-primary,
+  800: $app-light-primary,
+  900: $app-light-primary,
+  A100: $app-light-primary,
+  A200: $app-light-primary,
+  A400: $app-light-primary,
+  A700: $app-light-primary,
   contrast: (
         50 : #000000,
         100 : #000000,
@@ -77,7 +77,7 @@ $app-accent-palette: (
 
 
 $my-app-light-primary: mat.define-palette($app-primary-palette, 500, A100, 700);
-$my-app-light-accent: mat.define-palette($app-accent-palette, 500, 600, 700, A100);
+$my-app-light-accent: mat.define-palette($app-accent-palette);
 
 $my-app-light-theme: mat.define-light-theme(
   (

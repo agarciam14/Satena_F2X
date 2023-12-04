@@ -10,6 +10,7 @@
     display: inline-flex;
 
     .social-media__container {
+        cursor: pointer;
         justify-content: flex-start;
         align-items: flex-start;
         gap: 24px;
